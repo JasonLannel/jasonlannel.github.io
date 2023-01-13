@@ -184,8 +184,8 @@ body {
   background: var(--body-bg-color);
   box-sizing: border-box;
   color: var(--text-color);
-  font-family: Comic Neue, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1em;
+  font-family: Comic Neue, Noto Serif, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 1.1em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -197,7 +197,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Comic Neue, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Comic Neue, Noto Serif, Comic Neue, Noto Serif, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 30px 0 15px;
@@ -847,8 +847,9 @@ pre code {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
-  border: 1px solid #eee;
-  border-left-width: 5px;
+  background: #f9f9f9;
+  border: initial;
+  border-left: 3px solid #eee;
 }
 .post-body .note summary {
   cursor: pointer;
@@ -885,6 +886,7 @@ pre code {
   margin-bottom: 0;
 }
 .post-body .note.default {
+  background: #f7f7f7;
   border-left-color: #777;
 }
 .post-body .note.default h2,
@@ -895,6 +897,7 @@ pre code {
   color: #777;
 }
 .post-body .note.primary {
+  background: #f5f0fa;
   border-left-color: #6f42c1;
 }
 .post-body .note.primary h2,
@@ -905,6 +908,7 @@ pre code {
   color: #6f42c1;
 }
 .post-body .note.info {
+  background: #eef7fa;
   border-left-color: #428bca;
 }
 .post-body .note.info h2,
@@ -915,6 +919,7 @@ pre code {
   color: #428bca;
 }
 .post-body .note.success {
+  background: #eff8f0;
   border-left-color: #5cb85c;
 }
 .post-body .note.success h2,
@@ -925,6 +930,7 @@ pre code {
   color: #5cb85c;
 }
 .post-body .note.warning {
+  background: #fdf8ea;
   border-left-color: #f0ad4e;
 }
 .post-body .note.warning h2,
@@ -935,6 +941,7 @@ pre code {
   color: #f0ad4e;
 }
 .post-body .note.danger {
+  background: #fcf1f2;
   border-left-color: #d9534f;
 }
 .post-body .note.danger h2,
@@ -1204,7 +1211,7 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: Comic Neue, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Comic Neue, KaiTi, Comic Neue, Noto Serif, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1889,7 +1896,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Comic Neue, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Comic Neue, Noto Serif, Comic Neue, Noto Serif, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2092,7 +2099,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Comic Neue, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Comic Neue, Noto Serif, Comic Neue, Noto Serif, KaiTi, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
@@ -2163,9 +2170,6 @@ pre code {
 }
 .post-eof {
   background: #ccc;
-  height: 1px;
-  margin: 80px auto 60px;
-  width: 8%;
 }
 .post-block:last-of-type .post-eof {
   display: none;
@@ -2764,6 +2768,38 @@ body {
   -o-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
+}
+.main-inner {
+  background-color: rgba(255,255,255,0);
+  padding: 0px 40px 40px 40px;
+}
+.post-block {
+  background-color: rgba(251,255,255,0.95);
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 20px;
+  border-radius: 30px 50px 30px 50px;
+  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.header-inner {
+  background-color: rgba(251,255,255,0.95);
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.sidebar-inner {
+  background-color: rgba(251,255,255,0.95);
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.pagination {
+  background-color: rgba(251,255,255,0.95);
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.footer-inner {
+  background-color: rgba(251,255,255,0.95);
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @font-face {
   font-family: 'Comic Neue';
