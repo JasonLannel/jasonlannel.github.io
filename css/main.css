@@ -11,17 +11,17 @@
   --table-row-odd-bg-color: #f9f9f9;
   --table-row-hover-bg-color: #f5f5f5;
   --menu-item-bg-color: #f5f5f5;
-  --theme-color: #222;
+  --theme-color: rgba(0,102,170,0.533) 0;
   --btn-default-bg: #fff;
   --btn-default-color: #555;
   --btn-default-border-color: #555;
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #f0f0f0;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #dedede;
-  --highlight-gutter-foreground: #555;
+  --highlight-background: #f8f8f8;
+  --highlight-foreground: #333;
+  --highlight-gutter-background: #e4e4e4;
+  --highlight-gutter-foreground: #464646;
   color-scheme: light;
 }
 html {
@@ -364,7 +364,7 @@ td {
 }
 /*
 
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 
@@ -372,87 +372,87 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #F0F0F0;
+  color: #333;
+  background: #f8f8f8;
 }
 
-
-/* Base color: saturation 0; */
-
-.hljs,
-.hljs-subst {
-  color: #444;
-}
-
-.hljs-comment {
-  color: #888888;
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
 }
 
 .hljs-keyword,
-.hljs-attribute,
 .hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
+.hljs-subst {
+  color: #333;
   font-weight: bold;
 }
 
-
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
 .hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
 }
 
 .hljs-title,
-.hljs-section {
-  color: #880000;
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
   font-weight: bold;
 }
 
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
+.hljs-subst {
+  font-weight: normal;
 }
 
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
 
-/* Language color: hue: 90; */
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
 
-.hljs-literal {
-  color: #78A960;
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
 }
 
 .hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
+.hljs-builtin-name {
+  color: #0086b3;
 }
-
-
-/* Meta color: hue: 200 */
 
 .hljs-meta {
-  color: #1f7199;
+  color: #999;
+  font-weight: bold;
 }
 
-.hljs-meta-string {
-  color: #4d99bf;
+.hljs-deletion {
+  background: #fdd;
 }
 
-
-/* Misc effects */
+.hljs-addition {
+  background: #dfd;
+}
 
 .hljs-emphasis {
   font-style: italic;
@@ -462,6 +462,26 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   font-weight: bold;
 }
 
+.highlight:hover .copy-btn,
+pre:hover .copy-btn {
+  opacity: 1;
+}
+.copy-btn {
+  color: #333;
+  cursor: pointer;
+  line-height: 1.6;
+  opacity: 0;
+  padding: 2px 6px;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 0.8125em;
+  right: 4px;
+  top: 8px;
+}
 code,
 kbd,
 figure.highlight,
@@ -1319,6 +1339,35 @@ pre code {
 .use-motion .menu-item {
   visibility: hidden;
 }
+.book-mark-link {
+  border-bottom: 0;
+  position: fixed;
+  top: -10px;
+  transition: top 0.3s;
+  right: 30px;
+}
+@media (max-width: 991px) {
+  .book-mark-link {
+    right: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .book-mark-link {
+    display: none;
+  }
+}
+.book-mark-link::before {
+  color: #e42005;
+  font-size: 32px;
+  line-height: 1;
+  content: '\f02e';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.book-mark-link:hover,
+.book-mark-link-fixed {
+  top: -2px;
+}
 .sidebar-inner {
   color: #999;
   max-height: calc(100vh - 24px);
@@ -2051,22 +2100,6 @@ pre code {
   font-weight: normal;
   margin: initial;
   overflow-wrap: break-word;
-}
-.posts-expand .post-title .post-edit-link {
-  border-bottom: 0;
-  color: #bbb;
-  float: right;
-  font-size: 1.25em;
-  margin-left: -1.2em;
-  transition: color 0.2s ease-in;
-}
-@media (max-width: 567px) {
-  .posts-expand .post-title .post-edit-link {
-    margin-left: initial;
-  }
-}
-.posts-expand .post-title .post-edit-link:hover {
-  color: #fc6423;
 }
 .posts-expand .post-title-link {
   border-bottom: 0;
@@ -2893,8 +2926,8 @@ body {
   box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .header-inner {
-  background-color: rgba(251,255,255,0.95);
-  border-radius: 30px 30px 30px 30px;
+  background-color: #fbffff;
+  border-radius: 0px 0px 30px 30px;
   box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .sidebar-inner {
