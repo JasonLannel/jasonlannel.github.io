@@ -1,37 +1,434 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#06a80">
+<meta name="generator" content="Hexo 6.0.0">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#06a80">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Neue:300,300italic,400,400italic,700,700italic%7CNoto+Serif:300,300italic,400,400italic,700,700italic%7CKaiTi:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jasonlannel.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":"flat","bookmark":{"enable":true,"color":"#e42005","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="记录一月的生活。好奇怪，这是不是我第一次写公开日记？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一月随笔">
+<meta property="og:url" content="https://jasonlannel.github.io/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:site_name" content="JasonL&#39;s Blog">
+<meta property="og:description" content="记录一月的生活。好奇怪，这是不是我第一次写公开日记？">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-01-13T17:05:52.000Z">
+<meta property="article:modified_time" content="2023-01-14T15:49:45.993Z">
+<meta property="article:author" content="JasonL">
+<meta property="article:tag" content="小碎骨">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="https://jasonlannel.github.io/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://jasonlannel.github.io/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/","path":"2023/01/14/一月随笔/","title":"一月随笔"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>一月随笔 | JasonL's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G9X1WXCE3"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8G9X1WXCE3","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="JasonL's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">JasonL's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All of memory.</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>我的小窝</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>小标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>收纳箱</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>记录本</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">01&#x2F;13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">01&#x2F;14</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="JasonL"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">JasonL</p>
+  <div class="site-description" itemprop="description">满天繁星，无尽盛夏。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">盒子</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">贝壳</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:jasonlanch@qq.com" title="E-Mail → mailto:jasonlanch@qq.com" rel="noopener" target="_blank">E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/JasonLannel" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JasonLannel" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/user/137422" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;137422" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/JasonLan" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;JasonLan" rel="noopener" target="_blank">CodeForces</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/JasonL" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JasonL" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://jasonlannel.github.io/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="JasonL">
+      <meta itemprop="description" content="满天繁星，无尽盛夏。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonL's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一月随笔
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-14 01:05:52 / 修改时间：23:49:45" itemprop="dateCreated datePublished" datetime="2023-01-14T01:05:52+08:00">2023-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B0%B4%E6%9C%A8%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">水木录</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/" class="post-meta-item leancloud_visitors" data-flag-title="一月随笔" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
+
+            <div class="post-description">记录一月的生活。好奇怪，这是不是我第一次写公开日记？</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="section">01/13</h3>
+<p>明天是跟我非常敬重的两位老师见面的日子。一位是我高中的信息竞赛老师，指导了我信息竞赛的全部生涯；还有一位是我初中的班主任，教给我许多人生的智慧以及道理。晚上想着选点什么礼物好呢？于是翻看自己的包里，除了几本没有拆封过的笔记本什么都没带回来。<del>看来以后还是得随身带着明信片以备不虞！</del>
+希望明天能顺顺利利，在某些桌上好好表现<del>，别社恐中途犯了。</del></p>
+<p><del>唉，什么时候能解决社恐呢？我都不知道为什么会有社恐，但它就是发生了。</del></p>
+<hr />
+<p>今天看普物非常无聊，打开 Github
+翻了翻，意外翻到了不少我认识的人。果然 Github
+用的比较多吗？一边看大佬们的归档一边想，啊啊，原来他们以前都做过这样那样的事。又回念起我的
+OI
+生涯，实在是很贫乏的一段日子，一头闷进竞赛里，许多当时知道的不知道的都没有去尝试过。当时最大的梦想还是在竞赛中拿点奖励（特别是洛谷月赛的笔记本！），但是到最后也没有实现。</p>
+<p>突然打算写点日记也是因为翻到驰雨老师的日记博客，想到自己高一时那个不知道写给谁看，最后下落不明的日记，心里眼泪在哗哗地流。博客果然还是充实点好吧！而且我也需要一些方式处理我的情绪，把各种我心里想说的事吐露出来。至于有没有人看，大家读起来什么感受，那已经不是我该在乎的事了。只是希望我能多坚持一点吧。</p>
+<hr />
+<p>过几天宣讲，开始写自己的专业介绍了。写的时候有一种奇异的刚刚收到录取通知的感觉。可能是进
+IIIS 对我而言实在太过震撼了。</p>
+<p>（<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/JasonL/road-to-iiis">关于我去茶园当茶农这档事</a>里记载了我进入
+IIIS 的经历。）</p>
+<p>惊险的故事每次想起来都非常后怕：如果我没有拿到银牌，如果我不是恰好踩了清华的线，如果我笔试没有侥幸通过，我现在会在哪里？</p>
+<p>我不知道。</p>
+<p>也许我还住在南区，和我机航动的两位好兄弟们忙着画图，兼修计算机/茶园的课程；</p>
+<p>也许我在强基里读着一个我不怎么喜欢的专业，每天为了未来疯狂地卷卷卷；</p>
+<p>也许，我根本到不了清华园，好一点能靠着我自身条件去浙江或者上海读计算机，差一点与计算机永远告别，而据我所知，不管是好是坏，结果都未必如我所想。这个疙瘩也许会伴随着我走完这一生。</p>
+<p>这段也许看起来非常凡尔赛，毕竟他们都没有发生。但实际上这些故事才是最有可能发生的。我认识的
+OIers 有多少人会走向其中的一个结局呢？我不知道，但绝对不在少数。IIIS
+凤毛麟角，圆梦的人就那么多个。我能意外上岸，现在想来不哭上一晚上实在是说不过去。</p>
+<p>那么，现在我满意吗？</p>
+<p>心里冒出来的第一个念头竟是：我不好说。</p>
+<p>在这里压力很大。我虽然踏进了门，但我也清楚相较于各位大佬，我的天资、我的知识，未必有平均的水平。我要做2小时的事，别人1小时就能做完，做的又快又好。我所不能做的，或者希望去学的，别人早就一溜一溜地从天说到地给你讲个透甚至拿着成果给你看了。而且我也不是一个很会思考的人，并不能像其他人那样，问出各种我所想不到的问题。上完课甚至不知道自己还有什么疑问，这就是从开始读书到现在的实际情况。这一点也不好笑。在这里，我接受自己的平庸，却不能甘心承认自己的平庸。我还在追求着优秀的绩点，一学期奋斗下来被期末考干掉丢了绩点，我心里除了难受还是难受。尽管我最后成为末流的概率并不算小，由于身体原因我周围也会劝我放弃那点绩点的幻想，接受自己比不过别人的现实，但我无论如何也不愿落到那样的境地。忽然想到自己当初在特训班里偶尔还能争到前三，最差也是班级平均，感觉有点像在看乐子，哈哈。</p>
+<p>只是我还不愿太早放弃。毕竟我还是爱着信息学的。哪怕我没有能力，我也希望能尽力参透里面的奥秘。我希望能把这件事做到<strong>我的</strong>最好。明明都来到国内最好的，至少也是数一数二的信息学殿堂了，怎么能在这里放弃。以前我希望能看一眼天才们的殿堂里的世界，现在我看到了，不愿离开不也是很自然的事吗。只希望现实能慢一点，让我代替那些没有成功的人们在前面多跑一点，在殿堂里多看一点。</p>
+<p>某种意义上我还是很想做一名老师的。</p>
+<h3 id="section-1">01/14</h3>
+<p>今天去参加<del>鸿门宴</del>聚会了。突然间就有点感伤，不过这些话明天再补写吧。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>JasonL
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://jasonlannel.github.io/2023/01/14/%E4%B8%80%E6%9C%88%E9%9A%8F%E7%AC%94/" title="一月随笔">https://jasonlannel.github.io/2023/01/14/一月随笔/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>不可爱的版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处哦！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%B0%8F%E7%A2%8E%E9%AA%A8/" rel="tag"># 小碎骨</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/02/Hello-world/" rel="prev" title="Hello world">
+                  <i class="fa fa-chevron-left"></i> Hello world
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JasonL</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"jOmy9Gjgmqaj8CH4aQgCXMTf-gzGzoHsz","app_key":"UijYkkdZxygb02ITZbopVvHb","server_url":"https://jomy9gjg.lc-cn-n1-shared.com","security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"JasonLannel/jasonlannel.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
+</html>
