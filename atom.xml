@@ -42,9 +42,9 @@
     <link href="https://jasonlannel.github.io/2022/11/02/Hello-world/"/>
     <id>https://jasonlannel.github.io/2022/11/02/Hello-world/</id>
     <published>2022-11-02T02:25:33.000Z</published>
-    <updated>2023-01-21T17:31:11.704Z</updated>
+    <updated>2023-01-21T18:03:39.926Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="day--infty">Day <spanclass="math inline">\(-\infty\)</span></h3><p>把之前的各种杂七杂八的东西清掉了。</p><p>也许会重新写博客吧。</p><h3 id="section">01/17</h3><p>前几天各种整修，添加了评论、搜索功能。按着网上的教程还有几位社友的博客把一些边框样式改了改，看起来也很简单嘛！<del>有人弄了好几天都找不到评论区的块，评论区一度是透明背景什么都看不清楚，我不说是谁</del></p><p>下一步首先是解决本地有时生成空白网页的问题，可能需要重装 hexo。看情况还想调一调随机设置颜色/<code>post-block</code>的图片背景。当然后面这个遥遥无期了。</p><p>本来想用不蒜子，但是好像怎么都搞不定，所以换成了现在的leancloud。也没有搞 Security，加了 Security也出锅了。（不会也是版本问题吧？）</p><h3 id="section-1">01/18</h3><p>把 hexo 升级了一遍，连着 NexT 也升到了最新。现在</p><details class="note success"><summary><p>问题解决清单</p></summary><ul><li><p>生成空白网页的问题</p></li><li><p>不蒜子统计和 Leancloud Security</p></li></ul><p><del>这不相当于所有问题都解决了吗</del></p></details><p><del>绕了一大圈才找到正确的最新版 NexT，hexo-theme 和 theme-hexo坑死我了</del></p><h3 id="section-2">01/22</h3><p><del>谁大年初一凌晨修博客啊</del></p><p>把动画调快了一倍，并且新弄了图片的lazyload。现在的网页应该会比之前快一点。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="day--infty">Day <spanclass="math inline">\(-\infty\)</span></h3><p>把之前的各种杂七杂八的东西清掉了。</p><p>也许会重新写博客吧。</p><h3 id="section">01/17</h3><p>前几天各种整修，添加了评论、搜索功能。按着网上的教程还有几位社友的博客把一些边框样式改了改，看起来也很简单嘛！<del>有人弄了好几天都找不到评论区的块，评论区一度是透明背景什么都看不清楚，我不说是谁</del></p><p>下一步首先是解决本地有时生成空白网页的问题，可能需要重装 hexo。看情况还想调一调随机设置颜色/<code>post-block</code>的图片背景。当然后面这个遥遥无期了。</p><p>本来想用不蒜子，但是好像怎么都搞不定，所以换成了现在的leancloud。也没有搞 Security，加了 Security也出锅了。（不会也是版本问题吧？）</p><h3 id="section-1">01/18</h3><p>把 hexo 升级了一遍，连着 NexT 也升到了最新。现在</p><details class="note success"><summary><p>问题解决清单</p></summary><ul><li><p>生成空白网页的问题</p></li><li><p>不蒜子统计和 Leancloud Security</p></li></ul><p><del>这不相当于所有问题都解决了吗</del></p></details><p><del>绕了一大圈才找到正确的最新版 NexT，hexo-theme 和 theme-hexo坑死我了</del></p><h3 id="section-2">01/22</h3><p><del>谁大年初一凌晨修博客啊</del></p><p>把动画调快了一倍，并且新弄了图片的lazyload。现在的网页应该会比之前快一点。</p><p>2:00取消标题自动编号，修改返回顶部按钮位置。跟我现在的样式有点格格不入，但是放在右下角电脑端估计不会有人看到吧？</p>]]></content>
     
     
     <summary type="html">大清洗……后关于博客想说的一些话。</summary>

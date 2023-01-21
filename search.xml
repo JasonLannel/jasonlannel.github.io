@@ -31,6 +31,8 @@ leancloud。也没有搞 Security，加了 Security
 <p><del>谁大年初一凌晨修博客啊</del></p>
 <p>把动画调快了一倍，并且新弄了图片的
 lazyload。现在的网页应该会比之前快一点。</p>
+<p>2:00
+取消标题自动编号，修改返回顶部按钮位置。跟我现在的样式有点格格不入，但是放在右下角电脑端估计不会有人看到吧？</p>
 ]]></content>
       <categories>
         <category>维护日志</category>
