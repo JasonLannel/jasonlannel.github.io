@@ -41,6 +41,15 @@ lazyload。现在的网页应该会比之前快一点。</p>
 <p>连忙把按钮改了回去，乐坏了</p></li>
 </ul>
 </blockquote>
+<h4 id="section-3">01/24</h4>
+<p>测试可能存在的LaTeX渲染问题:</p>
+<p>除此之外还有一个特殊情况：对于正数列 <span
+class="math inline">\(\{a_n\}_{n\geqslant 1}\)</span>，乘积 <span
+class="math inline">\(\displaystyle\prod_{n=1}^{\infty}(1+a_n)\)</span>
+收敛（极限必然不是零）等价于 <span
+class="math inline">\(\displaystyle\sum_{n =1}^{\infty} a_n\)</span>
+收敛。当然，有对数的话可以近似成 <span class="math inline">\(ln(1+a_n)
+\approx a_n\)</span>，直观上二者就相等。严格的证明也不困难。</p>
 ]]></content>
       <categories>
         <category>维护日志</category>
