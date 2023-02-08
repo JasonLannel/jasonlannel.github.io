@@ -43,6 +43,8 @@ lazyload。现在的网页应该会比之前快一点。</p>
 </blockquote>
 <h3 id="section-3">02/06</h3>
 <p>把 Leancloud 的访客统计关了。<del>懒货！</del></p>
+<h3 id="section-4">02/09</h3>
+<p>修改主页 post-block 的相关设置，现在两个 block 之间的间隔被取消。</p>
 ]]></content>
       <categories>
         <category>维护日志</category>
@@ -503,6 +505,33 @@ aria-hidden="true">最后无聊建了一堆设施，铁换了200+的赤金</figc
       <tags>
         <tag>2023</tag>
         <tag>阿里</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>未来日记</title>
+    <url>/2023/02/09/futurePlan/</url>
+    <content><![CDATA[<p>今天开始写一点计划，督促自己不要放鸽子。大概吧。</p>
+<details class="note warning"><summary><p>230209</p>
+</summary>
+<ul>
+<li>把缓存的普物看完，并且尝试直播以水时长</li>
+<li>捞一点 CSAPP，好像快忘完了 QAQ 要是有时间就写点笔记丢上来</li>
+<li>学 Python + Pytorch （大概）
+<ul>
+<li>如果没学可能会看 Games 101？或者继续弄点 Rendering</li>
+</ul></li>
+<li>周常练习画画.jpg</li>
+<li><del>有没有可能哪天能面到社友</del></li>
+</ul>
+
+</details>
+]]></content>
+      <categories>
+        <category>计划</category>
+      </categories>
+      <tags>
+        <tag>2023</tag>
+        <tag>计划</tag>
       </tags>
   </entry>
 </search>

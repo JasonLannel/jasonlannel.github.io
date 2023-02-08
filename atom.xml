@@ -6,7 +6,7 @@
   <link href="https://jasonlannel.github.io/atom.xml" rel="self"/>
   
   <link href="https://jasonlannel.github.io/"/>
-  <updated>2023-02-05T16:48:50.665Z</updated>
+  <updated>2023-02-08T17:40:49.509Z</updated>
   <id>https://jasonlannel.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>未来日记</title>
+    <link href="https://jasonlannel.github.io/2023/02/09/futurePlan/"/>
+    <id>https://jasonlannel.github.io/2023/02/09/futurePlan/</id>
+    <published>2023-02-08T17:13:17.000Z</published>
+    <updated>2023-02-08T17:40:49.509Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天开始写一点计划，督促自己不要放鸽子。大概吧。</p><details class="note warning"><summary><p>230209</p></summary><ul><li>把缓存的普物看完，并且尝试直播以水时长</li><li>捞一点 CSAPP，好像快忘完了 QAQ 要是有时间就写点笔记丢上来</li><li>学 Python + Pytorch （大概）<ul><li>如果没学可能会看 Games 101？或者继续弄点 Rendering</li></ul></li><li>周常练习画画.jpg</li><li><del>有没有可能哪天能面到社友</del></li></ul></details>]]></content>
+    
+    
+    <summary type="html">Miku Fans!</summary>
+    
+    
+    
+    <category term="计划" scheme="https://jasonlannel.github.io/categories/%E8%AE%A1%E5%88%92/"/>
+    
+    
+    <category term="2023" scheme="https://jasonlannel.github.io/tags/2023/"/>
+    
+    <category term="计划" scheme="https://jasonlannel.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>AliSummary</title>
@@ -92,9 +115,9 @@
     <link href="https://jasonlannel.github.io/2022/11/02/Hello-world/"/>
     <id>https://jasonlannel.github.io/2022/11/02/Hello-world/</id>
     <published>2022-11-02T02:25:33.000Z</published>
-    <updated>2023-02-05T16:53:09.423Z</updated>
+    <updated>2023-02-08T17:34:18.096Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="day--infty">Day <spanclass="math inline">\(-\infty\)</span></h3><p>把之前的各种杂七杂八的东西清掉了。</p><p>也许会重新写博客吧。</p><h3 id="section">01/17</h3><p>前几天各种整修，添加了评论、搜索功能。按着网上的教程还有几位社友的博客把一些边框样式改了改，看起来也很简单嘛！<del>有人弄了好几天都找不到评论区的块，评论区一度是透明背景什么都看不清楚，我不说是谁</del></p><p>下一步首先是解决本地有时生成空白网页的问题，可能需要重装 hexo。看情况还想调一调随机设置颜色/<code>post-block</code>的图片背景。当然后面这个遥遥无期了。</p><p>本来想用不蒜子，但是好像怎么都搞不定，所以换成了现在的leancloud。也没有搞 Security，加了 Security也出锅了。（不会也是版本问题吧？）</p><h3 id="section-1">01/18</h3><p>把 hexo 升级了一遍，连着 NexT 也升到了最新。现在</p><details class="note success"><summary><p>问题解决清单</p></summary><ul><li><p>生成空白网页的问题</p></li><li><p>不蒜子统计和 Leancloud Security</p></li></ul><p><del>这不相当于所有问题都解决了吗</del></p></details><p><del>绕了一大圈才找到正确的最新版 NexT，hexo-theme 和 theme-hexo坑死我了</del></p><h3 id="section-2">01/22</h3><p><del>谁大年初一凌晨修博客啊</del></p><p>把动画调快了一倍，并且新弄了图片的lazyload。现在的网页应该会比之前快一点。</p><blockquote><ul><li><p>2:00</p><p>取消标题自动编号，修改返回顶部按钮位置。跟我现在的样式有点格格不入，但是放在右下角电脑端估计不会有人看到吧？</p></li><li><p>2:15</p><p>想着去网站上看看效果，这是什么东西？</p><p><img src="\images\Diary-Blog\01.jpg" /></p><p>连忙把按钮改了回去，乐坏了</p></li></ul></blockquote><h3 id="section-3">02/06</h3><p>把 Leancloud 的访客统计关了。<del>懒货！</del></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="day--infty">Day <spanclass="math inline">\(-\infty\)</span></h3><p>把之前的各种杂七杂八的东西清掉了。</p><p>也许会重新写博客吧。</p><h3 id="section">01/17</h3><p>前几天各种整修，添加了评论、搜索功能。按着网上的教程还有几位社友的博客把一些边框样式改了改，看起来也很简单嘛！<del>有人弄了好几天都找不到评论区的块，评论区一度是透明背景什么都看不清楚，我不说是谁</del></p><p>下一步首先是解决本地有时生成空白网页的问题，可能需要重装 hexo。看情况还想调一调随机设置颜色/<code>post-block</code>的图片背景。当然后面这个遥遥无期了。</p><p>本来想用不蒜子，但是好像怎么都搞不定，所以换成了现在的leancloud。也没有搞 Security，加了 Security也出锅了。（不会也是版本问题吧？）</p><h3 id="section-1">01/18</h3><p>把 hexo 升级了一遍，连着 NexT 也升到了最新。现在</p><details class="note success"><summary><p>问题解决清单</p></summary><ul><li><p>生成空白网页的问题</p></li><li><p>不蒜子统计和 Leancloud Security</p></li></ul><p><del>这不相当于所有问题都解决了吗</del></p></details><p><del>绕了一大圈才找到正确的最新版 NexT，hexo-theme 和 theme-hexo坑死我了</del></p><h3 id="section-2">01/22</h3><p><del>谁大年初一凌晨修博客啊</del></p><p>把动画调快了一倍，并且新弄了图片的lazyload。现在的网页应该会比之前快一点。</p><blockquote><ul><li><p>2:00</p><p>取消标题自动编号，修改返回顶部按钮位置。跟我现在的样式有点格格不入，但是放在右下角电脑端估计不会有人看到吧？</p></li><li><p>2:15</p><p>想着去网站上看看效果，这是什么东西？</p><p><img src="\images\Diary-Blog\01.jpg" /></p><p>连忙把按钮改了回去，乐坏了</p></li></ul></blockquote><h3 id="section-3">02/06</h3><p>把 Leancloud 的访客统计关了。<del>懒货！</del></p><h3 id="section-4">02/09</h3><p>修改主页 post-block 的相关设置，现在两个 block 之间的间隔被取消。</p>]]></content>
     
     
     <summary type="html">大清洗……后关于博客想说的一些话。</summary>
