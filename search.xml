@@ -609,4 +609,235 @@ PKU 与 THU 学生围着一锅没有打火的火锅畅聊学英语的痛苦。</
         <tag>小碎骨</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CS:APP Notes</title>
+    <url>/2023/02/12/csapp/</url>
+    <content><![CDATA[<h3 id="preface">Preface</h3>
+<p>It's a long way to learn CS:APP. Notes can mistakenly miss something,
+and some basic info/unnecessary chapters(with stars before the title)
+would be skipped, so I would commend you readers to read the original
+book on your own. (I mean the original North American edition;
+<del>中文版虽然努力了，但是一言难尽</del>)</p>
+<p>Thanks give to ouuan with <a
+href="https://ouuan.moe/tag/csapp">CS:APP notes</a> in Chinese. (I write
+notes in English just because I have to...To prove it, you would find
+pics from Chinese edition below.)</p>
+<h3 id="a-tour-of-computer-systems">*01 A Tour of Computer Systems</h3>
+<p>I would just skip this; if necessary I would fill the blank in.</p>
+<h3 id="representing-and-manipulating-information">02 Representing and
+Manipulating Information</h3>
+<h4 id="information-storage">Information Storage</h4>
+<ul>
+<li><p><strong>Bit</strong> kept 0/1. For numbers count in binary</p>
+<p>e.g. <span
+class="math inline">\((\mathrm{00011011111101010010})_2\)</span>, or
+<span class="math inline">\((\mathrm{114514})_{10}\)</span> in decimal.
+Most times we hate binary expression for its length; So we use
+hexadecimal <span
+class="math inline">\((\mathrm{1BF52})_{16}\)</span></p></li>
+<li><p><strong>Byte</strong> = 8 bits</p></li>
+<li><p><strong>Word Size</strong> = nominal size of integer-valued data
+and of addresses. Now most machines have 64-bit word size.</p></li>
+</ul>
+<figure>
+<img src="\images\csapp\TypeWithBits.jpg"
+alt="Word size changes bits used by different types in C." />
+<figcaption aria-hidden="true">Word size changes bits used by different
+types in C.</figcaption>
+</figure>
+<ul>
+<li><p><strong>Byte Ordering</strong></p>
+<ul>
+<li><strong>Big Endian</strong>: Read/Write from high bits to low bits.
+e.g. <span
+class="math inline">\(\mathrm{00011011111101010010}\rightarrow
+(114514)_{10}\)</span></li>
+<li><strong>Little Endian</strong>: Read/Write from low bits to high
+bits. e.g. <span
+class="math inline">\(\mathrm{01001010111111011000}\rightarrow(114514)_{10}\)</span></li>
+</ul>
+<p>Usually no effect on programming; But consideration need to be taken
+when:</p>
+<ul>
+<li>communication (e.g. Network)</li>
+<li>check original byte array (in machine-level programming),</li>
+<li>type conversions/casting, union, etc.</li>
+</ul></li>
+<li><p><strong>Bit-level Operations</strong></p>
+<ul>
+<li><p><strong>General Boolean Algebra</strong></p>
+<ul>
+<li>Intersection &amp;(AND)</li>
+<li>Union |(OR)</li>
+<li>Symmetric difference ^(XOR)</li>
+<li>Complement ~</li>
+</ul>
+<p>Notice: Contrast to logical operations (&amp;&amp;,||,!) which
+results are only 0/1.</p></li>
+<li><p><strong>Shift Operations</strong></p>
+<p><img src="\images\csapp\Shift.jpg" /></p></li>
+</ul></li>
+</ul>
+<h4 id="integer-representations">Integer Representations</h4>
+<ul>
+<li><p><strong>Encoding Integers</strong></p>
+<p><img src="\images\csapp\EncodingInts.jpg" /></p>
+<details class="note warning"><summary><p>Warning</p>
+</summary>
+<p>Be cautious when dealing with unsigned and signed. When both operated
+with operations, signed will be converted to unsigned, and errors can be
+produced like <code>-1 &gt; 0u</code>.</p>
+
+</details></li>
+<li><p><strong>Expanding</strong></p>
+<ul>
+<li>Unsigned: fill high bits with 0s</li>
+<li>Signed: fill in sign bit</li>
+</ul></li>
+<li><p><strong>Truncating</strong></p>
+<p>Unsigned/signed: high bits are truncated. Similar to mod.</p></li>
+</ul>
+<h4 id="integer-arithmetic">Integer Arithmetic</h4>
+<ul>
+<li><p><strong>Addition</strong></p>
+<ul>
+<li><p>Unsigned: <span class="math inline">\(u + v = (u+v) \mod
+2^w\)</span></p>
+<p><img src="\images\csapp\IntAdd.jpg" /></p></li>
+<li><p>Signed: <span class="math inline">\(u+v =
+\mathrm{U2T}(\mathrm{T2U}(u)+\mathrm{T2U}(v))\)</span></p>
+<p><img src="\images\csapp\NegAdd.jpg" /></p></li>
+</ul>
+<p>Extra: $-u = (u)+1 $</p></li>
+<li><p><strong>Multiplication</strong></p>
+<p>Do mod <span class="math inline">\(2^w\)</span> again. Do power-of-2
+multiply/divide, use shift.</p></li>
+</ul>
+<h4 id="floating-point">Floating Point</h4>
+<ul>
+<li><p>IEEE Representation: <span class="math inline">\((-1)^s\times
+M\times 2^E\)</span></p>
+<ul>
+<li>sign bit(<span class="math inline">\(s\)</span>)</li>
+<li>exponent field(<span class="math inline">\(E\)</span>) [Can be
+negative, like signed integer.]</li>
+<li>fraction field(<span class="math inline">\(M\)</span>) = <span
+class="math inline">\(?.f_{n-1}\dots f_1f_0\)</span></li>
+</ul>
+<p>32-bit(float): 8 bits for exponent, 23 bits for fraction</p>
+<p>64-bit(double): 11 bits for exponent, 52 bits for fraction</p>
+<ul>
+<li><p>Normalized values (exponent not all 0s/1s)</p>
+<p><span class="math inline">\(E=1-\mathrm{Bias},M=1.f{n-1}\dots
+f_1f_0\)</span></p>
+<p>Here <span
+class="math inline">\(\mathrm{Bias}=2^{w-1}-1\)</span>.</p></li>
+<li><p>Denormalized values (exponent all 0s)</p>
+<p><span class="math inline">\(E=1-\mathrm{Bias},M=0.f{n-1}\dots
+f_1f_0\)</span></p></li>
+<li><p>Special values (exponent all 1s)</p>
+<p><span class="math inline">\(\pm \infty\)</span> if fraction all 0s;
+NaN otherwise.</p></li>
+</ul></li>
+<li><p>Arithmetic</p>
+<ul>
+<li><p>Rounding Modes</p>
+<p>round-to-even(default), round-toward-zero, round-down,
+round-up.</p></li>
+<li><p>Operations</p>
+<p>Get exact result, then fixing(overflow if out of range, and round to
+fit precision)</p></li>
+<li><p>Conversions/Casting</p>
+<p>Overflow/Rounding can be occured.</p></li>
+</ul></li>
+</ul>
+<h3 id="machine-level-representation-of-programs">*03 Machine-Level
+Representation of Programs</h3>
+<p>I would like to "borrow" <a
+href="https://ouuan.moe/post/2022/09/csapp-3">notes from Ouuan</a> for
+specific reason: it is said that we use RISC-V rather than x86-64
+architecture in Tea Garden(TG in short afterwards).</p>
+<h3 id="processor-architecture">*04 Processor Architecture</h3>
+<p>I would skip this two chapters for specific reason; if necessary I
+would fill the blank in.</p>
+<h3 id="optimizing-program-performance">*05 Optimizing Program
+Performance</h3>
+<p>As an OIer this chapter is skipped defaultly.</p>
+<h3 id="the-memory-hierarchy">06 The Memory Hierarchy</h3>
+<ul>
+<li><p><strong>RAM</strong>/Random-Access Memory</p>
+<p>Volatile memory: info lost once not powered.</p>
+<ul>
+<li><p><strong>SRAM</strong>/Static RAM</p>
+<ul>
+<li>Used as cache</li>
+<li>Bistable. Once powered, keep values all the time.</li>
+</ul></li>
+<li><p><strong>DRAM</strong>/Dynamic RAM</p>
+<ul>
+<li>Used as main memory, frame buffer (for graphics system)</li>
+<li>Cheaper &amp; Slower than SRAM</li>
+<li>Sensitive to electric noise</li>
+</ul>
+<p><strong>DRAM Chip</strong> A two-dimensional array, each called
+supercell with <span class="math inline">\(w\)</span>-DRAM units.
+Connected to <em>memory controller</em>, and packaged in the memory
+<em>module</em>.</p>
+<p>To read supercell <span class="math inline">\((i,j)\)</span>, memory
+controller send RAS(row access strobe) <span
+class="math inline">\(i\)</span> and CAS(column access strobe) <span
+class="math inline">\(j\)</span>, then DRAM copy <span
+class="math inline">\(i\)</span>-th row to the internal row buffer, and
+extract <span class="math inline">\(j\)</span>-th bit with CAS.</p></li>
+</ul></li>
+</ul>
+<p><img src="\images\csapp\DRAMonMM.jpg" /></p>
+<ul>
+<li><p><strong>ROM</strong>/Read-Only Memory</p>
+<p>Nonvolatile memory: infos kept even not powered</p>
+<p>Apps kept in ROM called <em>firmware.</em>(BIOS, disk drive
+controller, etc.)</p>
+<ul>
+<li><strong>PROM</strong>/Programmable ROM: Can be programmed only
+once</li>
+<li><strong>EPROM</strong>/Erasable Programmable ROM
+<ul>
+<li>Use physical way(Ultraviolet light) to erase</li>
+</ul></li>
+<li><strong>EEPROM</strong>/Electrically Erasable PROM
+<ul>
+<li>Application: Flash Memory</li>
+<li>Can be erased&amp;programmed for <span
+class="math inline">\(10^5\)</span> times</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="linking">07 Linking</h3>
+<h3 id="exceptional-control-flow">08 Exceptional Control Flow</h3>
+<h3 id="vortial-memory">09 Vortial Memory</h3>
+<h3 id="system-level-io">10 System-Level I/O</h3>
+<h3 id="network-programming">*11 Network Programming</h3>
+<h3 id="concurrent-programming">*12 Concurrent Programming</h3>
+]]></content>
+      <categories>
+        <category>ICS</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>2023</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>General Physics Notes</title>
+    <url>/2023/02/12/generalPhysics/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>普物</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>2023</tag>
+      </tags>
+  </entry>
 </search>

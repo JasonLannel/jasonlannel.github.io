@@ -6,7 +6,7 @@
   <link href="https://jasonlannel.github.io/atom.xml" rel="self"/>
   
   <link href="https://jasonlannel.github.io/"/>
-  <updated>2023-02-11T16:47:52.973Z</updated>
+  <updated>2023-02-12T03:17:52.724Z</updated>
   <id>https://jasonlannel.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>General Physics Notes</title>
+    <link href="https://jasonlannel.github.io/2023/02/12/generalPhysics/"/>
+    <id>https://jasonlannel.github.io/2023/02/12/generalPhysics/</id>
+    <published>2023-02-12T03:15:50.000Z</published>
+    <updated>2023-02-12T03:17:52.724Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    <category term="普物" scheme="https://jasonlannel.github.io/categories/%E6%99%AE%E7%89%A9/"/>
+    
+    <category term="笔记" scheme="https://jasonlannel.github.io/categories/%E6%99%AE%E7%89%A9/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="2023" scheme="https://jasonlannel.github.io/tags/2023/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS:APP Notes</title>
+    <link href="https://jasonlannel.github.io/2023/02/12/csapp/"/>
+    <id>https://jasonlannel.github.io/2023/02/12/csapp/</id>
+    <published>2023-02-12T03:15:06.000Z</published>
+    <updated>2023-02-12T10:15:49.656Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="preface">Preface</h3><p>It's a long way to learn CS:APP. Notes can mistakenly miss something,and some basic info/unnecessary chapters(with stars before the title)would be skipped, so I would commend you readers to read the originalbook on your own. (I mean the original North American edition;<del>中文版虽然努力了，但是一言难尽</del>)</p><p>Thanks give to ouuan with <ahref="https://ouuan.moe/tag/csapp">CS:APP notes</a> in Chinese. (I writenotes in English just because I have to...To prove it, you would findpics from Chinese edition below.)</p><h3 id="a-tour-of-computer-systems">*01 A Tour of Computer Systems</h3><p>I would just skip this; if necessary I would fill the blank in.</p><h3 id="representing-and-manipulating-information">02 Representing andManipulating Information</h3><h4 id="information-storage">Information Storage</h4><ul><li><p><strong>Bit</strong> kept 0/1. For numbers count in binary</p><p>e.g. <spanclass="math inline">\((\mathrm{00011011111101010010})_2\)</span>, or<span class="math inline">\((\mathrm{114514})_{10}\)</span> in decimal.Most times we hate binary expression for its length; So we usehexadecimal <spanclass="math inline">\((\mathrm{1BF52})_{16}\)</span></p></li><li><p><strong>Byte</strong> = 8 bits</p></li><li><p><strong>Word Size</strong> = nominal size of integer-valued dataand of addresses. Now most machines have 64-bit word size.</p></li></ul><figure><img src="\images\csapp\TypeWithBits.jpg"alt="Word size changes bits used by different types in C." /><figcaption aria-hidden="true">Word size changes bits used by differenttypes in C.</figcaption></figure><ul><li><p><strong>Byte Ordering</strong></p><ul><li><strong>Big Endian</strong>: Read/Write from high bits to low bits.e.g. <spanclass="math inline">\(\mathrm{00011011111101010010}\rightarrow(114514)_{10}\)</span></li><li><strong>Little Endian</strong>: Read/Write from low bits to highbits. e.g. <spanclass="math inline">\(\mathrm{01001010111111011000}\rightarrow(114514)_{10}\)</span></li></ul><p>Usually no effect on programming; But consideration need to be takenwhen:</p><ul><li>communication (e.g. Network)</li><li>check original byte array (in machine-level programming),</li><li>type conversions/casting, union, etc.</li></ul></li><li><p><strong>Bit-level Operations</strong></p><ul><li><p><strong>General Boolean Algebra</strong></p><ul><li>Intersection &amp;(AND)</li><li>Union |(OR)</li><li>Symmetric difference ^(XOR)</li><li>Complement ~</li></ul><p>Notice: Contrast to logical operations (&amp;&amp;,||,!) whichresults are only 0/1.</p></li><li><p><strong>Shift Operations</strong></p><p><img src="\images\csapp\Shift.jpg" /></p></li></ul></li></ul><h4 id="integer-representations">Integer Representations</h4><ul><li><p><strong>Encoding Integers</strong></p><p><img src="\images\csapp\EncodingInts.jpg" /></p><details class="note warning"><summary><p>Warning</p></summary><p>Be cautious when dealing with unsigned and signed. When both operatedwith operations, signed will be converted to unsigned, and errors can beproduced like <code>-1 &gt; 0u</code>.</p></details></li><li><p><strong>Expanding</strong></p><ul><li>Unsigned: fill high bits with 0s</li><li>Signed: fill in sign bit</li></ul></li><li><p><strong>Truncating</strong></p><p>Unsigned/signed: high bits are truncated. Similar to mod.</p></li></ul><h4 id="integer-arithmetic">Integer Arithmetic</h4><ul><li><p><strong>Addition</strong></p><ul><li><p>Unsigned: <span class="math inline">\(u + v = (u+v) \mod2^w\)</span></p><p><img src="\images\csapp\IntAdd.jpg" /></p></li><li><p>Signed: <span class="math inline">\(u+v =\mathrm{U2T}(\mathrm{T2U}(u)+\mathrm{T2U}(v))\)</span></p><p><img src="\images\csapp\NegAdd.jpg" /></p></li></ul><p>Extra: $-u = (u)+1 $</p></li><li><p><strong>Multiplication</strong></p><p>Do mod <span class="math inline">\(2^w\)</span> again. Do power-of-2multiply/divide, use shift.</p></li></ul><h4 id="floating-point">Floating Point</h4><ul><li><p>IEEE Representation: <span class="math inline">\((-1)^s\timesM\times 2^E\)</span></p><ul><li>sign bit(<span class="math inline">\(s\)</span>)</li><li>exponent field(<span class="math inline">\(E\)</span>) [Can benegative, like signed integer.]</li><li>fraction field(<span class="math inline">\(M\)</span>) = <spanclass="math inline">\(?.f_{n-1}\dots f_1f_0\)</span></li></ul><p>32-bit(float): 8 bits for exponent, 23 bits for fraction</p><p>64-bit(double): 11 bits for exponent, 52 bits for fraction</p><ul><li><p>Normalized values (exponent not all 0s/1s)</p><p><span class="math inline">\(E=1-\mathrm{Bias},M=1.f{n-1}\dotsf_1f_0\)</span></p><p>Here <spanclass="math inline">\(\mathrm{Bias}=2^{w-1}-1\)</span>.</p></li><li><p>Denormalized values (exponent all 0s)</p><p><span class="math inline">\(E=1-\mathrm{Bias},M=0.f{n-1}\dotsf_1f_0\)</span></p></li><li><p>Special values (exponent all 1s)</p><p><span class="math inline">\(\pm \infty\)</span> if fraction all 0s;NaN otherwise.</p></li></ul></li><li><p>Arithmetic</p><ul><li><p>Rounding Modes</p><p>round-to-even(default), round-toward-zero, round-down,round-up.</p></li><li><p>Operations</p><p>Get exact result, then fixing(overflow if out of range, and round tofit precision)</p></li><li><p>Conversions/Casting</p><p>Overflow/Rounding can be occured.</p></li></ul></li></ul><h3 id="machine-level-representation-of-programs">*03 Machine-LevelRepresentation of Programs</h3><p>I would like to "borrow" <ahref="https://ouuan.moe/post/2022/09/csapp-3">notes from Ouuan</a> forspecific reason: it is said that we use RISC-V rather than x86-64architecture in Tea Garden(TG in short afterwards).</p><h3 id="processor-architecture">*04 Processor Architecture</h3><p>I would skip this two chapters for specific reason; if necessary Iwould fill the blank in.</p><h3 id="optimizing-program-performance">*05 Optimizing ProgramPerformance</h3><p>As an OIer this chapter is skipped defaultly.</p><h3 id="the-memory-hierarchy">06 The Memory Hierarchy</h3><ul><li><p><strong>RAM</strong>/Random-Access Memory</p><p>Volatile memory: info lost once not powered.</p><ul><li><p><strong>SRAM</strong>/Static RAM</p><ul><li>Used as cache</li><li>Bistable. Once powered, keep values all the time.</li></ul></li><li><p><strong>DRAM</strong>/Dynamic RAM</p><ul><li>Used as main memory, frame buffer (for graphics system)</li><li>Cheaper &amp; Slower than SRAM</li><li>Sensitive to electric noise</li></ul><p><strong>DRAM Chip</strong> A two-dimensional array, each calledsupercell with <span class="math inline">\(w\)</span>-DRAM units.Connected to <em>memory controller</em>, and packaged in the memory<em>module</em>.</p><p>To read supercell <span class="math inline">\((i,j)\)</span>, memorycontroller send RAS(row access strobe) <spanclass="math inline">\(i\)</span> and CAS(column access strobe) <spanclass="math inline">\(j\)</span>, then DRAM copy <spanclass="math inline">\(i\)</span>-th row to the internal row buffer, andextract <span class="math inline">\(j\)</span>-th bit with CAS.</p></li></ul></li></ul><p><img src="\images\csapp\DRAMonMM.jpg" /></p><ul><li><p><strong>ROM</strong>/Read-Only Memory</p><p>Nonvolatile memory: infos kept even not powered</p><p>Apps kept in ROM called <em>firmware.</em>(BIOS, disk drivecontroller, etc.)</p><ul><li><strong>PROM</strong>/Programmable ROM: Can be programmed onlyonce</li><li><strong>EPROM</strong>/Erasable Programmable ROM<ul><li>Use physical way(Ultraviolet light) to erase</li></ul></li><li><strong>EEPROM</strong>/Electrically Erasable PROM<ul><li>Application: Flash Memory</li><li>Can be erased&amp;programmed for <spanclass="math inline">\(10^5\)</span> times</li></ul></li></ul></li></ul><h3 id="linking">07 Linking</h3><h3 id="exceptional-control-flow">08 Exceptional Control Flow</h3><h3 id="vortial-memory">09 Vortial Memory</h3><h3 id="system-level-io">10 System-Level I/O</h3><h3 id="network-programming">*11 Network Programming</h3><h3 id="concurrent-programming">*12 Concurrent Programming</h3>]]></content>
+    
+    
+    <summary type="html">Notes for CSAPP, textbook for ICS.</summary>
+    
+    
+    
+    <category term="ICS" scheme="https://jasonlannel.github.io/categories/ICS/"/>
+    
+    <category term="笔记" scheme="https://jasonlannel.github.io/categories/ICS/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="2023" scheme="https://jasonlannel.github.io/tags/2023/"/>
+    
+  </entry>
   
   <entry>
     <title>未来日记</title>
