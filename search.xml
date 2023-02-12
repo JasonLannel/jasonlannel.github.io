@@ -258,6 +258,28 @@ Kaleb 一样。）</p>
 个。我不太会计数，随它去吧，反正不会是 19 个。</del></p>
 
 </details>
+<h3 id="section-11">02/12</h3>
+<ul>
+<li><p>开始想什么时候可以给网站弄一些方便读者的
+utility，比如目录折叠（这对于笔记比较有用），修改标签显示的位置等等；也许之后还会写个将
+png/jpg 转成 webp 的 converter。（webp 是今天看 ouuan
+老师的笔记时想起来的，据说比 png/jpg
+加载起来好得多；虽然我觉得主要是没做有损压缩，加载出来的文件各个都是 MB
+级别确实没必要……）或者说页面给一个缩略图，点进去会加载原图，这样也挺不错。</p>
+<p>当然这些都是看不到什么时候能实现的事情，自己写代码的能力还是非常贫瘠……</p></li>
+<li><p>正如各位所见，今天开了两个大坑，CS:APP
+和普物。普物不知道什么时候弄完，<del>说不定之后删了，毕竟还有个
+Onenote</del>；CS:APP
+希望能在假期最后这一周冲刺一下搞完大部分的东西。因为考的会是英文，所以会全部用英文写。（咱其实也更喜欢用中文一点，但是用中文到时候英文记不住就贻笑大方了）</p></li>
+<li><p>看完了 Farm（见02/11）开始循环听 The Village Green Preservation
+Society。 不知道为什么旋律非常对我胃口，其实稍微有一点点 Hotel
+California，但是速度快得多。（咱不太懂音乐，也好久没碰纯音乐以外的东西了，不知道这个表述对不对……）</p>
+<p>在音乐欣赏这方面（其实不止）自己总感觉和大众是脱节的，大部分时间听的都是纯音乐（音游曲、游戏BGM、番剧/电影配乐等等），少数带词的也大部分都是至少十年二十年前的曲子（哈哈哈，听着珂朵莉版本的
+Scarborough Fair
+总觉得特别奇异），至于当下流行的曲子，并不是说全都不好听，只是我并不太感冒……难道说是因为小时候耳濡目染吗（笑）<del>写到这里突然想着要不要开个新的
+post 时不时给大家推点歌</del></p></li>
+<li><p>感觉自从开始写随笔之后生活正在潜移默化地发生着变化，自己日常生活的情绪慢慢从考完试那会的小颓废状态变得更丰富了一些（粗粗感觉用的感叹号越来越多了），接人待物比以前大方多了，写在随笔里的话也变多了不少（放在以前很难想象每天都能写这么多字），唯一不变的还是怕生猫猫。希望等到开学了自己还能<strong>高兴地</strong>坚持留出半个小时来这里写点随笔，在各种评论区里跟互联网原住民多聊聊天！（笑）</p></li>
+</ul>
 ]]></content>
       <categories>
         <category>水木录</category>
@@ -312,6 +334,11 @@ lazyload。现在的网页应该会比之前快一点。</p>
 <p>把 Leancloud 的访客统计关了。<del>懒货！</del></p>
 <h3 id="section-4">02/09</h3>
 <p>修改主页 post-block 的相关设置，现在两个 block 之间的间隔被取消。</p>
+<h3 id="section-5">02/12</h3>
+<p>开始想什么时候可以给网站弄一些方便读者的
+utility，比如目录折叠（这对于笔记比较有用），修改标签显示的位置等等；也许之后还会写个将
+png/jpg 转成 webp 的
+converter。或者说页面给一个缩略图，点进去会加载原图。</p>
 ]]></content>
       <categories>
         <category>维护日志</category>
@@ -323,19 +350,18 @@ lazyload。现在的网页应该会比之前快一点。</p>
   <entry>
     <title>未来日记</title>
     <url>/2023/02/09/futurePlan/</url>
-    <content><![CDATA[<details class="note warning"><summary><p>230211</p>
+    <content><![CDATA[<details class="note warning"><summary><p>230212</p>
 </summary>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
 补习 Kinematics</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 继续捞 CSAPP</li>
 <li><input type="checkbox" disabled="" />
 学 Python + Pytorch （大概）</li>
 <li><input type="checkbox" disabled="" />
 <del>有没有可能哪天能面到正在看这条的你</del></li>
 </ul>
-<p><del>Here's the village pigeons preservation society</del></p>
 
 </details>
 ]]></content>
@@ -640,7 +666,7 @@ class="math inline">\((\mathrm{1BF52})_{16}\)</span></p></li>
 and of addresses. Now most machines have 64-bit word size.</p></li>
 </ul>
 <figure>
-<img src="\images\csapp\TypeWithBits.jpg"
+<img src="\images\csapp\TypeWithBits.webp"
 alt="Word size changes bits used by different types in C." />
 <figcaption aria-hidden="true">Word size changes bits used by different
 types in C.</figcaption>
@@ -675,13 +701,13 @@ when:</p>
 <p>Notice: Contrast to logical operations (&amp;&amp;,||,!) which
 results are only 0/1.</p></li>
 <li><p><strong>Shift Operations</strong></p>
-<p><img src="\images\csapp\Shift.jpg" /></p></li>
+<p><img src="\images\csapp\Shift.webp" /></p></li>
 </ul></li>
 </ul>
 <h4 id="integer-representations">Integer Representations</h4>
 <ul>
 <li><p><strong>Encoding Integers</strong></p>
-<p><img src="\images\csapp\EncodingInts.jpg" /></p>
+<p><img src="\images\csapp\EncodingInts.webp" /></p>
 <details class="note warning"><summary><p>Warning</p>
 </summary>
 <p>Be cautious when dealing with unsigned and signed. When both operated
@@ -703,10 +729,10 @@ produced like <code>-1 &gt; 0u</code>.</p>
 <ul>
 <li><p>Unsigned: <span class="math inline">\(u + v = (u+v) \mod
 2^w\)</span></p>
-<p><img src="\images\csapp\IntAdd.jpg" /></p></li>
+<p><img src="\images\csapp\IntAdd.webp" /></p></li>
 <li><p>Signed: <span class="math inline">\(u+v =
 \mathrm{U2T}(\mathrm{T2U}(u)+\mathrm{T2U}(v))\)</span></p>
-<p><img src="\images\csapp\NegAdd.jpg" /></p></li>
+<p><img src="\images\csapp\NegAdd.webp" /></p></li>
 </ul>
 <p>Extra: $-u = (u)+1 $</p></li>
 <li><p><strong>Multiplication</strong></p>
@@ -760,9 +786,38 @@ architecture in Tea Garden(TG in short afterwards).</p>
 <h3 id="processor-architecture">*04 Processor Architecture</h3>
 <p>I would skip this two chapters for specific reason; if necessary I
 would fill the blank in.</p>
-<h3 id="optimizing-program-performance">*05 Optimizing Program
+<h3 id="optimizing-program-performance">05 Optimizing Program
 Performance</h3>
-<p>As an OIer this chapter is skipped defaultly.</p>
+<p>Optimize <strong>CPE</strong>(cycles per OP)</p>
+<ul>
+<li><p><strong>Basic Optimizations</strong></p>
+<ul>
+<li><p>Replace costly operation with simpler one</p></li>
+<li><p>Shift, add instead of multiply or divide (power-of-2)</p></li>
+<li><p>Share common subexpressions</p></li>
+<li><p>Procedure calls(e.g. <code>strlen</code>)</p>
+<p><img src="\images\csapp\ProcedureCalls.webp" /></p></li>
+<li><p>Removing aliasing (introducing local variables rather than
+iteration on arrays)</p></li>
+</ul></li>
+<li><p>Optimizations over modern CPU Design</p>
+<p><img src="\images\csapp\CPUDesign.webp" /></p>
+<ul>
+<li><p>Make use of pipeline: parallel execution</p>
+<ul>
+<li>Loop Unrolling (normally <span class="math inline">\(\le\)</span> 10
+rows)</li>
+<li>Reassociated Computation</li>
+</ul></li>
+<li><p>Branch Prediction</p>
+<p>Reload takes 20-30 clock cycles cost</p></li>
+<li><p>Locality(Chapter 06)</p>
+<p>Temporal locality: Recent accessed data are more likely to be
+accessed again</p>
+<p>Spatial locality: Data adjacent to last accessed data are more likely
+to be accessed</p></li>
+</ul></li>
+</ul>
 <h3 id="the-memory-hierarchy">06 The Memory Hierarchy</h3>
 <ul>
 <li><p><strong>RAM</strong>/Random-Access Memory</p>
@@ -791,7 +846,7 @@ class="math inline">\(i\)</span>-th row to the internal row buffer, and
 extract <span class="math inline">\(j\)</span>-th bit with CAS.</p></li>
 </ul></li>
 </ul>
-<p><img src="\images\csapp\DRAMonMM.jpg" /></p>
+<p><img src="\images\csapp\DRAMonMM.webp" /></p>
 <ul>
 <li><p><strong>ROM</strong>/Read-Only Memory</p>
 <p>Nonvolatile memory: infos kept even not powered</p>
@@ -811,7 +866,67 @@ once</li>
 class="math inline">\(10^5\)</span> times</li>
 </ul></li>
 </ul></li>
+<li><p><strong>Bus</strong></p>
+<p>Transfer data between CPU chip and DRAM main memory(procedure called
+bus transaction, including read &amp; write).</p>
+<p>System bus: linking CPU and I/O bridge(memory controller
+included)</p>
+<p>Memory bus: linking I/O bridge and main memory</p>
+<p>(So signals from two buses need to be translated by I/O bridge.)</p>
+<p>I/O bus: linking I/O bridge with I/O devices, like USB(Universal
+Serial Bus) controller, SCSI/SATA adapter, host bus adapter,
+etc.</p></li>
+<li><p><strong>Disk</strong></p>
+<p><img src="\images\csapp\disk.webp" /></p>
+<p>Consist of <strong>platter</strong> with two
+<strong>surfaces</strong>, covered with circular <strong>track</strong>.
+Tracks are divided into <strong>sector</strong>(usually 512 kB storage),
+with <strong>gaps</strong> to separate sectors (so easy to recognize
+them). Platters share one spindle, and for a certain <span
+class="math inline">\(k\)</span>, all tracks with distance <span
+class="math inline">\(k\)</span> to spindle called a cylinder.</p>
+<p>Factors to affect disk storage:</p>
+<ul>
+<li><strong>recording density</strong>(bit/inch): size of bits track
+kept for unit length</li>
+<li><strong>track density</strong>(track/inch): size of tracks on the
+area of a circle with unit radius from the center of a platter.</li>
+<li><strong>areal density</strong>(bit/inch^2): product of recording
+density and track density</li>
 </ul>
+<p>To improve storage, cylinder are divided into <strong>recording
+zones</strong> consisting of several adjacent cylinders, and all tracks
+have the same size of sectors.</p>
+<p>To read/write: using <strong>read/write head</strong>. The head
+<strong>seek</strong> the targeted track and modify the bit.</p>
+<p><img src="\images\csapp\rwHead.webp" /></p>
+<p><strong>Logical Disk Blocks</strong> indexed sectors to coordinates
+(surface, track, sector) using disk controller.</p>
+<p><strong>Disk Format</strong> Identify sectors and fill info into
+gaps; Identify surfaces with failure; Reserve surfaces for potential
+failure surfaces.</p>
+<p><strong>Access Disk</strong></p>
+<ul>
+<li>Command with target logical disk block number and target main memory
+address send to disk controller from CPU</li>
+<li>Disk read sectors and transfer data to main memory, so-called
+DMA(Direct Memory Access). CPU can process other commands until DMA is
+complete.</li>
+<li>Disk send interrupt signal to CPU and CPU jumps to signal
+handler.</li>
+</ul>
+<p>High cost for accessing disk, reading/writing on sectors.</p>
+<p>access time = seek time + rotational latency + transfer time</p>
+<p><strong>SSD</strong>(Solid State Disk)</p>
+<ul>
+<li>Packaged flash memories with a flash translation layer to translate
+logical block number to address of flash memory.</li>
+<li>Each block(16kB~512kB) contains 32 to 128 pages(512 bytes~4 kB).
+Write on pages only after the whole block is erased.</li>
+</ul></li>
+</ul>
+<p><img src="\images\csapp\access.webp" /></p>
+<p><img src="\images\csapp\MH.webp" /></p>
 <h3 id="linking">07 Linking</h3>
 <h3 id="exceptional-control-flow">08 Exceptional Control Flow</h3>
 <h3 id="vortial-memory">09 Vortial Memory</h3>
@@ -830,7 +945,7 @@ class="math inline">\(10^5\)</span> times</li>
   <entry>
     <title>General Physics Notes</title>
     <url>/2023/02/12/generalPhysics/</url>
-    <content><![CDATA[
+    <content><![CDATA[<p>还在摸鱼，别着急，<del>今天看到伽利略变换了</del></p>
 ]]></content>
       <categories>
         <category>普物</category>
