@@ -280,6 +280,10 @@ Scarborough Fair
 post 时不时给大家推点歌</del></p></li>
 <li><p>感觉自从开始写随笔之后生活正在潜移默化地发生着变化，自己日常生活的情绪慢慢从考完试那会的小颓废状态变得更丰富了一些（粗粗感觉用的感叹号越来越多了），接人待物比以前大方多了，写在随笔里的话也变多了不少（放在以前很难想象每天都能写这么多字），唯一不变的还是怕生猫猫。希望等到开学了自己还能<strong>高兴地</strong>坚持留出半个小时来这里写点随笔，在各种评论区里跟互联网原住民多聊聊天！（笑）</p></li>
 </ul>
+<h3 id="section-12">02/13</h3>
+<p>今天睡了一天，好像没什么可说的，<del>甚至刚起床非常
+emo，脑子在天上转。</del>扩大了一点学习范围，感觉剩余这几天还是有不少发挥空间的。</p>
+<p>预先祝大家情人节快乐！每年吃狗粮吃习惯了，不如大方一点，有情人终成眷属，没情人终有奇缘。<del>我就负责站在理想乡的高塔上吃狗粮</del></p>
 ]]></content>
       <categories>
         <category>水木录</category>
@@ -354,11 +358,15 @@ converter。或者说页面给一个缩略图，点进去会加载原图。</p>
 </summary>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
-补习 Kinematics</li>
-<li><input type="checkbox" disabled="" checked="" />
-继续捞 CSAPP</li>
+Work &amp; Energy</li>
 <li><input type="checkbox" disabled="" />
-学 Python + Pytorch （大概）</li>
+CSAPP: Linking</li>
+<li><input type="checkbox" disabled="" />
+Sola: 抽象代数</li>
+<li><input type="checkbox" disabled="" />
+具体数学（计应数）</li>
+<li><input type="checkbox" disabled="" />
+可爱的四级</li>
 <li><input type="checkbox" disabled="" />
 <del>有没有可能哪天能面到正在看这条的你</del></li>
 </ul>
@@ -816,6 +824,8 @@ rows)</li>
 accessed again</p>
 <p>Spatial locality: Data adjacent to last accessed data are more likely
 to be accessed</p></li>
+<li><p>Blocking(Chapter 06)</p>
+<p>e.g. Matrix multiplication.</p></li>
 </ul></li>
 </ul>
 <h3 id="the-memory-hierarchy">06 The Memory Hierarchy</h3>
@@ -927,6 +937,117 @@ Write on pages only after the whole block is erased.</li>
 </ul>
 <p><img src="\images\csapp\access.webp" /></p>
 <p><img src="\images\csapp\MH.webp" /></p>
+<p><img src="\images\csapp\MType.webp" /></p>
+<ul>
+<li><p><strong>Cache</strong></p>
+<p><img src="\images\csapp\CacheOrg.webp" /></p>
+<p>We suppose there're <span class="math inline">\(M=2^m\)</span>
+addresses for the main memory with each saves a byte. Then its cache
+would divide into <span class="math inline">\(S=2^s\)</span>
+<strong>cache sets</strong>, each contains <span
+class="math inline">\(E=2^e\)</span> <strong>cache lines</strong>, where
+each line saves a <strong>block</strong> with size of <span
+class="math inline">\(B=2^b\)</span> bytes, a <strong>valid
+bit</strong>, and <strong>tag bits</strong> with length of <span
+class="math inline">\(t=m-b-s\)</span>. So the size of the whole cache
+is <span class="math inline">\(C=S\times E\times B\)</span> bytes.</p>
+<ul>
+<li><p>How it works?</p>
+<p>Each address contains three parts: <strong>tag</strong> for the <span
+class="math inline">\(t\)</span> high bits, <strong>set index</strong>
+for <span class="math inline">\(s\)</span> bits in the middle, and
+<strong>block offset</strong> for the <span
+class="math inline">\(b\)</span> low bits. To have a cache hit, the
+machine with the set index find the corresponding cache set, and then
+find a cache line whose <strong>valid bit is true and the tag bits
+fit</strong>. Then with block offset the machine finds the targeted
+byte.</p></li>
+<li><p><strong>Cache miss</strong></p>
+<p>There would be <strong>cache miss</strong> as well when the case
+above is not satisfied. Once a cache miss happens, the <span
+class="math inline">\(k\)</span>-level cache would gain the block
+containing the data from the <span
+class="math inline">\(k+1\)</span>-level cache(the procedure is called
+<strong>placement policy</strong>). If the cache is full, the machine
+choose a <strong>victim block/line</strong> to <strong>evict</strong>
+based on a <strong>replacement policy</strong>, e.g. random replacement
+policy, <strong>least frequently used(LFU)</strong> and <strong>least
+recently used(LRU)</strong>.</p>
+<ul>
+<li>For an empty cache so-called <strong>cold cache</strong>,
+<strong>cold miss</strong> happens. (So it's a compulsory miss.)</li>
+<li>Usually, the block which index is <span
+class="math inline">\(i\)</span> in the <span
+class="math inline">\(k+1\)</span>-level cache would push into the <span
+class="math inline">\(i \mod (S\times E)\)</span>-th block in the <span
+class="math inline">\(k\)</span>-level cache. This causes
+<strong>conflict miss</strong>, e.g. CPU calls block <span
+class="math inline">\(0,8,0,8,\dots\)</span> of <span
+class="math inline">\(k+1\)</span>-level cache, and conflict miss occurs
+in the <span class="math inline">\(k\)</span>-level cache.</li>
+<li>If the working set is larger than <span
+class="math inline">\(C\)</span>, the cache would have <strong>capacity
+miss</strong>.</li>
+</ul></li>
+<li><p>Different types of cache</p>
+<ul>
+<li>When <span class="math inline">\(E=1\)</span>, it is called
+<strong>direct-mapped cache.</strong> (Capacity miss occurs.)</li>
+<li>When <span class="math inline">\(E&gt;1\)</span>, it is called
+<strong>set associative cache.</strong>
+<ul>
+<li>For <span class="math inline">\(s=0\)</span>, naming
+<strong>fully</strong> associative cache;</li>
+<li>Otherwise, called <strong>E-way set</strong> associative cache.</li>
+</ul></li>
+</ul></li>
+<li><p>Write</p>
+<p>For write hits:</p>
+<ul>
+<li><strong>Write-through</strong>: write block to the lower(k to k+1)
+level immediately. Simple but bus flow produces.</li>
+<li><strong>Write-back</strong>: delay the update until the block is
+going to be evicted (just like lazy tag in the segment tree). Bus flow
+reduces but complexity increases; and an extra <strong>dirty
+bit</strong> is needed to help identify whether a block is
+modified.</li>
+</ul>
+<p>For write misses:</p>
+<ul>
+<li><strong>Write-allocate:</strong> Gain block from the lower level and
+process as write hits</li>
+<li><strong>No-write-allocate:</strong> Write straightly without writing
+into the cache.</li>
+</ul></li>
+<li><p>i-cache and d-cache</p>
+<p><strong>i-cache</strong> only saves commands(so read-only), and
+<strong>d-cache</strong> only saves data, and <strong>unified
+cache</strong> saves both. Help optimize them separately, reduce
+conflict miss.</p></li>
+<li><p>Parameters</p>
+<ul>
+<li><strong>miss rate</strong></li>
+<li><strong>hit rate</strong> = 1 - miss rate</li>
+<li><strong>hit time</strong> = time takes for transferring a word from
+cache to CPU</li>
+<li><strong>miss penalty</strong> 10s cycles for L1/L2, and 50 cycles
+for L3, and 200+ cycles for main memory.</li>
+</ul>
+<p>Effects</p>
+<ul>
+<li>Larger the cache size is, higher the hit rate and hit time are.</li>
+<li>Larger the size of block is, higher the hit rate is (programs with
+better spatial locality); But the lines decreases and the high rate may
+decrease (for programs with better temporal locality).</li>
+<li>Larger the <span class="math inline">\(E\)</span> is, less the
+likelihood of conflict miss is; but hit time and miss penalty increases
+due to the complexity of comparing tags and choosing victim lines.</li>
+<li>Different types of write policy. Usually write-back is better for
+lower-level caches.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img src="\images\csapp\TMountain.webp" /></p>
 <h3 id="linking">07 Linking</h3>
 <h3 id="exceptional-control-flow">08 Exceptional Control Flow</h3>
 <h3 id="vortial-memory">09 Vortial Memory</h3>
