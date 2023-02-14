@@ -284,6 +284,10 @@ post 时不时给大家推点歌</del></p></li>
 <p>今天睡了一天，好像没什么可说的，<del>甚至刚起床非常
 emo，脑子在天上转。</del>扩大了一点学习范围，感觉剩余这几天还是有不少发挥空间的。</p>
 <p>预先祝大家情人节快乐！每年吃狗粮吃习惯了，不如大方一点，有情人终成眷属，没情人终有奇缘。<del>我就负责站在理想乡的高塔上吃狗粮</del></p>
+<h3 id="section-13">02/14</h3>
+<p><del>今天的随笔画给干员迷迭香了。</del>舍友看我穿着外套比轮廓的场面真的非常
+embarassing...</p>
+<p><img src="\images\DiaryFeb\Rosemary.png" /></p>
 ]]></content>
       <categories>
         <category>水木录</category>
@@ -354,14 +358,14 @@ converter。或者说页面给一个缩略图，点进去会加载原图。</p>
   <entry>
     <title>未来日记</title>
     <url>/2023/02/09/futurePlan/</url>
-    <content><![CDATA[<details class="note warning"><summary><p>230212</p>
+    <content><![CDATA[<details class="note warning"><summary><p>230213</p>
 </summary>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
 Work &amp; Energy</li>
 <li><input type="checkbox" disabled="" />
 CSAPP: Linking</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 Sola: 抽象代数</li>
 <li><input type="checkbox" disabled="" />
 具体数学（计应数）</li>
