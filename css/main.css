@@ -2007,7 +2007,7 @@ pre code {
   justify-content: center;
 }
 .post-eof {
-  background: #ccc;
+  height: 0px;
 }
 .post-block:last-of-type .post-eof {
   display: none;
