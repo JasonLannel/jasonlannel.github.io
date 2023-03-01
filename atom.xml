@@ -6,7 +6,7 @@
   <link href="https://jasonlannel.github.io/atom.xml" rel="self"/>
   
   <link href="https://jasonlannel.github.io/"/>
-  <updated>2023-02-18T12:02:49.390Z</updated>
+  <updated>2023-03-01T16:39:40.002Z</updated>
   <id>https://jasonlannel.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三月随笔</title>
+    <link href="https://jasonlannel.github.io/2023/03/02/DMar23/"/>
+    <id>https://jasonlannel.github.io/2023/03/02/DMar23/</id>
+    <published>2023-03-01T16:31:07.000Z</published>
+    <updated>2023-03-01T16:39:40.002Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="section">03/01</h3><p>对不起，我摸鱼了。最近事情好多，睡个好觉真难。</p><ul><li><p>为了防止你毫无收获，我的朋友，告诉你一个冷知识：粥粥评论区底下有很多冷知识。</p></li><li><p>还有英语可以打准考证了，然后我意识到我英语颓了，芜湖，完蛋。</p></li></ul><p>附上一张大概没人懂的笑话。</p><p><img src="\images\DMar23\happythoughts.jpg" /></p>]]></content>
+    
+    
+    <summary type="html">爬爬人生，怎么可能有不摆的道理。</summary>
+    
+    
+    
+    <category term="水木录" scheme="https://jasonlannel.github.io/categories/%E6%B0%B4%E6%9C%A8%E5%BD%95/"/>
+    
+    
+    <category term="2023" scheme="https://jasonlannel.github.io/tags/2023/"/>
+    
+    <category term="小碎骨" scheme="https://jasonlannel.github.io/tags/%E5%B0%8F%E7%A2%8E%E9%AA%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>CS:APP Notes</title>
