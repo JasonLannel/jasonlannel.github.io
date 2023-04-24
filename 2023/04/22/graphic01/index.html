@@ -29,7 +29,7 @@
 <meta property="og:description" content="由此请自贝塞尔始。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-04-22T12:33:48.000Z">
-<meta property="article:modified_time" content="2023-04-22T13:02:46.301Z">
+<meta property="article:modified_time" content="2023-04-24T14:36:45.130Z">
 <meta property="article:author" content="JasonL">
 <meta property="article:tag" content="2023">
 <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
+    <div class="toggle" aria-label="নেভিগেশন বারের দৃশ্যমানতা টগল করুন" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preface"><span class="nav-text">Preface</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preface"><span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">1 Introduction</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -255,9 +255,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-22 20:33:48 / 修改时间：21:02:46" itemprop="dateCreated datePublished" datetime="2023-04-22T20:33:48+08:00">2023-04-22</time>
+      <time title="创建时间：2023-04-22 20:33:48" itemprop="dateCreated datePublished" datetime="2023-04-22T20:33:48+08:00">2023-04-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-24 22:36:45" itemprop="dateModified" datetime="2023-04-24T22:36:45+08:00">2023-04-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,6 +299,32 @@
 <p>一直想开图形学的坑了。虽然本地服务器（雾）里存有另一份非常简略的笔记，但是写得不是非常好，实质上就是
 Copy and Paste。</p>
 <p>之后我期望能每周至少更新一次？虽然大概不能保证一次更多少……顺带一提，刚开始很可能会拖一段时间，因为众所周知书的最开头一般都没什么可写的（</p>
+<h2 id="introduction">1 Introduction</h2>
+<p>我觉得还是有必要写一些东西，虽然是引入。正如书中所说，计算机图形学所涉及的领域是相当之广的；要全面深入地了解一门科学，它门下的诸多研究领域无疑不可忽视。</p>
+<p>计算机图形学，顾名思义，是一门研究<strong>计算机中的图形</strong>的学科。简单地分个类，图形学可以分为<strong>建模、渲染、动画</strong>三大块。</p>
+<ul>
+<li>建模：我如果想在计算机中存储一个物体的形貌，便需要一套约定好的数据——模型来表述它。模型的表示方式有很多，例如三角片（三角剖分）、点云（以点代面）、辐射场（给定位置与视角，返回对应体素的光辐射信息）。我一般将其理解为，将（现实世界的）图形<em>输入</em>到计算机中。（我们这里说的模型一般指三维模型）</li>
+<li>渲染：与建模相对应，渲染研究的是如何让计算机中的模型<em>输出</em>为（现实世界的）图形。一个非常直观的理解：假如我手上有一台相机，将现实中的树木、人物视为模型，渲染做的就是将这些模型投影到二维液晶显示屏上（或者更早一些的，胶片）。想查看与之相关的图形管道的更多信息，可参见<a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/uwp/graphics-concepts/graphics-pipeline">Direct
+3D</a>。</li>
+<li>动画：建模和渲染一般指的是静态的，换而言之，它们研究的是在时间轴上某一切片中的图形学。而动画研究的则是如何让图形“动”起来。大家如果玩过在纸上画图，通过快速翻页让图形动起来的游戏，动画与前二者的区别应该会很好理解：建模和渲染都是在一张纸上，而动画要的是连续多张纸翻页的效果。</li>
+</ul>
+<p>一些需要用的计算机图形学的领域也列在下面。</p>
+<ul>
+<li>人机交互。举个例子，有些朋友可能觉得微软 Windows
+界面不好看，麦金塔的界面就很好看（免责声明：我一直用的
+Windows），为什么呢？他们可能会说某个图标应该圆滑一些，某种颜色应该调成另一种颜色。这就是人与机器之间的一种交互。</li>
+<li>虚拟现实。视觉信息获取与显示课（之后我会简称为“视觉信息课”）上的一个例子就很好：一个人戴着
+3D
+眼镜看可能会晕，但看全息图像就不会晕。为什么呢？因为二者传输的光学信息量不同，信息方式也不同。迁移到
+VR
+设备中，我们是否有更好的传递图形的方式，来让使用者获得更“真实”、更绚丽、更舒适的体验？</li>
+<li>可视化。渲染与动画大抵都可列入这一范畴。做数据统计时的三维统计图、云图等等，都属于可视化的一种。</li>
+<li>图像处理。最简单的图像处理就是平移、旋转、尺寸压缩了。稍微复杂的图像处理包括一些奇奇怪怪的映射，提取轮廓（只提取高频信息），滤波器处理等等。</li>
+<li>三维扫描。这一块主要应用建模：通过扫描仪获取物体表面信息，通过特定方式转化为三维模型。一些博物馆的应用推出的全方位观察文物功能中，文物的外形信息就可以通过此类方式导入到计算机中。</li>
+<li>计算成像。还是视觉信息课的一个例子：如果我们想获取大尺度、超高清图像（例如十亿像素成像），我们可以通过非规则相机阵列，像人眼一样拍摄若干张图，然后通过计算将其合成为一张图。计算成像通过引入包括计算机视觉、图像处理方法等等来拓宽成像的新方法。</li>
+</ul>
+<p>至于有什么主要的应用——游戏、动画、特效、CAD/CAM、模拟、生物成像、信息可视化等等。（生物成像，比如显示细胞内部一些物质的移动）</p>
 
     </div>
 
@@ -356,7 +388,7 @@ Copy and Paste。</p>
   </footer>
 
   
-  <div class="back-to-top" role="button" aria-label="Back to top">
+  <div class="back-to-top" role="button" aria-label="উপরে ফিরে যান">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
