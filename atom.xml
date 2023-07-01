@@ -6,7 +6,7 @@
   <link href="https://jasonlannel.github.io/atom.xml" rel="self"/>
   
   <link href="https://jasonlannel.github.io/"/>
-  <updated>2023-06-30T19:27:15.765Z</updated>
+  <updated>2023-07-01T16:56:05.869Z</updated>
   <id>https://jasonlannel.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>七月随笔</title>
+    <link href="https://jasonlannel.github.io/2023/07/02/DJul23/"/>
+    <id>https://jasonlannel.github.io/2023/07/02/DJul23/</id>
+    <published>2023-07-01T16:32:29.000Z</published>
+    <updated>2023-07-01T16:56:05.869Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="section">07/01</h3><p>七月伊始，今日情绪稳定，大概。但是缺觉。写这个的时候拉练的学生应该刚出发，希望早上回来都能睡个好觉。</p><p>今天好像没什么写的，随便记点流水账吧。</p><p>早上开党团生活会，其实就是个批评会，进行批评与自我批评。平时随笔里自我批评也挺多了，会上也差不多就是这个样子。但是，但是！最尴尬的是我们班主任是负责党支部的，然后我讲了许多我自己的和我们班的问题，最后发现他在线上全程都在听，寄。</p><p>下午忙前后端去了。因为不敢乱动代码，写异步写了一下午，看 React 调 CSS又花了一晚上。最后弄得还可以，接下来想学习一下怎么弄整个的布局。作为一个对UI还有那么点要求的人来说弄前端可能是一种折磨的享受，但是感觉比调后端的过程更舒服一点（虽然个人感觉后端还好写一些）。总之被委派做美工负责人了（x</p>]]></content>
+    
+    
+    <summary type="html">“七月的七海千秋”</summary>
+    
+    
+    
+    <category term="水木录" scheme="https://jasonlannel.github.io/categories/%E6%B0%B4%E6%9C%A8%E5%BD%95/"/>
+    
+    
+    <category term="小碎骨" scheme="https://jasonlannel.github.io/tags/%E5%B0%8F%E7%A2%8E%E9%AA%A8/"/>
+    
+    <category term="2023" scheme="https://jasonlannel.github.io/tags/2023/"/>
+    
+  </entry>
   
   <entry>
     <title>六月随笔</title>
