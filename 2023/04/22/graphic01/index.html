@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jasonlannel.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"flat","style":null},"bookmark":{"enable":true,"color":"#e42005","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="由此请自贝塞尔始。">
+    <meta name="description" content="一篇关于计算机图形学的笔记。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《计算机图形学基础》笔记">
+<meta property="og:title" content="光影箱庭">
 <meta property="og:url" content="https://jasonlannel.github.io/2023/04/22/graphic01/index.html">
 <meta property="og:site_name" content="JasonL&#39;s Blog">
-<meta property="og:description" content="由此请自贝塞尔始。">
+<meta property="og:description" content="一篇关于计算机图形学的笔记。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-04-22T12:33:48.000Z">
-<meta property="article:modified_time" content="2023-04-24T14:36:45.130Z">
+<meta property="article:modified_time" content="2023-07-21T18:01:41.607Z">
 <meta property="article:author" content="JasonL">
 <meta property="article:tag" content="2023">
 <meta name="twitter:card" content="summary">
@@ -39,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://jasonlannel.github.io/2023/04/22/graphic01/","path":"2023/04/22/graphic01/","title":"《计算机图形学基础》笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://jasonlannel.github.io/2023/04/22/graphic01/","path":"2023/04/22/graphic01/","title":"光影箱庭"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>《计算机图形学基础》笔记 | JasonL's Blog</title>
+<title>光影箱庭 | JasonL's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G9X1WXCE3"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8G9X1WXCE3","only_pageview":false}</script>
@@ -70,7 +70,7 @@
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="নেভিগেশন বারের দৃশ্যমানতা টগল করুন" role="button">
+    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preface"><span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">1 Introduction</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%89%88"><span class="nav-text">第一版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%89%88"><span class="nav-text">第二版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="nav-text">光线追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">图形流水线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text">图像处理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="《计算机图形学基础》笔记 | JasonL's Blog">
-      <meta itemprop="description" content="由此请自贝塞尔始。">
+      <meta itemprop="name" content="光影箱庭 | JasonL's Blog">
+      <meta itemprop="description" content="一篇关于计算机图形学的笔记。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《计算机图形学基础》笔记
+          光影箱庭
         </h1>
 
         <div class="post-meta-container">
@@ -263,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-24 22:36:45" itemprop="dateModified" datetime="2023-04-24T22:36:45+08:00">2023-04-24</time>
+      <time title="修改时间：2023-07-22 02:01:41" itemprop="dateModified" datetime="2023-07-22T02:01:41+08:00">2023-07-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,7 +286,7 @@
   
 </div>
 
-            <div class="post-description">由此请自贝塞尔始。</div>
+            <div class="post-description">一篇关于计算机图形学的笔记。</div>
         </div>
       </header>
 
@@ -294,13 +294,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="preface">Preface</h2>
+        <h2 id="前言">前言</h2>
+<h3 id="第一版">第一版</h3>
 <p>Long time no see!</p>
 <p>一直想开图形学的坑了。虽然本地服务器（雾）里存有另一份非常简略的笔记，但是写得不是非常好，实质上就是
 Copy and Paste。</p>
 <p>之后我期望能每周至少更新一次？虽然大概不能保证一次更多少……顺带一提，刚开始很可能会拖一段时间，因为众所周知书的最开头一般都没什么可写的（</p>
-<h2 id="introduction">1 Introduction</h2>
-<p>我觉得还是有必要写一些东西，虽然是引入。正如书中所说，计算机图形学所涉及的领域是相当之广的；要全面深入地了解一门科学，它门下的诸多研究领域无疑不可忽视。</p>
+<h3 id="第二版">第二版</h3>
+<p>我发觉好像如果仅限于《Fundamentals of Computer
+Graphics》，写起来不是很有意思，毕竟那样不就和第一版前言里说的一样，都是
+C&amp;P 嘛。所以之后我就打算 Extend
+这一份笔记的内容啦，可能会参考一下一些之前看过的（比如 THU
+出版社的那本《计算机图形学基础》<del>就是我第一版吐槽的那份笔记</del>，还有
+RT in One Week。可能还会写点 CS231a，Games101 之类的？）。</p>
+<p>既然换主题就要改个名字。最开始我想写 Cornell Box
+的，但是本来这篇也没打算写成英文。直译成康奈尔盒也不是很好。所以用了现在这个。箱庭这个词最早看到是在地错的小说里，Box
+正好对应“箱”的概念。而且现在很多游戏在一些养成内容中也会引入“箱庭”的概念。计算机图形学虽然并不是只有“光”与“影”（比如
+draw_line 这种 dirty
+work），但光影确实是其中最重要的一部分，至少是将图形呈现给用户时最重要的一部分。我个人觉得还算比较契合吧。</p>
+<h2 id="引入">引入</h2>
 <p>计算机图形学，顾名思义，是一门研究<strong>计算机中的图形</strong>的学科。简单地分个类，图形学可以分为<strong>建模、渲染、动画</strong>三大块。</p>
 <ul>
 <li>建模：我如果想在计算机中存储一个物体的形貌，便需要一套约定好的数据——模型来表述它。模型的表示方式有很多，例如三角片（三角剖分）、点云（以点代面）、辐射场（给定位置与视角，返回对应体素的光辐射信息）。我一般将其理解为，将（现实世界的）图形<em>输入</em>到计算机中。（我们这里说的模型一般指三维模型）</li>
@@ -325,6 +337,26 @@ VR
 <li>计算成像。还是视觉信息课的一个例子：如果我们想获取大尺度、超高清图像（例如十亿像素成像），我们可以通过非规则相机阵列，像人眼一样拍摄若干张图，然后通过计算将其合成为一张图。计算成像通过引入包括计算机视觉、图像处理方法等等来拓宽成像的新方法。</li>
 </ul>
 <p>至于有什么主要的应用——游戏、动画、特效、CAD/CAM、模拟、生物成像、信息可视化等等。（生物成像，比如显示细胞内部一些物质的移动）</p>
+<h2 id="光线追踪">光线追踪</h2>
+<ul>
+<li>简单回顾光线追踪的概念；</li>
+<li>介绍几种简单的光照明模型。（至少不会漏掉 Phong，对吧！）</li>
+</ul>
+<h2 id="图形流水线">图形流水线</h2>
+<ul>
+<li>照相模型、不同坐标系的变换（刚体变换、仿射变换）；</li>
+<li>光栅化（线、三角形的填充）；</li>
+<li>图形流水线的大致流程及部分细节问题。</li>
+</ul>
+<h2 id="图像处理">图像处理</h2>
+<ul>
+<li>信号处理
+<ul>
+<li>离散、连续函数的卷积；</li>
+<li>常见滤波器；</li>
+<li>傅里叶变换，频域上的采样分析（低通/高通）。</li>
+</ul></li>
+</ul>
 
     </div>
 
@@ -391,7 +423,7 @@ VR
   </footer>
 
   
-  <div class="back-to-top" role="button" aria-label="উপরে ফিরে যান">
+  <div class="back-to-top" role="button" aria-label="Back to top">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
