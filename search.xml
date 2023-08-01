@@ -2208,7 +2208,10 @@ RT in One Week。可能还会写点 CS231a，Games101 之类的？）。</p>
 正好对应“箱”的概念。而且现在很多游戏在一些养成内容中也会引入“箱庭”的概念。计算机图形学虽然并不是只有“光”与“影”（比如
 draw_line 这种 dirty
 work），但光影确实是其中最重要的一部分，至少是将图形呈现给用户时最重要的一部分。我个人觉得还算比较契合吧。</p>
+<p>参考<a href="https://www.zhihu.com/column/c_1486012697024557057">知乎
+TecrayC：Computer graphics</a>。</p>
 <h2 id="引入">引入</h2>
+<h3 id="简介">简介</h3>
 <p>计算机图形学，顾名思义，是一门研究<strong>计算机中的图形</strong>的学科。简单地分个类，图形学可以分为<strong>建模、渲染、动画</strong>三大块。</p>
 <ul>
 <li>建模：我如果想在计算机中存储一个物体的形貌，便需要一套约定好的数据——模型来表述它。模型的表示方式有很多，例如三角片（三角剖分）、点云（以点代面）、辐射场（给定位置与视角，返回对应体素的光辐射信息）。我一般将其理解为，将（现实世界的）图形<em>输入</em>到计算机中。（我们这里说的模型一般指三维模型）</li>
@@ -2233,8 +2236,7 @@ VR
 <li>计算成像。还是视觉信息课的一个例子：如果我们想获取大尺度、超高清图像（例如十亿像素成像），我们可以通过非规则相机阵列，像人眼一样拍摄若干张图，然后通过计算将其合成为一张图。计算成像通过引入包括计算机视觉、图像处理方法等等来拓宽成像的新方法。</li>
 </ul>
 <p>至于有什么主要的应用——游戏、动画、特效、CAD/CAM、模拟、生物成像、信息可视化等等。（生物成像，比如显示细胞内部一些物质的移动）</p>
-<h2 id="光线追踪">光线追踪</h2>
-<h3 id="光栅图像">光栅图像</h3>
+<h3 id="图像设备">图像设备</h3>
 <p>图像的输入/输出设备主要分为以下几种：</p>
 <ul>
 <li><p><strong>输入设备</strong>，包括</p>
@@ -2297,18 +2299,14 @@ class="math inline">\(\gamma\)</span>
 是某个固定的，但因人而异的常数。可以通过放置两张图片，一张黑白像素交错，一张为对应的
 <span class="math inline">\(0.5^\gamma\)</span>，通过肉眼比较来确定
 <span class="math inline">\(\gamma\)</span>。</p>
-<h3 id="光线追踪-1">光线追踪</h3>
-<ul>
-<li><strong>引入</strong></li>
-</ul>
+<h2 id="光线追踪">光线追踪</h2>
 <p>思考一下眼睛如何“渲染”眼睛所在视平面某个“像素”。（不同颜色的）光线从光源出发，通过若干次反射/透射进入我们眼睛内的“传感器”（视网膜），根据光强混合得到最终的像素。</p>
 <p>那么，假定我们现在已经有了一个充满各类物体的“世界”，如何让计算机“看”到这些物体，得到对应的图像呢？一个很朴素的方法是，模拟所有可能的光线从光源射出后的轨迹。由于可能的光线方向非常多，这个方法无法真正实现；但是利用采样的方法以及光路可逆的性质，我们可以从视平面“反着”射出（若干条）光线，采集光线对应的信息（如光强、RGB
 颜色等等）。这就是光线“追踪”。</p>
-<p>附：光线追踪除了渲染，还可以用于在 3D
-图像程序中根据光标所在位置“选定”物体。</p>
-<ul>
-<li><strong>简单光线追踪</strong></li>
-</ul>
+<p>光线追踪最简单的应用是在 3D
+图像程序中根据光标所在位置“选定”物体。它更为 powerful
+的应用则是渲染。朴素的光线追踪算法可见“简单光线追踪”一节。对于更复杂的光线追踪，详见“照明模型”一节。</p>
+<h3 id="简单光线追踪"><strong>简单光线追踪</strong></h3>
 <p>先不考虑光的反射、折射，我们可以设计一种朴素的光线追踪：首先从像素中心按特定方向射出一道光线，判断射线是否与物体相交。如果相交，根据物体表面的颜色/光源（如点光源、面光源等等）自身的若干信息，以及原点到相交点的距离计算实际像素应该渲染的颜色。（这个颜色与
 <span class="math inline">\(\frac{1}{d^2}\)</span> 成正比，其中 <span
 class="math inline">\(d\)</span>
@@ -2340,16 +2338,16 @@ class="math inline">\(d\)</span>，射入焦点的平面根据所在位置与视
 <p><u>TAT 施工部分</u></p>
 <p>之后应该会在这里加几张图，但是现在手头上没有数位板。</p>
 <h3 id="照明模型">照明模型</h3>
-<ul>
-<li><strong>真实图像的生成</strong></li>
-</ul>
+<p>这一部分可能会视情况在未来大改，可能多介绍一些 Lambertian
+之类的东西。</p>
+<h4 id="真实图像的生成">真实图像的生成</h4>
 <p>假设 <span class="math inline">\(I(x,y,t,\lambda)\)</span>
 为像源的空间辐射能量分布。一般来说 <span
 class="math inline">\(I=\frac{\int_S DKI_i(\vec N_0\cdot \vec
 L_0)dw_i}{\vec N_0\cdot\vec V_0}\)</span>，其中 <span
-class="math inline">\(I_i\)</span> 是发光面元 <span
+class="math inline">\(I_i\)</span> 是发光片元 <span
 class="math inline">\(dS_i\)</span> （可视为环境中一点光源 <span
-class="math inline">\(R\)</span>）向曲面元 <span
+class="math inline">\(R\)</span>）向曲片元 <span
 class="math inline">\(dS_J\)</span> （可视为环境中一点 <span
 class="math inline">\(P\)</span>）辐射的光亮度，辐射立体角为 <span
 class="math inline">\(dw_i\)</span>； <span class="math inline">\(\vec
@@ -2366,16 +2364,14 @@ class="math inline">\(K\)</span> 是光通量的辐射比；<span
 class="math inline">\(S\)</span> 为对 <span
 class="math inline">\(P\)</span> 有光能贡献的所有发光表面集合， <span
 class="math inline">\(dS_i\)</span> 是 <span
-class="math inline">\(S\)</span> 中的一面元。<span
+class="math inline">\(S\)</span> 中的一片元。<span
 class="math inline">\(I,I_i,K\)</span> 均是可见光波长 <span
 class="math inline">\(\lambda\)</span> 的函数（光谱分布）。</p>
 <p>光场瞬时光亮度定义为 <span
 class="math inline">\(Y(x,y,t)=\int_0^{\infty}
 I(x,y,t,\lambda)V_s(\lambda)d\lambda\)</span>，其中 <span
 class="math inline">\(V_s(\lambda)\)</span> 代表相对光效函数。</p>
-<ul>
-<li><strong>简单光照明模型</strong></li>
-</ul>
+<h4 id="简单光照明模型">简单光照明模型</h4>
 <p><em>光的传播</em></p>
 <p>反射折射定律不予赘述。</p>
 <p>能量关系。入射光强 <span class="math inline">\(I_i\)</span> =
@@ -2384,7 +2380,7 @@ class="math inline">\(I_s\)</span> + 透射光强 <span
 class="math inline">\(I_t\)</span> + 被物体所吸收的光强 <span
 class="math inline">\(I_v\)</span> 。</p>
 <p><em>光的度量</em></p>
-<p>立体角。面元 <span class="math inline">\(dS\)</span> 向点光源 <span
+<p>立体角。片元 <span class="math inline">\(dS\)</span> 向点光源 <span
 class="math inline">\(P\)</span> 所张立体角 <span
 class="math inline">\(dw=\frac{dS}{r^2}\)</span>， 其中 <span
 class="math inline">\(r\)</span> 为点光源到面源中心的垂直距离。</p>
@@ -2461,9 +2457,7 @@ V|}\)</span>。</li>
 模型计算顶点平均光强，插值计算各离散边的各点光强，最后插值得到多边形内域中各点光强。</p>
 <p>双线性法向插值（Phong
 明暗处理）：保留双线性插值，对多边形上的点和内域各点采用增量法；对顶点法向量进行插值，顶点法向量用相邻的多边形的法向量的平均值得到；由插值得到的法向量，计算每个像素的光亮度；假设光源与视点均在无穷远处。</p>
-<ul>
-<li><strong>局部光照明模型</strong></li>
-</ul>
+<h4 id="局部光照明模型">局部光照明模型*</h4>
 <p>仅处理光源直接照射物体表面的光照明模型称为局部光照明模型，而可处理物体之间光照相互作用的模型称为整体光照明模型。</p>
 <p>光的电磁理论略去不讲。微平面理论，假定微观角度物体表面粗糙不平，由许多微小的理想镜面平面组成，粗糙程度越高，漫反射系数越大。对一实际物体表面，其反射率为
 <span class="math inline">\(DG\rho(\theta,\lambda)\)</span>，其中 <span
@@ -2510,9 +2504,7 @@ N\cdot\vec L)(\vec N\cdot\vec V)}\)</span>
 class="math display">\[
 I_r=I_a K_a+I_i(\vec N\cdot\vec L)dw(K_dR_d+K_sR_s)
 \]</span></p>
-<ul>
-<li><strong>光透射模型</strong></li>
-</ul>
+<h4 id="光透射模型">光透射模型*</h4>
 <p>透明效果的简单模拟。像素点颜色可通过 <span
 class="math inline">\(I=tI_b+(1-t)I_a\)</span> 进行颜色调和（其中 <span
 class="math inline">\(t\)</span>
@@ -2578,9 +2570,7 @@ I=I_aK_a+\sum\limits_{i}I_{p,i}(K_{ds}(L_i\cdot N)+K_s(\vec H_{s,i}\cdot
 \vec N)^{n_i})+\sum\limits_{j}I_{p,j}[K_{dt}(-\vec N\cdot L_j)+K_t(\vec
 N\cdot\vec H_{t,j})^{n_t}]+I_tK_t&#39;+I_sK_s&#39;
 \]</span></p>
-<ul>
-<li><strong>整体光照明模型</strong></li>
-</ul>
+<h4 id="整体光照明模型">整体光照明模型*</h4>
 <p><em>光线追踪算法</em>
 从视点进行视线跟踪，跟踪镜面反射与折射。算法终止当且仅当
 1）光线未碰到任何物体 2）光线碰到了背景
@@ -2589,19 +2579,125 @@ N\cdot\vec H_{t,j})^{n_t}]+I_tK_t&#39;+I_sK_s&#39;
 <p>算法加速。自适应深度控制；包围盒及层次结构；三维 DDA
 算法；空间八叉树剖分技术。</p>
 <p><em>辐射度方法</em> 略。<del>当时没学会，饶了我吧。</del></p>
-<ul>
-<li><strong>实时真实感图形学技术</strong></li>
-</ul>
+<h4 id="实时真实感图形学技术">实时真实感图形学技术*</h4>
 <p>基于图像的绘制技术。通过视图插值还原六维全光函数，从而实现加速绘制。</p>
 <p>景物模拟。将物理原理引入图形学中，如布料模拟采用质点-弹簧模型。</p>
 <h2 id="图形流水线">图形流水线</h2>
-<h3 id="照相模型">照相模型</h3>
+<h3 id="观察">观察</h3>
+<p>假如将我们丢到计算机里一个包含若干物体的三维“世界”空间，我们需要什么样的信息去“看”这个世界，或者说，怎么去获得图像呢？要想实现这一目标，我们需要变换矩阵这一基本工具来帮助我们在世界空间内进行坐标的转化。这一部分的内容见“变换矩阵”一节。</p>
+<p>事实上，最简单的模型只需要我们相对于世界坐标的位置以及我们看的角度（即视角），共五维。更复杂的模型还需要考虑其他的信息，例如，我们的眼睛可以看作是一台带凸透镜的相机，这个凸透镜的焦距是多少？视屏距离透镜中心的距离又是多少？这一部分的内容见“相机模型”一节。</p>
+<p>有了这些信息，我们又应当如何去将物体投影到我们的视平面呢？图形学一般采用<strong>视图变换</strong>来将视野内的物体投影到
+<span class="math inline">\([0,1]^3\)</span>
+的屏幕空间，然后进行进一步地处理。视图变换将对象由对象空间转换到普遍的世界空间，再转换到相机空间（以相机为原点的坐标轴），经过投影变换转换到
+Canonical View
+Volumn，最后转换到屏幕空间。这一部分的内容见“视图变换”一节。</p>
 <h4 id="变换矩阵">变换矩阵</h4>
-<p>不同坐标系的变换（刚体变换、仿射变换）；</p>
-<h3 id="光栅化线三角形的填充">光栅化（线、三角形的填充）</h3>
 <ul>
-<li><p><strong>直线段的扫描转换算法</strong></p>
-<p>众所周知，我们看到的图片是由一个个像素组成的，像素有大小，因而看到的线其实是一个个像素（矩形）组成，而并非一条精确的线。因此需要考虑如何填充像素。本节考虑直线段，给定两端点进行像素填充；为方便进行绘图，我们要求直线斜率
+<li><p><strong>2D 变换</strong></p>
+<p>2D 变换矩阵主要包括</p>
+<ul>
+<li><p>缩放（Scaling）：<span
+class="math inline">\(\begin{bmatrix}a&amp;0\\0&amp;b\end{bmatrix}\)</span>。</p></li>
+<li><p>错切（Shearing）</p>
+<p>沿 <span class="math inline">\(x\)</span> 方向<span
+class="math inline">\(\begin{bmatrix}1&amp;s\\0&amp;1\end{bmatrix}\)</span>，沿
+<span class="math inline">\(y\)</span> 方向 <span
+class="math inline">\(\begin{bmatrix}1&amp;0\\s&amp;1\end{bmatrix}\)</span>。（<span
+class="math inline">\(s\)</span> 可以看作是错切距离，也可看作是错切角度
+<span class="math inline">\(s=\tan \phi\)</span>）</p></li>
+<li><p>旋转（Rotation）：<span
+class="math inline">\(\begin{bmatrix}\cos\phi&amp;-\sin\phi\\\sin\phi&amp;\cos\phi\end{bmatrix}\)</span>。</p></li>
+<li><p>镜像（Reflection）：</p>
+<p><span class="math inline">\(x\)</span> 轴对称 <span
+class="math inline">\(\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}\)</span>，<span
+class="math inline">\(y\)</span> 轴对称 <span
+class="math inline">\(\begin{bmatrix}-1&amp;0\\0&amp;1\end{bmatrix}\)</span>。</p>
+<p>变换的合成遵循右先原则，而分解一般采用 SVD 分解（一般分解出 3
+个：旋转，缩放，旋转）。逆运算可以应用矩阵的性质（例如对角矩阵取倒数，正交矩阵取转置）。</p></li>
+</ul></li>
+<li><p>3D 变换</p>
+<p>3D 变换与 2D
+变换类似，大部分情况可以转化为固定某一坐标轴做变换。一些需要补充的情况如下：</p>
+<ul>
+<li><p>绕给定方向 <span class="math inline">\(\textbf{w}\)</span>
+旋转：先求旋转矩阵 <span class="math inline">\(\textbf{R}\)</span>，将
+<span class="math inline">\(z\)</span> 轴旋转到 <span
+class="math inline">\(\textbf{w}\)</span> 方向，绕方向旋转后再把 <span
+class="math inline">\(z\)</span> 轴转回来。可以通过限定特征值 <span
+class="math inline">\(\lambda=1\)</span> 来确定唯一的旋转矩阵。</p></li>
+<li><p>变换法线：对表面施加 <span
+class="math inline">\(\textbf{M}\)</span> 变换后，法线旋转矩阵为 <span
+class="math inline">\(\textbf{N}=(\textbf
+M^{-1})^\top\)</span>。证明略。</p></li>
+<li><p>平移变换：有时我们需要移动坐标。我们只需要多加一维代表“常数 <span
+class="math inline">\(1\)</span>”即可。2D、3D 平移变换如下。 <span
+class="math display">\[
+\begin{bmatrix}1&amp;0&amp;x_t\\0&amp;1&amp;y_t\\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\1\end{bmatrix}\quad
+\begin{bmatrix}1&amp;0&amp;0&amp;x_t\\0&amp;1&amp;0&amp;y_t\\0&amp;0&amp;1&amp;z_t\\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\\1\end{bmatrix}
+\]</span></p></li>
+<li><p>仿射变换：将平移、缩放、旋转混合起来。任何一个矩阵都可以用仿射变换表示，并分解成平移、缩放、旋转矩阵。
+<span class="math display">\[
+\begin{bmatrix}1&amp;0&amp;0&amp;x_t\\0&amp;1&amp;0&amp;y_t\\0&amp;0&amp;1&amp;z_t\\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}&amp;0\\a_{21}&amp;a_{22}&amp;a_{23}&amp;0\\a_{31}&amp;a_{32}&amp;a_{33}&amp;0\\0&amp;0&amp;0&amp;1\end{bmatrix}
+\]</span> 不同坐标系之间的转换可以通过仿射变换实现。</p></li>
+</ul></li>
+</ul>
+<h4 id="视图变换">视图变换</h4>
+<h5 id="视口变换">视口变换</h5>
+<h5 id="正投影变换">正投影变换</h5>
+<h5 id="镜头转换">镜头转换</h5>
+<h4 id="相机模型">相机模型</h4>
+<h5 id="投影变换">投影变换</h5>
+<h5 id="透视变换">透视变换</h5>
+<h3 id="图形流水线-1">图形流水线</h3>
+<p>按对象顺序绘制的图形流水线主要分为以下四个步骤：</p>
+<p>[应用层] 命令流 -&gt; <strong>顶点处理</strong> -&gt; 变换几何 -&gt;
+<strong>光栅化</strong> -&gt; 片元 -&gt; <strong>片元处理</strong> -&gt;
+<strong>混合</strong> -&gt; [输出] 帧缓冲图像</p>
+<p>图像渲染管线 API 包括</p>
+<ul>
+<li>硬件管线 API，如 OpenGL, Direct3D
+等。这些多用于游戏渲染等实时渲染。</li>
+<li>软件管线 API，如
+RenderMan。主要用于高质量动画，耗时长，渲染质量好。</li>
+</ul>
+<h4 id="剔除">剔除</h4>
+<p>图形流水线一般是 Object-order
+Rendering，换而言之，对每个对象进行处理。考虑到视野空间内只有若干对象可见，我们需要考虑一些比较有效的方式快速剔除掉不在视野内的对象。</p>
+<ul>
+<li><p><strong>视景体剔除</strong>（View Volume Culling）</p>
+<p>将若干对象打包在一起做一次快速检测。例如若干对象的位置都在某个球内，只需要简单衡量球与视野空间是否有交，即可进行快速剔除。</p></li>
+<li><p><strong>闭合剔除</strong>（Occlusion Culling）</p>
+<p>对象包在其他对象之内无法被看见。</p></li>
+<li><p><strong>背面剔除</strong>（Backface Culling）</p>
+<p>对于那些“背对”我们视平面法向量的对象（点积简单判断），即可快速剔除。</p></li>
+</ul>
+<h4 id="顶点处理">顶点处理</h4>
+<p>顶点处理实质就是准备光栅化所需要的对象顶点的若干信息。通过应用若干矩阵变换（见前文“照相模型”一节），顶点在屏幕空间的坐标可以由世界空间坐标求得。其他包括顶点的颜色、表面法线、对应材质/纹理的坐标等信息，也可通过一定方法获得。</p>
+<p>注：注意在透视中表面法向量不能简单通过变换矩阵做变换，还需要进行修正。</p>
+<h4 id="光栅化">光栅化</h4>
+<p>众所周知，我们在屏幕平面看到的图片是由一个个像素组成的，像素有大小，因而看到的线其实是一个个像素（矩形）组成，而并非一条精确的线。因此需要考虑如何填充像素。这就是光栅化需要做的事情。</p>
+<p>下文的光栅化主要考虑线段和三角形的光栅化。多边形可以简单规约到三角形的处理。</p>
+<p><strong><em>裁剪</em></strong></p>
+<p>我们的屏幕大小并不是无限大，有时我们会遇到图形的一部分处于屏幕之外。这时我们就需要进行裁剪。一般裁剪会选择在进行几何转换后进行。</p>
+<ul>
+<li><p><strong>直线段裁剪</strong></p>
+<p><em>朴素</em>：利用平面法线等信息判断两个端点是否在平面两端，然后朴素求解交点。</p>
+<p><em>Cohen-Sutherland</em>：对主窗口边界直线所划分出的九个方块编码，处理直线时先求两端点编码，之后利用位运算判断是否部分/完全丢弃该线段。如果部分丢弃，则求出线段与窗口某边的交点，一分为二，对两条再进行考虑。</p>
+<p><em>中点分割</em>：如果部分丢弃，则取中点一分为二，对两条线再进行考虑。只有加法和除二运算，非常适合。</p>
+<p><em>梁友栋-Barskey</em>（据说更快）：将裁剪问题转化为不等式条件，形如
+<span class="math inline">\(x_1\le x+u\Delta x\le x_2,y_1\le y+u\Delta
+y\le y_2\)</span>，然后求式子中的 <span
+class="math inline">\(u\)</span>，从而确定裁剪坐标。</p></li>
+<li><p><strong>三角形裁剪</strong></p>
+<p>实际裁剪一般采用 BSP
+树程序进行（我还没看，这一部分先跳过）。用直线段裁剪的方法类似处理即可。</p></li>
+<li><p><strong>多边形裁剪</strong></p>
+<p><em>Sutherland-Hodgman</em>。考虑多边形是由有序点集/有向边表示的，从起点开始取点，每次考虑下一条边是否部分/完全可见，并返回对应的端点，从而得到新的有序点集。</p></li>
+</ul>
+<p><strong><em>扫描转换</em></strong></p>
+<ul>
+<li><p><strong>直线段的扫描转换算法（画线算法）</strong></p>
+<p>考虑一条给定端点的直线段进行像素填充。为方便进行绘图，我们要求直线斜率
 <span class="math inline">\(|k|\le 1\)</span>。 若不然，则将 <span
 class="math inline">\(x,y\)</span> 位置调换。</p>
 <ul>
@@ -2619,18 +2715,25 @@ class="math inline">\(y_p+1\)</span>。</p>
 <li><p><strong>Bresenham</strong></p>
 <p>其实就是上面 <span class="math inline">\(f(x)\)</span>
 的改良，同样使用步进，然后扣掉0.5，从而变成只用判断正负即可确认下一坐标取值。</p></li>
-</ul></li>
+</ul>
+<p>画线可能遇到的走样问题：可以将原先的单个 pixel 模糊成若干个
+pixels，片元增多。</p></li>
+<li><p><strong>三角形的扫描转换算法</strong></p>
+<p>三角形各边的转换可以采用画线算法。对于三角形内部，可以根据顶点设定
+<span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span>
+的范围，然后计算重心坐标是否满足要求。（对于三角形片元的着色，可以使用重心坐标以及顶点颜色进行简单的线性插值。）</p></li>
 </ul>
 <details class="note warning"><summary><p>了解更多</p>
 </summary>
 <ul>
-<li><strong>圆弧的扫描转换算法</strong></li>
-</ul>
-<p>圆具有良好的对称性，一般绘图时只考虑 1/8
-圆弧，剩下的圆弧可以通过对称方式模仿填充。只考虑1/8圆弧也有一个好处，取斜率绝对值显然不大于1的部分，这样我们可以模仿直线段的中点画线法画圆。（课本采用的是顶端右侧1/8圆弧，每次取点考虑
-<span class="math inline">\(y_p\)</span> 和 <span
-class="math inline">\(y_p-1\)</span>。）</p>
-<ul>
+<li><p><strong>圆弧的扫描转换算法</strong></p>
+<p>圆具有良好的对称性，一般绘制边界时只考虑 <span
+class="math inline">\(\frac 1 8\)</span>
+圆弧，剩下的圆弧可以通过对称方式模仿填充。只考虑1/8圆弧也有一个好处，取斜率绝对值显然不大于1的部分，这样我们可以模仿直线段的中点画线法画圆。可以采用顶端右侧
+<span class="math inline">\(\frac 1 8\)</span> 圆弧，每次取点考虑 <span
+class="math inline">\(y_p\)</span> 和 <span
+class="math inline">\(y_p-1\)</span>。</p></li>
 <li><p><strong>多边形的扫描转换与区域填充</strong></p>
 <ul>
 <li><p><em>多边形的扫描转换</em></p>
@@ -2643,19 +2746,10 @@ class="math inline">\(y_p-1\)</span>。）</p>
 </ul>
 
 </details>
-<h4 id="裁剪">裁剪</h4>
-<ul>
-<li><p><strong>直线段裁剪</strong></p>
-<p><em>Cohen-Sutherland</em>：对主窗口边界直线所划分出的九个方块编码，处理直线时先求两端点编码，之后利用位运算判断是否部分/完全丢弃该线段。如果部分丢弃，则求出线段与窗口某边的交点，一分为二，对两条再进行考虑。</p>
-<p><em>中点分割</em>：如果部分丢弃，则取中点一分为二，对两条线再进行考虑。只有加法和除二运算，非常适合。</p>
-<p><em>梁友栋-Barskey</em>（据说更快）：将裁剪问题转化为不等式条件，形如
-<span class="math inline">\(x_1\le x+u\Delta x\le x_2,y_1\le y+u\Delta
-y\le y_2\)</span>，然后求式子中的 <span
-class="math inline">\(u\)</span>，从而确定裁剪坐标。</p></li>
-<li><p><strong>多边形裁剪</strong></p>
-<p><em>Sutherland-Hodgman</em>。考虑多边形是由有序点集/有向边表示的，从起点开始取点，每次考虑下一条边是否部分/完全可见，并返回对应的端点，从而得到新的有序点集。</p></li>
-</ul>
-<h4 id="消隐">消隐</h4>
+<h4 id="片元处理与混合">片元处理与混合</h4>
+<p>片元处理阶段主要是计算每个片元的颜色和深度，而混合阶段则对片元进行混合，得到对应像素。最常见的方式是选择深度最小的片元的颜色（消隐）。</p>
+<p><strong><em>消隐</em></strong></p>
+<p>在光栅化阶段我们获得了若干片元的信息，如颜色，深度等。考虑到片元之间存在遮挡关系，我们要将应当被隐藏的片元消去不显示。</p>
 <ul>
 <li><strong>消除隐藏线</strong></li>
 </ul>
@@ -2665,13 +2759,24 @@ class="math inline">\(u\)</span>，从而确定裁剪坐标。</p></li>
 <li><strong>消除隐藏面</strong></li>
 </ul>
 <p><em>Z
-缓冲区算法</em>。补充一深度缓冲器，只有当待绘制像素深度值大于缓冲器中对应深度值时才更新帧缓冲器。为节省空间，可逐个处理帧缓冲器上的每个像素。处理点与多边形的包含性检测可采用射线法、弧长法（稳定但弧长难求，可通过建立四象限，查看象限变化并对每种情况赋弧长变化）。扫描线
+缓冲区算法</em>。补充一深度缓冲器，只有当待绘制像素深度值大于缓冲器中对应深度值时才更新帧缓冲器。为节省空间，可逐个处理帧缓冲器上的每个像素。为了加速处理可以对深度做一个简单的离散化（<span
+class="math inline">\(2^b\)</span> 切割 <span
+class="math inline">\([0,1]\)</span>
+区间，可以均匀切割，也可以在处理透视情况时采用非线性切割）。处理点与多边形的包含性检测可采用射线法、弧长法（稳定但弧长难求，可通过建立四象限，查看象限变化并对每种情况赋弧长变化）。扫描线
 Z-Buffer,区间扫描线法略去。</p>
 <p><em>区域子分割算法</em>。将窗口不断四分割，直到情况足够简单为止，根据实际情况绘图。</p>
 <p><em>光线投射算法</em>。从窗口像素位置做射线，与物体求交。实际仍然是
 Z-Buffer。</p>
-<h3 id="图形流水线-1">图形流水线</h3>
-<p>...</p>
+<p><strong><em>着色</em></strong></p>
+<ul>
+<li><p><strong>逐顶点着色</strong>（Gouraud Shading）</p>
+<p>在顶点处理阶段计算各顶点对应的颜色，然后光栅化阶段根据顶点颜色做插值。缺点是几何片元不够多、不够小时着色细节不足。</p></li>
+<li><p><strong>按片元着色</strong>（Phong Shading）</p>
+<p>在光栅化阶段插值每个顶点的法向量、位置，在片元处理阶段再计算每个片元的颜色。具有更优秀的着色细节。</p></li>
+</ul>
+<p>着色还需要考虑着色频率的问题。着色频率反应像素之间颜色变化的快慢，着色频率越大，需要的细节程度也就越高，计算精度也要求越高。（比如高光的着色频率应当显著高于漫反射的频率。）</p>
+<p><strong><em>纹理映射</em></strong></p>
+<p>我们想给对象加上一些特殊的“皮肤”，比如圆木凹凸不平的树皮。这时可以添加纹理，进行纹理映射。这一部分的内容见“图像处理”下纹理映射一节。</p>
 <h2 id="图像处理">图像处理</h2>
 <h3 id="信号处理">信号处理</h3>
 <ul>
@@ -2686,10 +2791,16 @@ class="math inline">\(\frac{1}{16}\pmatrix{1&amp;2&amp;1\\2&amp;4&amp;2\\1&amp;2
 <ul>
 <li>傅里叶变换，频域上的采样分析（低通/高通）</li>
 </ul>
-<h3 id="纹理及纹理映射">纹理及纹理映射</h3>
-<p>二维纹理域：将纹理变换到三维物体表面形成最终图像。</p>
-<p>三维纹理域：各点对应一纹理由三维纹理函数唯一确定。</p>
-<p>几何纹理：对物体表面每个点沿法向量方向位移若干单位长度，从而实现粗糙外观。</p>
+<h3 id="纹理映射">纹理映射</h3>
+<p>纹理可以简单分为以下若干种类：</p>
+<ul>
+<li><p>二维纹理域：将纹理变换到三维物体表面形成最终图像。</p></li>
+<li><p>三维纹理域：各点对应一纹理由三维纹理函数唯一确定。</p></li>
+<li><p>几何纹理：对物体表面每个点沿法向量方向位移若干单位长度，从而实现粗糙外观。</p></li>
+</ul>
+<p>纹理查找问题。</p>
+<p><u>TAT 施工部分</u></p>
+<p>之后应该会在这里加一些有关纹理查找问题的 Notes，参考 Games 101。</p>
 ]]></content>
       <categories>
         <category>Graphics</category>
@@ -3267,6 +3378,27 @@ emo 程度上彼此彼此。</del>考完今年“没有区分度”的 NOI
 的学弟前几天问我回去学文化课怎么办，想了想好像没什么好建议，毕竟本省高考改革第一年，只能说“多找老师沟通”了。这一点感觉也算是给我自己的建议吧。</p>
 <p>毕业的季节在朋友圈里送走了许多大佬，又迎来了汹涌澎湃的后浪。我们每个人都有光明的未来，大概。<del>好像前段时间看到某条评论，说经常表示自己内心阴暗的实际上比较健康，说面朝大海春暖花开的反而心理不健康，那我加个大概，算不算是
 edge runner。</del></p>
+]]></content>
+      <categories>
+        <category>水木录</category>
+      </categories>
+      <tags>
+        <tag>小碎骨</tag>
+        <tag>2023</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>八月随笔</title>
+    <url>/2023/08/02/DAug23/</url>
+    <content><![CDATA[<h3 id="section">08/01</h3>
+<p>又补了一点图形学。实践之前学的量有点超标了，现在笔记写起来非常痛苦，感觉有好多东西要写进笔记里，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+<p>原计划还有两三天就要从大兴坐飞机回去了。生草的事情是家人发了视频，说是大兴机场成了大兴港，全是水，暂且不知道是否真实。（看百度好像不是真的，不会又是造谣一张嘴辟谣跑断腿吧。<del>因为按计划回去之后有聚会，聚会群里看到家人说大兴港又好笑又难蚌</del>）</p>
+<p><a
+href="https://www.zhihu.com/question/614278357/answer/3144876874">关于名校开放的一些心声</a>。感觉好像在面对疫情相关的事情上我的第一反应都是慢慢来，非常害怕“迅捷果断”的举动。比如去年没放开的时候希望如果放开至少花若干个月，听到突然放开的时候感觉既焦虑又恐慌。回到家期末周还是中招了。这是否也是一种犹疑（</p>
+<p>今天运气相当糟糕，打雀魂连输四把还点了一个国士<del>有借有还</del>，方舟抽了
+150 抽没出羊，悲。种田（小羊
+CV）的声音听起来让人难过，刚开始第一反应就是 CV
+嗓子不行了，没注意到原来真生病了……唉。</p>
 ]]></content>
       <categories>
         <category>水木录</category>
