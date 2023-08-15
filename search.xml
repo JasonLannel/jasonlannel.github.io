@@ -2936,11 +2936,11 @@ class="math inline">\(\hat f\)</span>
 之间的转换。假如你有一个时域上的信号 <span
 class="math inline">\(f\)</span>，希望由若干个频率为 <span
 class="math inline">\(w_i\)</span>
-的正弦波表示，傅里叶变换可以告诉你这些正弦波对应的幅值 <span
-class="math inline">\(\hat f(w_i)\)</span>；同样的，如果你知道频域上的
+的正弦波表示（如果你知道傅里叶级数……），傅里叶变换可以告诉你这些正弦波对应的幅值
 <span class="math inline">\(\hat
-f\)</span>，可以通过逆变换来还原时域上的信号 <span
-class="math inline">\(f\)</span>。 <span class="math display">\[
+f(w_i)\)</span>；同样的，如果你知道频域上的 <span
+class="math inline">\(\hat f\)</span>，可以通过逆变换来还原时域上的信号
+<span class="math inline">\(f\)</span>。 <span class="math display">\[
 \hat f(w)=\int_{-\infty}^{\infty} f(t)e^{-iwt}dt\\
 f(t)=\frac 1 {2\pi}\int_{-\infty}^{\infty}\hat f(w)e^{iwt}dw
 \]</span> 傅里叶变换有一些美妙的性质：</p>
@@ -2979,11 +2979,10 @@ s_T(t)=\sum\limits_{i}\delta(i-T)
 T})(u)=\sum\limits_i \hat f(u-\frac i T)
 \]</span> 因而，在不使用滤波器的情况下，当采样间隔 <span
 class="math inline">\(T\)</span>
-过大（采样率不足），频域图像高频段会出现重叠的部分（高次混叠波），进而产生走样[^4.1.4
-1]。因而在采样时，我们有如下方法实现反走样：</p>
+过大（采样率不足），频域图像高频段会出现重叠的部分（高次混叠波），进而产生走样<sup id="fnref:4141"><a href="#fn:4141" rel="footnote">4141</a></sup>。因而在采样时，我们有如下方法实现反走样：</p>
 <ul>
 <li>增加采样率，从而减少高频信号重叠区域大小。</li>
-<li>采样前使用低通滤波器，去除高频信息。[^4.1.4 2]</li>
+<li>采样前使用低通滤波器，去除高频信息。<sup id="fnref:4142"><a href="#fn:4142" rel="footnote">4142</a></sup></li>
 </ul>
 <p>利用样本重建信号时，也可以选用适合的滤波器来实现反走样，在保留基波的同时降低高次混叠波。重采样由于带宽（频谱宽度）减少，也可以降低混叠。</p>
 <h4 id="图像信号">4.1.5 图像信号</h4>
@@ -2995,7 +2994,7 @@ class="math inline">\(T\)</span>
 </ul>
 <p>对图像进行采样也会遇到走样的问题，这种走样一般表现为锯齿和摩尔纹。如上文所述，我们可以先对原图进行适当模糊，再进行采样。</p>
 <p>如果要改变图像分辨率/采样频率，我们就需要对图像信号进行重采样。重采样一般分为重构与采样两个步骤。利用卷积，我们可以将重构与采样时应用的滤波器组合起来，得到重采样滤波器。[^
-4.1.5 1]</p>
+4151]</p>
 <p>对图像信号做滤波时会遇到如下的问题：</p>
 <ul>
 <li>图像边缘的处理。比较好的方法是在接近边缘时选择不同大小的滤波器。</li>
@@ -3011,17 +3010,39 @@ class="math inline">\(T\)</span>
 <p>纹理查找问题。</p>
 <p><u>TAT 施工部分</u></p>
 <p>之后应该会在这里加一些有关纹理查找问题的 Notes，参考 Games 101。</p>
-<h2 id="曲线">5 曲线</h2>
-<h3 id="贝塞尔曲线">5.1 贝塞尔曲线</h3>
-<h3 id="b-样条曲线">5.2 B 样条曲线*</h3>
-<p>[^4.1.4 1]:
-上文提到，信息的采样频率过低会造成走样。要正确采样（能够从采样后的信息重建出原始信号），采样频率必须大于原始信号最大频率的2倍，这通常被称为采样定理，采样频率称为
+<h2 id="几何表示">5 几何表示</h2>
+<h3 id="引入与基础">5.1 引入与基础</h3>
+<h4 id="显示表示">5.1.1 显示表示</h4>
+<h4 id="隐式表示">5.1.2 隐式表示</h4>
+<h3 id="曲线">5.2 曲线</h3>
+<h4 id="贝塞尔曲线">5.2.1 贝塞尔曲线</h4>
+<h4 id="b-样条曲线">5.2.2 B 样条曲线*</h4>
+<h3 id="平面">5.3 平面</h3>
+<h4 id="贝塞尔平面">5.3.1 贝塞尔平面</h4>
+<h3 id="三维表示">5.4 三维表示</h3>
+<div id="footnotes">
+<hr>
+<div id="footnotelist">
+<ol style="list-style:none; padding-left: 0;">
+<li id="fn:4141">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px;">4141.</span><span
+style="display: inline-block; vertical-align: top;">上文提到，信息的采样频率过低会造成走样。要正确采样（能够从采样后的信息重建出原始信号），采样频率必须大于原始信号最大频率的2倍，这通常被称为采样定理，采样频率称为
 Nyquist limit 或 Nyquist
-rate。这个定理使用了"最大频率"术语，这就意味着这个信号必须是有带宽限制(band-limited)的，没有任何频率能超过这个限制。换句话说，在相邻采样的间隔中，信号必须足够平滑。
-[^4.1.4 2]:
-按此描述，盒状滤波器的处理效果似乎是最好的：它在完全剔除了高频信息的同时保存了低频信息。然而，它的实用性并不强：一是频域函数难用，还存在着负数部分，二是实际效果并不如想象的那般出色。相较而言，帐篷滤波器、高斯滤波器更实用，效果也较为出色。
-[^ 4.1.5 1]:
-实际应用中，重采样时可以先对行进行重采样，然后再对列进行重采样，从而实现“空间换时间”的效率提升。</p>
+rate。这个定理使用了"最大频率"术语，这就意味着这个信号必须是有带宽限制(band-limited)的，没有任何频率能超过这个限制。换句话说，在相邻采样的间隔中，信号必须足够平滑。</span><a href="#fnref:4141" rev="footnote">
+↩︎</a>
+</li>
+<li id="fn:4142">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px;">4142.</span><span
+style="display: inline-block; vertical-align: top;">按此描述，盒状滤波器的处理效果似乎是最好的：它在完全剔除了高频信息的同时保存了低频信息。然而，它的实用性并不强：一是频域函数难用，还存在着负数部分，二是实际效果并不如想象的那般出色。相较而言，帐篷滤波器、高斯滤波器更实用，效果也较为出色。
+[^ 4151]:
+实际应用中，重采样时可以先对行进行重采样，然后再对列进行重采样，从而实现“空间换时间”的效率提升。</span><a href="#fnref:4142" rev="footnote">
+↩︎</a>
+</li>
+</ol>
+</div>
+</div>
 ]]></content>
       <categories>
         <category>Graphics</category>
