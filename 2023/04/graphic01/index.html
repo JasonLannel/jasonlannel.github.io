@@ -28,18 +28,11 @@
 <meta property="og:site_name" content="JasonL&#39;s Blog">
 <meta property="og:description" content="一篇关于计算机图形学的笔记。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-a7ca2ffad8bc263453ba63f33b1ccef0_720w.webp">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-8e45a895e2f91a9e68287ab20f7541d2_720w.webp">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-56a07c35e2f6bc752dcea3110fe85362_720w.webp">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-95255593b8fbd77b7c4cf8d802c0ffc2_1440w.webp">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-cfc56179153eeadaa72795ddb1554caa_720w.webp">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-2dd1adbfcef4777462d8efa358091fff_720w.jpg?source=d16d100b">
 <meta property="article:published_time" content="2023-04-22T12:33:48.000Z">
 <meta property="article:modified_time" content="2023-11-25T10:23:28.000Z">
 <meta property="article:author" content="JasonL">
 <meta property="article:tag" content="2023">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-a7ca2ffad8bc263453ba63f33b1ccef0_720w.webp">
 
 
 <link rel="canonical" href="https://jasonlannel.github.io/2023/04/graphic01/">
@@ -152,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80"><span class="nav-text">0 前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-1-%E7%AC%AC%E4%B8%80%E7%89%88"><span class="nav-text">0.1 第一版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-2-%E7%AC%AC%E4%BA%8C%E7%89%88"><span class="nav-text">0.2 第二版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E5%85%A5"><span class="nav-text">1 引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%AE%80%E4%BB%8B"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%9B%BE%E5%83%8F%E8%AE%BE%E5%A4%87"><span class="nav-text">1.2 图像设备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%9D%80%E8%89%B2"><span class="nav-text">2 着色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E7%AE%80%E5%8D%95%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="nav-text">2.1 简单光线追踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2 照明模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-%E7%9C%9F%E5%AE%9E%E5%9B%BE%E5%83%8F%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-text">2.2.1 真实图像的生成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-%E7%AE%80%E5%8D%95%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.2 简单光照明模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-%E5%B1%80%E9%83%A8%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3 局部光照明模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-%E5%85%89%E9%80%8F%E5%B0%84%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.4 光透射模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-%E6%95%B4%E4%BD%93%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.5 整体光照明模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6-%E5%AE%9E%E6%97%B6%E7%9C%9F%E5%AE%9E%E6%84%9F%E5%9B%BE%E5%BD%A2%E5%AD%A6%E6%8A%80%E6%9C%AF"><span class="nav-text">2.2.6 实时真实感图形学技术*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9B%BE%E5%BD%A2%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">3 图形流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E8%A7%82%E5%AF%9F"><span class="nav-text">3.1 观察</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-text">3.1.1 变换矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-%E8%A7%86%E5%9B%BE%E5%8F%98%E6%8D%A2"><span class="nav-text">3.1.2 视图变换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%9B%BE%E5%BD%A2%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">3.2 图形流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E5%89%94%E9%99%A4"><span class="nav-text">3.1 剔除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E9%A1%B6%E7%82%B9%E5%A4%84%E7%90%86"><span class="nav-text">3.2 顶点处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E5%85%89%E6%A0%85%E5%8C%96"><span class="nav-text">3.3 光栅化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-%E7%89%87%E5%85%83%E5%A4%84%E7%90%86%E4%B8%8E%E6%B7%B7%E5%90%88"><span class="nav-text">3.4 片元处理与混合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text">4 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="nav-text">4.1 信号处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-%E5%BC%95%E5%85%A5"><span class="nav-text">4.1.1 引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-%E5%8D%B7%E7%A7%AF"><span class="nav-text">4.1.2 卷积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-3-%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">4.1.3 滤波器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-4-%E9%87%87%E6%A0%B7%E7%90%86%E8%AE%BA"><span class="nav-text">4.1.4 采样理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-5-%E5%9B%BE%E5%83%8F%E4%BF%A1%E5%8F%B7"><span class="nav-text">4.1.5 图像信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84"><span class="nav-text">4.2 纹理映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-%E5%BC%95%E5%85%A5"><span class="nav-text">4.2.1 引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-%E6%98%A0%E5%B0%84%E5%87%BD%E6%95%B0"><span class="nav-text">4.2.2 映射函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-%E5%8F%8D%E8%B5%B0%E6%A0%B7"><span class="nav-text">4.2.3 反走样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="nav-text">5 几何表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%BC%95%E5%85%A5%E4%B8%8E%E5%9F%BA%E7%A1%80"><span class="nav-text">5.1 引入与基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-1-%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.1.1 显示表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-2-%E9%9A%90%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.1.2 隐式表示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2 曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2.1 贝塞尔曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-B-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2.2 B 样条曲线*</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%B9%B3%E9%9D%A2"><span class="nav-text">5.3 平面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-%E8%B4%9D%E5%A1%9E%E5%B0%94%E5%B9%B3%E9%9D%A2"><span class="nav-text">5.3.1 贝塞尔平面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E4%B8%89%E7%BB%B4%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.4 三维表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-%E8%84%9A%E6%B3%A8"><span class="nav-text">F 脚注</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">0 前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%89%88"><span class="nav-text">0.1 第一版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%89%88"><span class="nav-text">0.2 第二版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">1 引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%AE%BE%E5%A4%87"><span class="nav-text">1.2 图像设备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9D%80%E8%89%B2"><span class="nav-text">2 着色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="nav-text">2.1 简单光线追踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2 照明模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9C%9F%E5%AE%9E%E5%9B%BE%E5%83%8F%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-text">2.2.1 真实图像的生成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.2 简单光照明模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3 局部光照明模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E9%80%8F%E5%B0%84%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.4 光透射模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E5%85%89%E7%85%A7%E6%98%8E%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.5 整体光照明模型*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E7%9C%9F%E5%AE%9E%E6%84%9F%E5%9B%BE%E5%BD%A2%E5%AD%A6%E6%8A%80%E6%9C%AF"><span class="nav-text">2.2.6 实时真实感图形学技术*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">3 图形流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F"><span class="nav-text">3.1 观察</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-text">3.1.1 变换矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%8F%98%E6%8D%A2"><span class="nav-text">3.1.2 视图变换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%B5%81%E6%B0%B4%E7%BA%BF-1"><span class="nav-text">3.2 图形流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%94%E9%99%A4"><span class="nav-text">3.1 剔除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9%E5%A4%84%E7%90%86"><span class="nav-text">3.2 顶点处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E6%A0%85%E5%8C%96"><span class="nav-text">3.3 光栅化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%87%E5%85%83%E5%A4%84%E7%90%86%E4%B8%8E%E6%B7%B7%E5%90%88"><span class="nav-text">3.4 片元处理与混合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="nav-text">4 图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="nav-text">4.1 信号处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5-1"><span class="nav-text">4.1.1 引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF"><span class="nav-text">4.1.2 卷积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">4.1.3 滤波器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%87%E6%A0%B7%E7%90%86%E8%AE%BA"><span class="nav-text">4.1.4 采样理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E4%BF%A1%E5%8F%B7"><span class="nav-text">4.1.5 图像信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84"><span class="nav-text">4.2 纹理映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5-2"><span class="nav-text">4.2.1 引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%A0%E5%B0%84%E5%87%BD%E6%95%B0"><span class="nav-text">4.2.2 映射函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E8%B5%B0%E6%A0%B7"><span class="nav-text">4.2.3 反走样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E8%A1%A8%E7%A4%BA"><span class="nav-text">5 几何表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E4%B8%8E%E5%9F%BA%E7%A1%80"><span class="nav-text">5.1 引入与基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.1.1 显示表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.1.2 隐式表示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2 曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2.1 贝塞尔曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="nav-text">5.2.2 B 样条曲线*</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2"><span class="nav-text">5.3 平面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E5%B9%B3%E9%9D%A2"><span class="nav-text">5.3.1 贝塞尔平面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.4 三维表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f-%E8%84%9A%E6%B3%A8"><span class="nav-text">F 脚注</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -297,386 +290,882 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h2><h3 id="0-1-第一版"><a href="#0-1-第一版" class="headerlink" title="0.1 第一版"></a>0.1 第一版</h3><p>Long time no see! </p>
-<p>一直想开图形学的坑了。虽然本地服务器（雾）里存有另一份非常简略的笔记，但是写得不是非常好，实质上就是 Copy and Paste。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="前言">0 前言</h2>
+<h3 id="第一版">0.1 第一版</h3>
+<p>Long time no see!</p>
+<p>一直想开图形学的坑了。虽然本地服务器（雾）里存有另一份非常简略的笔记，但是写得不是非常好，实质上就是
+Copy and Paste。</p>
 <p>之后我期望能每周至少更新一次？虽然大概不能保证一次更多少……顺带一提，刚开始很可能会拖一段时间，因为众所周知书的最开头一般都没什么可写的（</p>
-<h3 id="0-2-第二版"><a href="#0-2-第二版" class="headerlink" title="0.2 第二版"></a>0.2 第二版</h3><p>我发觉好像如果仅限于《Fundamentals of Computer Graphics》，写起来不是很有意思，毕竟那样不就和第一版前言里说的一样，都是 C&amp;P 嘛。所以之后我就打算 Extend 这一份笔记的内容啦，可能会参考一下一些之前看过的（比如 THU 出版社的那本《计算机图形学基础》<del>就是我第一版吐槽的那份笔记</del>，还有 RT in One Week。可能还会写点 CS231a，Games101 之类的？）。</p>
-<p>既然换主题就要改个名字。最开始我想写 Cornell Box 的，但是本来这篇也没打算写成英文。直译成康奈尔盒也不是很好。所以用了现在这个。箱庭这个词最早看到是在地错的小说里，Box 正好对应“箱”的概念。而且现在很多游戏在一些养成内容中也会引入“箱庭”的概念。计算机图形学虽然并不是只有“光”与“影”（比如 draw_line 这种 dirty work），但光影确实是其中最重要的一部分，至少是将图形呈现给用户时最重要的一部分。我个人觉得还算比较契合吧。</p>
-<p>图片引自 <a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1486012697024557057">知乎 TecrayC：Computer graphics</a> 专栏。</p>
-<h2 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h2><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h3><p>计算机图形学，顾名思义，是一门研究<strong>计算机中的图形</strong>的学科。简单地分个类，图形学可以分为<strong>建模、渲染、动画</strong>三大块。</p>
+<h3 id="第二版">0.2 第二版</h3>
+<p>我发觉好像如果仅限于《Fundamentals of Computer
+Graphics》，写起来不是很有意思，毕竟那样不就和第一版前言里说的一样，都是
+C&amp;P 嘛。所以之后我就打算 Extend
+这一份笔记的内容啦，可能会参考一下一些之前看过的（比如 THU
+出版社的那本《计算机图形学基础》<del>就是我第一版吐槽的那份笔记</del>，还有
+RT in One Week。可能还会写点 CS231a，Games101 之类的？）。</p>
+<p>既然换主题就要改个名字。最开始我想写 Cornell Box
+的，但是本来这篇也没打算写成英文。直译成康奈尔盒也不是很好。所以用了现在这个。箱庭这个词最早看到是在地错的小说里，Box
+正好对应“箱”的概念。而且现在很多游戏在一些养成内容中也会引入“箱庭”的概念。计算机图形学虽然并不是只有“光”与“影”（比如
+draw_line 这种 dirty
+work），但光影确实是其中最重要的一部分，至少是将图形呈现给用户时最重要的一部分。我个人觉得还算比较契合吧。</p>
+<p>图片引自 <a
+target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1486012697024557057">知乎
+TecrayC：Computer graphics</a> 专栏。</p>
+<h2 id="引入">1 引入</h2>
+<h3 id="简介">1.1 简介</h3>
+<p>计算机图形学，顾名思义，是一门研究<strong>计算机中的图形</strong>的学科。简单地分个类，图形学可以分为<strong>建模、渲染、动画</strong>三大块。</p>
 <ul>
 <li>建模：我如果想在计算机中存储一个物体的形貌，便需要一套约定好的数据——模型来表述它。模型的表示方式有很多，例如三角片（三角剖分）、点云（以点代面）、辐射场（给定位置与视角，返回对应体素的光辐射信息）。我一般将其理解为，将（现实世界的）图形<em>输入</em>到计算机中。（我们这里说的模型一般指三维模型）</li>
-<li>渲染：与建模相对应，渲染研究的是如何让计算机中的模型<em>输出</em>为（现实世界的）图形。一个非常直观的理解：假如我手上有一台相机，将现实中的树木、人物视为模型，渲染做的就是将这些模型投影到二维液晶显示屏上（或者更早一些的，胶片）。想查看与之相关的图形管道的更多信息，可参见<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/uwp/graphics-concepts/graphics-pipeline">Direct 3D</a>。</li>
+<li>渲染：与建模相对应，渲染研究的是如何让计算机中的模型<em>输出</em>为（现实世界的）图形。一个非常直观的理解：假如我手上有一台相机，将现实中的树木、人物视为模型，渲染做的就是将这些模型投影到二维液晶显示屏上（或者更早一些的，胶片）。想查看与之相关的图形管道的更多信息，可参见<a
+target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/uwp/graphics-concepts/graphics-pipeline">Direct
+3D</a>。</li>
 <li>动画：建模和渲染一般指的是静态的，换而言之，它们研究的是在时间轴上某一切片中的图形学。而动画研究的则是如何让图形“动”起来。大家如果玩过在纸上画图，通过快速翻页让图形动起来的游戏，动画与前二者的区别应该会很好理解：建模和渲染都是在一张纸上，而动画要的是连续多张纸翻页的效果。</li>
 </ul>
 <p>一些需要用的计算机图形学的领域也列在下面。</p>
 <ul>
-<li>人机交互。举个例子，有些朋友可能觉得微软 Windows 界面不好看，麦金塔的界面就很好看（免责声明：我一直用的 Windows），为什么呢？他们可能会说某个图标应该圆滑一些，某种颜色应该调成另一种颜色。这就是人与机器之间的一种交互。</li>
-<li>虚拟现实。视觉信息获取与显示课（之后我会简称为“视觉信息课”）上的一个例子就很好：一个人戴着 3D 眼镜看可能会晕，但看全息图像就不会晕。为什么呢？因为二者传输的光学信息量不同，信息方式也不同。迁移到 VR 设备中，我们是否有更好的传递图形的方式，来让使用者获得更“真实”、更绚丽、更舒适的体验？</li>
+<li>人机交互。举个例子，有些朋友可能觉得微软 Windows
+界面不好看，麦金塔的界面就很好看（免责声明：我一直用的
+Windows），为什么呢？他们可能会说某个图标应该圆滑一些，某种颜色应该调成另一种颜色。这就是人与机器之间的一种交互。</li>
+<li>虚拟现实。视觉信息获取与显示课（之后我会简称为“视觉信息课”）上的一个例子就很好：一个人戴着
+3D
+眼镜看可能会晕，但看全息图像就不会晕。为什么呢？因为二者传输的光学信息量不同，信息方式也不同。迁移到
+VR
+设备中，我们是否有更好的传递图形的方式，来让使用者获得更“真实”、更绚丽、更舒适的体验？</li>
 <li>可视化。渲染与动画大抵都可列入这一范畴。做数据统计时的三维统计图、云图等等，都属于可视化的一种。</li>
 <li>图像处理。最简单的图像处理就是平移、旋转、尺寸压缩了。稍微复杂的图像处理包括一些奇奇怪怪的映射，提取轮廓（只提取高频信息），滤波器处理等等。</li>
 <li>三维扫描。这一块主要应用建模：通过扫描仪获取物体表面信息，通过特定方式转化为三维模型。一些博物馆的应用推出的全方位观察文物功能中，文物的外形信息就可以通过此类方式导入到计算机中。</li>
 <li>计算成像。还是视觉信息课的一个例子：如果我们想获取大尺度、超高清图像（例如十亿像素成像），我们可以通过非规则相机阵列，像人眼一样拍摄若干张图，然后通过计算将其合成为一张图。计算成像通过引入包括计算机视觉、图像处理方法等等来拓宽成像的新方法。</li>
 </ul>
-<p>至于有什么主要的应用——游戏、动画、特效、CAD&#x2F;CAM、模拟、生物成像、信息可视化等等。（生物成像，比如显示细胞内部一些物质的移动）</p>
-<h3 id="1-2-图像设备"><a href="#1-2-图像设备" class="headerlink" title="1.2 图像设备"></a>1.2 图像设备</h3><p>图像的输入&#x2F;输出设备主要分为以下几种：</p>
+<p>至于有什么主要的应用——游戏、动画、特效、CAD/CAM、模拟、生物成像、信息可视化等等。（生物成像，比如显示细胞内部一些物质的移动）</p>
+<h3 id="图像设备">1.2 图像设备</h3>
+<p>图像的输入/输出设备主要分为以下几种：</p>
 <ul>
 <li><p><strong>输入设备</strong>，包括</p>
 <ul>
-<li>二维传感器（如数码相机）。相机内部常见的传感器包括 CCD 以及 CMOS 两种，通过色彩滤波阵列（或者马赛克<del>我也不知道为啥叫这名字</del>）来接受特定的红&#x2F;绿&#x2F;蓝光。</li>
+<li>二维传感器（如数码相机）。相机内部常见的传感器包括 CCD 以及 CMOS
+两种，通过色彩滤波阵列（或者马赛克<del>我也不知道为啥叫这名字</del>）来接受特定的红/绿/蓝光。</li>
 <li>一维传感器（如平板扫描仪）。同样采用阵列，但通过移动来实现二维的扫描。</li>
-</ul>
-</li>
+</ul></li>
 <li><p><strong>输出设备</strong>，主要分为显示设备和打印设备。</p>
 <p><strong>显示设备</strong>的每个像素由红、绿、蓝光光源光强的调整来显示颜色。部分内容可以参考下文的“颜色视觉”。</p>
 <ul>
 <li><p><em>Transmissive</em></p>
-<p>透射式，例如液晶 LCD 显示器。非偏振光首先经过第一层水平偏振片，经过液晶偏振后再经过第二层垂直偏振片，从而得到对应的偏振光。偏振旋转到 90°（fully open）时得到最大光强，0°（off）时光强为 0。</p>
-</li>
+<p>透射式，例如液晶 LCD
+显示器。非偏振光首先经过第一层水平偏振片，经过液晶偏振后再经过第二层垂直偏振片，从而得到对应的偏振光。偏振旋转到
+90°（fully open）时得到最大光强，0°（off）时光强为 0。</p></li>
 <li><p><em>Emissive</em></p>
-<p>放射式。例如发光二极管 LED 显示器，通过施加电流可以实现不同强度的发光。</p>
-</li>
+<p>放射式。例如发光二极管 LED
+显示器，通过施加电流可以实现不同强度的发光。</p></li>
 </ul>
-<p><strong>打印设备</strong> </p>
+<p><strong>打印设备</strong></p>
 <ul>
 <li><p><em>Binary</em></p>
-<p>“二进制”打印。例如喷墨打印机，每个像素只有“喷”与“不喷”两种状态。喷墨打印头在水平方向移动进行喷墨。图像分辨率由墨滴大小以及纸张前进距离决定。</p>
-</li>
+<p>“二进制”打印。例如喷墨打印机，每个像素只有“喷”与“不喷”两种状态。喷墨打印头在水平方向移动进行喷墨。图像分辨率由墨滴大小以及纸张前进距离决定。</p></li>
 <li><p><em>Continuous Tone</em></p>
-<p>“连续彩印”。如染料热升华打印机，不同颜色的供墨纸经过线阵热敏打印机头热升华后印在对应的纸上，从而实现颜色的连续。图像分辨率由线阵打印机头的像素密度决定。</p>
-</li>
+<p>“连续彩印”。如染料热升华打印机，不同颜色的供墨纸经过线阵热敏打印机头热升华后印在对应的纸上，从而实现颜色的连续。图像分辨率由线阵打印机头的像素密度决定。</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>一张 $h\times w$ 的光栅化图像对应 $[-0.5,h-0.5]\times[-0.5,w-0.5]$ 的二维空间，每个像素的中心都在整点上。像素的值即对应像素的颜色信息。这种信息由各种类型，例如 1-bit 灰度、8-bit RGB， 16-bit RGB， 16-bit “半精度”浮点 RGB， 32-bit 浮点 RGB。比较常见是 8-bit RGB，后面的内容主要也以这个展开。对应图像的存储也有各种方式，如 jpeg（有损压缩），tiff，ppm，png 等。（吐槽：ppm 存储最朴素但查看需要较专业的图像处理程序。）</p>
+<p>一张 <span class="math inline">\(h\times w\)</span> 的光栅化图像对应
+<span class="math inline">\([-0.5,h-0.5]\times[-0.5,w-0.5]\)</span>
+的二维空间，每个像素的中心都在整点上。像素的值即对应像素的颜色信息。这种信息由各种类型，例如
+1-bit 灰度、8-bit RGB， 16-bit RGB， 16-bit “半精度”浮点 RGB， 32-bit
+浮点 RGB。比较常见是 8-bit
+RGB，后面的内容主要也以这个展开。对应图像的存储也有各种方式，如
+jpeg（有损压缩），tiff，ppm，png 等。（吐槽：ppm
+存储最朴素但查看需要较专业的图像处理程序。）</p>
 <details class="note warning"><summary><p>了解更多</p>
 </summary>
 <p>颜色模型有很多种，这里只考虑 RGB、CMY、HSV 颜色模型。</p>
-<p>RGB 与 CMY 高度相似，区别在于 RGB 是加色（向黑色中加入颜色），CMY 是减色（从白光中滤去颜色）。</p>
-<p>HSV 相较于面向硬件的前两者更面向用户，$H$ 可看作一色盘，色盘上一颜色与其补色相差$\pi$，另有两轴 $V$ 与 $S$，分别表示亮度与色深。</p>
+<p>RGB 与 CMY 高度相似，区别在于 RGB 是加色（向黑色中加入颜色），CMY
+是减色（从白光中滤去颜色）。</p>
+<p>HSV 相较于面向硬件的前两者更面向用户，<span
+class="math inline">\(H\)</span>
+可看作一色盘，色盘上一颜色与其补色相差<span
+class="math inline">\(\pi\)</span>，另有两轴 <span
+class="math inline">\(V\)</span> 与 <span
+class="math inline">\(S\)</span>，分别表示亮度与色深。</p>
 
 </details>
-
-<p>Alpha 合成是将背景和图像进行合成的一种方法：<br>$$<br>\textbf{c}&#x3D;\alpha \textbf c_f+(1-\alpha)\textbf c_b<br>$$<br>相当于将两张图像每个像素的颜色通过给定的 $\alpha$ 混合起来。$\alpha$ 的值一般存在另一个灰度图中，被称为 Alpha 遮罩（mask）或透明遮罩。 </p>
-<p>由于我们眼睛独特的处理颜色的方式，例如对于介于 1（白色） 与 0（黑色）之间的灰色，其对应的数值一般不会是 0.5，而是 $1\times 0.5^\gamma$，其中 $\gamma$ 是某个固定的，但因人而异的常数。可以通过放置两张图片，一张黑白像素交错，一张为对应的 $0.5^\gamma$，通过肉眼比较来确定 $\gamma$。</p>
-<h2 id="2-着色"><a href="#2-着色" class="headerlink" title="2 着色"></a>2 着色</h2><h3 id="2-1-简单光线追踪"><a href="#2-1-简单光线追踪" class="headerlink" title="2.1 简单光线追踪"></a>2.1 简单光线追踪</h3><p>思考一下眼睛如何“渲染”眼睛所在视平面某个“像素”。（不同颜色的）光线从光源出发，通过若干次反射&#x2F;透射进入我们眼睛内的“传感器”（视网膜），根据光强混合得到最终的像素。</p>
-<p>那么，假定我们现在已经有了一个充满各类物体的“世界”，如何让计算机“看”到这些物体，得到对应的图像呢？一个很朴素的方法是，模拟所有可能的光线从光源射出后的轨迹。由于可能的光线方向非常多，这个方法无法真正实现；但是利用采样的方法以及光路可逆的性质，我们可以从视平面“反着”射出（若干条）光线，采集光线对应的信息（如光强、RGB 颜色等等）。这就是光线“追踪”。</p>
-<p>先不考虑光的反射、折射，我们可以设计一种朴素的光线追踪：首先从像素中心按特定方向射出一道光线，判断射线是否与物体相交。如果相交，根据物体表面的颜色&#x2F;光源（如点光源、面光源等等）自身的若干信息，以及原点到相交点的距离计算实际像素应该渲染的颜色。（这个颜色与 $\frac{1}{d^2}$ 成正比，其中 $d$ 即原点到相交点的距离。具体见本节“了解更多”。）</p>
-<p>那么，怎么去计算相交呢？实际应用中我们主要考虑射线与圆的相交，以及射线与三角形的相交两种情况。射线与圆的相交较为简单，可自行推导。与三角形的相交可以利用三角形的<strong>重心坐标</strong><br>$$<br>p(\alpha,\beta,\gamma)&#x3D;\alpha\vec a+\beta\vec b+\gamma\vec c<br>$$<br>$\vec a,\vec b,\vec c$ 为三角形三顶点对应的坐标向量。重心坐标的一个良好性质是，当 $\alpha+\beta+\gamma&#x3D;1$ 时，点在三角形所在平面；当 $\alpha,\beta,\gamma&gt;0$ 时，$p(\alpha,\beta,\gamma)$ 在三角形内。因而，我们只需计算对应的 $\alpha,\beta,\gamma$，以及对应的光线 $\vec e+t\vec d$ （$\vec e$ 为光线原点，$\vec d$ 为光线方向）即可，此处略去推导过程。</p>
+<p>Alpha 合成是将背景和图像进行合成的一种方法： <span
+class="math display">\[
+\textbf{c}=\alpha \textbf c_f+(1-\alpha)\textbf c_b
+\]</span> 相当于将两张图像每个像素的颜色通过给定的 <span
+class="math inline">\(\alpha\)</span> 混合起来。<span
+class="math inline">\(\alpha\)</span> 的值一般存在另一个灰度图中，被称为
+Alpha 遮罩（mask）或透明遮罩。</p>
+<p>由于我们眼睛独特的处理颜色的方式，例如对于介于 1（白色） 与
+0（黑色）之间的灰色，其对应的数值一般不会是 0.5，而是 <span
+class="math inline">\(1\times 0.5^\gamma\)</span>，其中 <span
+class="math inline">\(\gamma\)</span>
+是某个固定的，但因人而异的常数。可以通过放置两张图片，一张黑白像素交错，一张为对应的
+<span class="math inline">\(0.5^\gamma\)</span>，通过肉眼比较来确定
+<span class="math inline">\(\gamma\)</span>。</p>
+<h2 id="着色">2 着色</h2>
+<h3 id="简单光线追踪">2.1 简单光线追踪</h3>
+<p>思考一下眼睛如何“渲染”眼睛所在视平面某个“像素”。（不同颜色的）光线从光源出发，通过若干次反射/透射进入我们眼睛内的“传感器”（视网膜），根据光强混合得到最终的像素。</p>
+<p>那么，假定我们现在已经有了一个充满各类物体的“世界”，如何让计算机“看”到这些物体，得到对应的图像呢？一个很朴素的方法是，模拟所有可能的光线从光源射出后的轨迹。由于可能的光线方向非常多，这个方法无法真正实现；但是利用采样的方法以及光路可逆的性质，我们可以从视平面“反着”射出（若干条）光线，采集光线对应的信息（如光强、RGB
+颜色等等）。这就是光线“追踪”。</p>
+<p>先不考虑光的反射、折射，我们可以设计一种朴素的光线追踪：首先从像素中心按特定方向射出一道光线，判断射线是否与物体相交。如果相交，根据物体表面的颜色/光源（如点光源、面光源等等）自身的若干信息，以及原点到相交点的距离计算实际像素应该渲染的颜色。（这个颜色与
+<span class="math inline">\(\frac{1}{d^2}\)</span> 成正比，其中 <span
+class="math inline">\(d\)</span>
+即原点到相交点的距离。具体见本节“了解更多”。）</p>
+<p>那么，怎么去计算相交呢？实际应用中我们主要考虑射线与圆的相交，以及射线与三角形的相交两种情况。射线与圆的相交较为简单，可自行推导。与三角形的相交可以利用三角形的<strong>重心坐标</strong>
+<span class="math display">\[
+p(\alpha,\beta,\gamma)=\alpha\vec a+\beta\vec b+\gamma\vec c
+\]</span> <span class="math inline">\(\vec a,\vec b,\vec c\)</span>
+为三角形三顶点对应的坐标向量。重心坐标的一个良好性质是，当 <span
+class="math inline">\(\alpha+\beta+\gamma=1\)</span>
+时，点在三角形所在平面；当 <span
+class="math inline">\(\alpha,\beta,\gamma&gt;0\)</span> 时，<span
+class="math inline">\(p(\alpha,\beta,\gamma)\)</span>
+在三角形内。因而，我们只需计算对应的 <span
+class="math inline">\(\alpha,\beta,\gamma\)</span>，以及对应的光线 <span
+class="math inline">\(\vec e+t\vec d\)</span> （<span
+class="math inline">\(\vec e\)</span> 为光线原点，<span
+class="math inline">\(\vec d\)</span>
+为光线方向）即可，此处略去推导过程。</p>
 <ul>
 <li><strong>投影</strong></li>
 </ul>
-<p>想象一下我们实现上述光线追踪后得到的图像，我们会发现，它与我们在实际生活中看到的图像好像有些许差别。确切地说，我们得到的图像是平行投影（根据投影方向分为 orthographic 以及 oblique 两种），而我们实际眼睛看到的则遵循透视（perspective）原则，即“近大远小”。</p>
-<p>（怎么去简单理解两种投影的区别呢？考虑我们图像所在的视平面。平行投影的焦点在无穷远处，对应的射入光线与平面垂直；而透视投影的焦点与平面有一固定距离 $d$，射入焦点的平面根据所在位置与视平面呈不同的夹角。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-a7ca2ffad8bc263453ba63f33b1ccef0_720w.webp"></p>
-<h3 id="2-2-照明模型"><a href="#2-2-照明模型" class="headerlink" title="2.2 照明模型"></a>2.2 照明模型</h3><h4 id="2-2-1-真实图像的生成"><a href="#2-2-1-真实图像的生成" class="headerlink" title="2.2.1 真实图像的生成"></a>2.2.1 真实图像的生成</h4><p>假设 $I(x,y,t,\lambda)$ 为像源的空间辐射能量分布。一般来说 $I&#x3D;\frac{\int_S DKI_i(\vec N_0\cdot \vec L_0)dw_i}{\vec N_0\cdot\vec V_0}$，其中 $I_i$ 是发光片元 $dS_i$ （可视为环境中一点光源 $R$）向曲片元 $dS_J$ （可视为环境中一点 $P$）辐射的光亮度，辐射立体角为 $dw_i$； $\vec N_0$ 为 $P$ 的单位法向量， $\vec L_0$ 为 $P$ 指向 $R$ 的单位向量（单位光线向量）， $\vec V_0$ 为 $P$ 指向观察点 $U$ 的单位向量（单位视线向量）；光通量分布函数 $D$ 定义为向立体角内辐射的概率密度， $K$ 是光通量的辐射比；$S$ 为对 $P$ 有光能贡献的所有发光表面集合， $dS_i$ 是 $S$ 中的一片元。$I,I_i,K$ 均是可见光波长 $\lambda$ 的函数（光谱分布）。</p>
-<p>光场瞬时光亮度定义为 $Y(x,y,t)&#x3D;\int_0^{\infty} I(x,y,t,\lambda)V_s(\lambda)d\lambda$，其中 $V_s(\lambda)$ 代表相对光效函数。</p>
-<h4 id="2-2-2-简单光照明模型"><a href="#2-2-2-简单光照明模型" class="headerlink" title="2.2.2 简单光照明模型"></a>2.2.2 简单光照明模型</h4><p><em>光的传播</em></p>
+<p>想象一下我们实现上述光线追踪后得到的图像，我们会发现，它与我们在实际生活中看到的图像好像有些许差别。确切地说，我们得到的图像是平行投影（根据投影方向分为
+orthographic 以及 oblique
+两种），而我们实际眼睛看到的则遵循透视（perspective）原则，即“近大远小”。</p>
+<p>（怎么去简单理解两种投影的区别呢？考虑我们图像所在的视平面。平行投影的焦点在无穷远处，对应的射入光线与平面垂直；而透视投影的焦点与平面有一固定距离
+<span
+class="math inline">\(d\)</span>，射入焦点的平面根据所在位置与视平面呈不同的夹角。</p>
+<p><img
+src="https://pic1.zhimg.com/80/v2-a7ca2ffad8bc263453ba63f33b1ccef0_720w.webp" /></p>
+<h3 id="照明模型">2.2 照明模型</h3>
+<h4 id="真实图像的生成">2.2.1 真实图像的生成</h4>
+<p>假设 <span class="math inline">\(I(x,y,t,\lambda)\)</span>
+为像源的空间辐射能量分布。一般来说 <span
+class="math inline">\(I=\frac{\int_S DKI_i(\vec N_0\cdot \vec
+L_0)dw_i}{\vec N_0\cdot\vec V_0}\)</span>，其中 <span
+class="math inline">\(I_i\)</span> 是发光片元 <span
+class="math inline">\(dS_i\)</span> （可视为环境中一点光源 <span
+class="math inline">\(R\)</span>）向曲片元 <span
+class="math inline">\(dS_J\)</span> （可视为环境中一点 <span
+class="math inline">\(P\)</span>）辐射的光亮度，辐射立体角为 <span
+class="math inline">\(dw_i\)</span>； <span class="math inline">\(\vec
+N_0\)</span> 为 <span class="math inline">\(P\)</span> 的单位法向量，
+<span class="math inline">\(\vec L_0\)</span> 为 <span
+class="math inline">\(P\)</span> 指向 <span
+class="math inline">\(R\)</span> 的单位向量（单位光线向量）， <span
+class="math inline">\(\vec V_0\)</span> 为 <span
+class="math inline">\(P\)</span> 指向观察点 <span
+class="math inline">\(U\)</span>
+的单位向量（单位视线向量）；光通量分布函数 <span
+class="math inline">\(D\)</span> 定义为向立体角内辐射的概率密度， <span
+class="math inline">\(K\)</span> 是光通量的辐射比；<span
+class="math inline">\(S\)</span> 为对 <span
+class="math inline">\(P\)</span> 有光能贡献的所有发光表面集合， <span
+class="math inline">\(dS_i\)</span> 是 <span
+class="math inline">\(S\)</span> 中的一片元。<span
+class="math inline">\(I,I_i,K\)</span> 均是可见光波长 <span
+class="math inline">\(\lambda\)</span> 的函数（光谱分布）。</p>
+<p>光场瞬时光亮度定义为 <span
+class="math inline">\(Y(x,y,t)=\int_0^{\infty}
+I(x,y,t,\lambda)V_s(\lambda)d\lambda\)</span>，其中 <span
+class="math inline">\(V_s(\lambda)\)</span> 代表相对光效函数。</p>
+<h4 id="简单光照明模型">2.2.2 简单光照明模型</h4>
+<p><em>光的传播</em></p>
 <p>反射折射定律不予赘述。</p>
-<p>能量关系。入射光强 $I_i$ &#x3D; 漫反射光强 $I_d$ + 镜面反射光强 $I_s$ + 透射光强 $I_t$ + 被物体所吸收的光强 $I_v$ 。</p>
+<p>能量关系。入射光强 <span class="math inline">\(I_i\)</span> =
+漫反射光强 <span class="math inline">\(I_d\)</span> + 镜面反射光强 <span
+class="math inline">\(I_s\)</span> + 透射光强 <span
+class="math inline">\(I_t\)</span> + 被物体所吸收的光强 <span
+class="math inline">\(I_v\)</span> 。</p>
 <p><em>光的度量</em></p>
-<p>立体角。片元 $dS$ 向点光源 $P$ 所张立体角 $dw&#x3D;\frac{dS}{r^2}$， 其中 $r$ 为点光源到面源中心的垂直距离。</p>
-<p>点发光强度。单位时间内通过 $dS$ 的光能量记为光通量 $dF$，而点光源在某个方向上的发光强度定义为该方向上单位立体角的内的光通量，即 $I&#x3D;\frac{dF}{dw}&#x3D;\frac{dF}{dS}r^2$. 各向同性的点光源在各方向上的单位立体角内通过的光通量相等，即各方向发光强度相等。设发光强度为 $I$，则点光源向外辐射的整个光通量为整个球立体角内的光通量，即 $F&#x3D;\int_{4\pi}Idw&#x3D;4\pi I$.</p>
+<p>立体角。片元 <span class="math inline">\(dS\)</span> 向点光源 <span
+class="math inline">\(P\)</span> 所张立体角 <span
+class="math inline">\(dw=\frac{dS}{r^2}\)</span>， 其中 <span
+class="math inline">\(r\)</span> 为点光源到面源中心的垂直距离。</p>
+<p>点发光强度。单位时间内通过 <span class="math inline">\(dS\)</span>
+的光能量记为光通量 <span
+class="math inline">\(dF\)</span>，而点光源在某个方向上的发光强度定义为该方向上单位立体角的内的光通量，即
+<span class="math inline">\(I=\frac{dF}{dw}=\frac{dF}{dS}r^2\)</span>.
+各向同性的点光源在各方向上的单位立体角内通过的光通量相等，即各方向发光强度相等。设发光强度为
+<span
+class="math inline">\(I\)</span>，则点光源向外辐射的整个光通量为整个球立体角内的光通量，即
+<span class="math inline">\(F=\int_{4\pi}Idw=4\pi I\)</span>.</p>
 <p><em>Phong</em></p>
 <p>简单光照明模型模拟物体表面对光的反射作用，只考虑直接光照的反射作用，而物体间的反射作用只用环境光同一表示。</p>
 <ul>
 <li><p>理想漫反射（Lambertian）</p>
-<p>漫反射光的空间分布是均匀的。记入射光强为 $I_p$，物体表面点 $P$ 法向量为 $\vec N$，从点 $P$ 指向光源的向量为 $\vec L$，两者间夹角为 $\theta$，则漫反射光强为 $I_d&#x3D;I_p K_d\cos\theta,\theta\in(0,\frac \pi 2)$。其中 $K_d$ 为与物体有关的漫反射系数， $K_d\in (0,1)$。（假如用反射度 $R$ 来表示， $K_d&#x3D;\frac{R}{\pi}$。）当 $L,N$ 为单位向量时， $I_d&#x3D;I_p K_d(\vec L\cdot\vec N)$. 多光源情况下可表示为 $I_d&#x3D;K_d\sum\limits_{i} I_{p,i}(\vec L_i\cdot \vec N)$.</p>
-</li>
+<p>漫反射光的空间分布是均匀的。记入射光强为 <span
+class="math inline">\(I_p\)</span>，物体表面点 <span
+class="math inline">\(P\)</span> 法向量为 <span
+class="math inline">\(\vec N\)</span>，从点 <span
+class="math inline">\(P\)</span> 指向光源的向量为 <span
+class="math inline">\(\vec L\)</span>，两者间夹角为 <span
+class="math inline">\(\theta\)</span>，则漫反射光强为 <span
+class="math inline">\(I_d=I_p K_d\cos\theta,\theta\in(0,\frac \pi
+2)\)</span>。其中 <span class="math inline">\(K_d\)</span>
+为与物体有关的漫反射系数， <span class="math inline">\(K_d\in
+(0,1)\)</span>。（假如用反射度 <span class="math inline">\(R\)</span>
+来表示， <span class="math inline">\(K_d=\frac{R}{\pi}\)</span>。）当
+<span class="math inline">\(L,N\)</span> 为单位向量时， <span
+class="math inline">\(I_d=I_p K_d(\vec L\cdot\vec N)\)</span>.
+多光源情况下可表示为 <span class="math inline">\(I_d=K_d\sum\limits_{i}
+I_{p,i}(\vec L_i\cdot \vec N)\)</span>.</p></li>
 <li><p>镜面反射光（Blinn-Phong）</p>
-<p>镜面反射光强可表示为 $I_s&#x3D;I_pK_s\cos^n\alpha,\alpha\in(0,\frac \pi 2)$，其中 $K_s$ 为与物体有关的镜面反射系数，$\alpha$ 为视线方向 $\vec V$ 与反射方向 $\vec R$ 的夹角， $n$ 为反射指数，反应物体表面的光泽程度，一般为 $[1,2000]$，数值越大物体表面越光滑。同样地，当 $\vec V$ 与 $\vec R$ 为单位向量， $I_s&#x3D;I_p K_s(\vec R\cdot \vec V)^n$，其中 $\vec R&#x3D;2\vec N\cos\theta-\vec L&#x3D;2\vec N(\vec N\cdot \vec L)-L$。多光源情况 $I_s&#x3D;K_s\sum\limits_{i}I_{p,i} (\vec R_i\cdot \vec V)^n$。</p>
-</li>
+<p>镜面反射光强可表示为 <span
+class="math inline">\(I_s=I_pK_s\cos^n\alpha,\alpha\in(0,\frac \pi
+2)\)</span>，其中 <span class="math inline">\(K_s\)</span>
+为与物体有关的镜面反射系数，<span class="math inline">\(\alpha\)</span>
+为视线方向 <span class="math inline">\(\vec V\)</span> 与反射方向 <span
+class="math inline">\(\vec R\)</span> 的夹角， <span
+class="math inline">\(n\)</span>
+为反射指数，反应物体表面的光泽程度，一般为 <span
+class="math inline">\([1,2000]\)</span>，数值越大物体表面越光滑。同样地，当
+<span class="math inline">\(\vec V\)</span> 与 <span
+class="math inline">\(\vec R\)</span> 为单位向量， <span
+class="math inline">\(I_s=I_p K_s(\vec R\cdot \vec V)^n\)</span>，其中
+<span class="math inline">\(\vec R=2\vec N\cos\theta-\vec L=2\vec N(\vec
+N\cdot \vec L)-L\)</span>。多光源情况 <span
+class="math inline">\(I_s=K_s\sum\limits_{i}I_{p,i} (\vec R_i\cdot \vec
+V)^n\)</span>。</p></li>
 <li><p>环境光（Ambient）</p>
-<p>环境光忽略光线方向。实际情况中通常用一常数模拟环境光，用公式表示为 $I_e&#x3D;I_a K_a$，其中 $I_a$ 为环境光光强， $K_a$ 为物体对环境光的反射系数。</p>
-</li>
+<p>环境光忽略光线方向。实际情况中通常用一常数模拟环境光，用公式表示为
+<span class="math inline">\(I_e=I_a K_a\)</span>，其中 <span
+class="math inline">\(I_a\)</span> 为环境光光强， <span
+class="math inline">\(K_a\)</span> 为物体对环境光的反射系数。</p></li>
 <li><p>Phong 光照明模型</p>
-<p>$$<br>I&#x3D;I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_pK_s(\vec R\cdot\vec V)^n<br>$$<br>即：反射到视点的光强等于环境光光强+漫反射光强+镜面反射光光强。</p>
+<p><span class="math display">\[
+I=I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_pK_s(\vec R\cdot\vec V)^n
+\]</span>
+即：反射到视点的光强等于环境光光强+漫反射光强+镜面反射光光强。</p>
 <p>为减少计算量，可假设：</p>
 <ul>
-<li>光源在无穷远处，则 $\vec L$ 为常数。</li>
-<li>视点在无穷远处，则 $\vec V$ 为常数。</li>
-<li>用 $(\vec H\cdot\vec N)$ 近似 $(\vec R\cdot\vec V)$，其中 $\vec H&#x3D;\frac{\vec L+\vec V}{|\vec L+\vec V|}$。</li>
+<li>光源在无穷远处，则 <span class="math inline">\(\vec L\)</span>
+为常数。</li>
+<li>视点在无穷远处，则 <span class="math inline">\(\vec V\)</span>
+为常数。</li>
+<li>用 <span class="math inline">\((\vec H\cdot\vec N)\)</span> 近似
+<span class="math inline">\((\vec R\cdot\vec V)\)</span>，其中 <span
+class="math inline">\(\vec H=\frac{\vec L+\vec V}{|\vec L+\vec
+V|}\)</span>。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><em>增量式光照明模型</em> 在每一个多边形的顶点处计算合适的光照明强度或其他参数，然后在各多边形内部均匀插值，最后得到多边形光滑颜色分布。</p>
-<p>双线性光强插值（Gouraud 明暗处理）：计算多边形顶点平均法向，用 Phong 模型计算顶点平均光强，插值计算各离散边的各点光强，最后插值得到多边形内域中各点光强。</p>
-<p>双线性法向插值（Phong 明暗处理）：保留双线性插值，对多边形上的点和内域各点采用增量法；对顶点法向量进行插值，顶点法向量用相邻的多边形的法向量的平均值得到；由插值得到的法向量，计算每个像素的光亮度；假设光源与视点均在无穷远处。</p>
-<h4 id="2-2-3-局部光照明模型"><a href="#2-2-3-局部光照明模型" class="headerlink" title="2.2.3 局部光照明模型*"></a>2.2.3 局部光照明模型*</h4><p>仅处理光源直接照射物体表面的光照明模型称为局部光照明模型，而可处理物体之间光照相互作用的模型称为整体光照明模型。</p>
-<p>光的电磁理论略去不讲。微平面理论，假定微观角度物体表面粗糙不平，由许多微小的理想镜面平面组成，粗糙程度越高，漫反射系数越大。对一实际物体表面，其反射率为 $DG\rho(\theta,\lambda)$，其中 $D$ 为微平面方法向的分布函数，$G$ 为由于微平面的相互遮挡或屏蔽而使光产生衰减的因子。</p>
-<p>$D$ 可通过 Gauss 分布函数 $D&#x3D;ke^{-\frac {a^2} {m^2}}$ （$\alpha$ 为微平面法向与平均法向夹角，$m$ 为微平面斜率均方根）或 Berkmann 分布函数 $D&#x3D;\frac{1}{m^2\cos^4\alpha}e^{-\frac{tg^2\alpha}{m^2}}$模拟。$m$ 越小，表面越光滑。而对于 $G$，若光路无遮挡或屏蔽，令 $G&#x3D;1$；对于部分反射光被屏蔽的情况，有 $G_m&#x3D;\frac{2(\vec N\cdot \vec H)(\vec N\cdot \vec V)}{\vec V\cdot\vec H}$， 对于部分入射光被遮挡的情况，有 $G_s&#x3D;\frac{2(\vec N\cdot \vec H)(\vec N\cdot \vec L)}{\vec V\cdot\vec H}$，其中 $\vec N$ 为物体表面法向， $\vec H$ 为微平面法向， $\vec L$ 为入射光方向， $\vec V$ 为观察方向。实际应用中取 $G&#x3D;\min{1,G_m,G_s}$。</p>
-<p>用 $R_{bd}$ 表示物体表面对入射自然光的反射率系数，写成反射光光强 $I_r$ 与单位时间内单位面积上的入射光能量 $E_i$ 的比，即 $R_{bd}&#x3D;\frac{I_r}{E_i}$。式中 $E_i$ 可用入射光光强 $I_i$ 与单位面积向光源所张立体角 $dw$ 表示为 $E_i&#x3D;I_i\cos\theta dw&#x3D;I_i(\vec N\cdot\vec L)dw$，于是有 $I_r&#x3D;R_{bd}I_i(\vec N\cdot\vec L)dw$。而反射率系数可写为漫反射率与镜面反射率的代数和，即 $R_{bd}&#x3D;K_dR_d+K_sR_s$，其中 $K_d+K_b&#x3D;1$，对应漫反射系数与镜面反射系数。 $R_d&#x3D;R_d(\lambda)$ 为物体表面漫反射率，受入射光波长影响；$R_s&#x3D;\frac{DG\rho(\theta,\lambda)}{\pi(\vec N\cdot\vec L)(\vec N\cdot\vec V)}$ 为物体表面镜面反射率。因而局部光照明模型最后表示为<br>$$<br>I_r&#x3D;I_a K_a+I_i(\vec N\cdot\vec L)dw(K_dR_d+K_sR_s)<br>$$</p>
-<p>$2^{[2]}&#x3D;{00,01,10,11}$</p>
-<p>$\mathscr F&#x3D;{00,10}$</p>
-<p>$\hat f_S $</p>
-<p>$\hat f_S:S\in \mathscr F$</p>
-<p>$f’\sum\limits_{S\in \mathscr F} \hat f_S\chi_S(x)$</p>
-<p>function $\mathbb E[(f-f’)^2]\le \epsilon$ on $\mathscr F$.</p>
-<p>spectrum $\sum\limits_{S\not \in \mathscr F} \hat f_S^2 \le \epsilon$ on $\mathscr F$</p>
-<h4 id="2-2-4-光透射模型"><a href="#2-2-4-光透射模型" class="headerlink" title="2.2.4 光透射模型*"></a>2.2.4 光透射模型*</h4><p>透明效果的简单模拟。像素点颜色可通过 $I&#x3D;tI_b+(1-t)I_a$ 进行颜色调和（其中 $t$ 为物体透明度），从而简单模拟出光的透射效果。</p>
-<p><em>Whitted 光透射模型</em> 在简单光照明模型上增加透射光，即得到 Whitted 光透射模型<br>$$<br>I&#x3D;I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_p K_s(\vec H\cdot\vec N)^n+I_tK_t’<br>$$<br>​	，其中 $I_t$ 为折射方向入射光强度，$K’_t$ 为透射系数。若透明体为一镜面反射体，则应加上环境反射光一项，得到 Whitted 整体光照模型<br>$$<br>I&#x3D;I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_p K_s(\vec H\cdot\vec N)^n+I_tK_t’+I_sK_s’<br>$$</p>
-<p>​	，其中 $I_s$ 为镜面反射方向入射光强度， $K’_s$ 为镜面反射系数。</p>
-<p>​	实现细节。给定实现方向 $\vec V$ 与法向方向 $\vec N$，视线方向 $\vec V$ 的反射方向 $\vec S&#x3D;2(\vec N\cdot\vec V)\vec N-\vec V$，而折射方向 $\vec T&#x3D;k_f(\vec N-\vec V’)-\vec N$，其中 $k_f&#x3D;\frac{1}{\sqrt{\eta^2|\vec V’|^2-|\vec N-\vec V|^2}},\vec V’&#x3D;\frac{\vec V}{|\vec N\cdot\vec V|},\eta&#x3D;\frac{\eta_1}{\eta_2}&#x3D;\frac{\sin\theta_1}{\sin\theta_2}$， $\eta_1,\eta_2$ 分别为视点所在空间的介质折射率、物体的折射率。此时 $\vec T$ 为非单位向量。或采用 $\vec T&#x3D;-\frac{1}{\eta}\vec V-(\cos\theta_2-\frac{1}{\eta}\cos\theta_1)\vec N$，其中 $\cos\theta_2&#x3D;\sqrt{1-\frac{1}{\eta^2}(1-\cos^2\theta_1)}$，$\cos\theta_1&#x3D;\vec N\cdot\vec V$。此时 $\vec T$ 为单位向量。</p>
-<p><em>Hall 光透射模型</em> Hall 光透射模型可模拟透射高光的效果。对于理想漫透射面，透射光光强在各个方向均相等。此时点 $P$ 处漫透射光光强为 $I_{dt}&#x3D;I_pK_{dt}(-\vec N\cdot\vec L)$，其中 $K_{dt}\in [0,1]$ 为物体漫透射系数，$\vec L$ 为光源方向， $\vec N$ 为面法向。对透射高光现象， $I_t&#x3D;I_pK_t(\vec T\cdot\vec V)^n$，其中 $I_t$ 为规则透射光在视线方向的强度， $I_p$ 为点光源强度， $K_t$ 为物体透明系数， $n$ 为反应物体表面光泽的常数。简化处理同 Phong 光照明模型；区别是用 $\vec H_{t}\cdot\vec N$ 代替 $\vec T\cdot\vec V$， 其中 $\vec H_t$ 可视为一虚拟理想透射面法向，有 $\vec H_t&#x3D;\frac{\vec L+\frac{\vec V}{\eta}}{\frac{1}{\eta}\cos\theta_1-\cos\theta_2}$，简化并单位化有 $\vec H_t&#x3D;sign(\eta_1-\eta_2)\frac{\eta_2\vec L+\eta_1\vec V}{|\eta_2\vec L+\eta_1\vec V|}$，其中 $\eta_1&gt;\eta_2\Rightarrow \theta_1&lt;\theta_2$ 时 $sign$ 取正号，否则取负号。</p>
+<p><em>增量式光照明模型</em>
+在每一个多边形的顶点处计算合适的光照明强度或其他参数，然后在各多边形内部均匀插值，最后得到多边形光滑颜色分布。</p>
+<p>双线性光强插值（Gouraud 明暗处理）：计算多边形顶点平均法向，用 Phong
+模型计算顶点平均光强，插值计算各离散边的各点光强，最后插值得到多边形内域中各点光强。</p>
+<p>双线性法向插值（Phong
+明暗处理）：保留双线性插值，对多边形上的点和内域各点采用增量法；对顶点法向量进行插值，顶点法向量用相邻的多边形的法向量的平均值得到；由插值得到的法向量，计算每个像素的光亮度；假设光源与视点均在无穷远处。</p>
+<h4 id="局部光照明模型">2.2.3 局部光照明模型*</h4>
+<p>仅处理光源直接照射物体表面的光照明模型称为局部光照明模型，而可处理物体之间光照相互作用的模型称为整体光照明模型。</p>
+<p>光的电磁理论略去不讲。微平面理论，假定微观角度物体表面粗糙不平，由许多微小的理想镜面平面组成，粗糙程度越高，漫反射系数越大。对一实际物体表面，其反射率为
+<span class="math inline">\(DG\rho(\theta,\lambda)\)</span>，其中 <span
+class="math inline">\(D\)</span> 为微平面方法向的分布函数，<span
+class="math inline">\(G\)</span>
+为由于微平面的相互遮挡或屏蔽而使光产生衰减的因子。</p>
+<p><span class="math inline">\(D\)</span> 可通过 Gauss 分布函数 <span
+class="math inline">\(D=ke^{-\frac {a^2} {m^2}}\)</span> （<span
+class="math inline">\(\alpha\)</span> 为微平面法向与平均法向夹角，<span
+class="math inline">\(m\)</span> 为微平面斜率均方根）或 Berkmann
+分布函数 <span
+class="math inline">\(D=\frac{1}{m^2\cos^4\alpha}e^{-\frac{tg^2\alpha}{m^2}}\)</span>模拟。<span
+class="math inline">\(m\)</span> 越小，表面越光滑。而对于 <span
+class="math inline">\(G\)</span>，若光路无遮挡或屏蔽，令 <span
+class="math inline">\(G=1\)</span>；对于部分反射光被屏蔽的情况，有 <span
+class="math inline">\(G_m=\frac{2(\vec N\cdot \vec H)(\vec N\cdot \vec
+V)}{\vec V\cdot\vec H}\)</span>， 对于部分入射光被遮挡的情况，有 <span
+class="math inline">\(G_s=\frac{2(\vec N\cdot \vec H)(\vec N\cdot \vec
+L)}{\vec V\cdot\vec H}\)</span>，其中 <span class="math inline">\(\vec
+N\)</span> 为物体表面法向， <span class="math inline">\(\vec H\)</span>
+为微平面法向， <span class="math inline">\(\vec L\)</span>
+为入射光方向， <span class="math inline">\(\vec V\)</span>
+为观察方向。实际应用中取 <span
+class="math inline">\(G=\min\{1,G_m,G_s\}\)</span>。</p>
+<p>用 <span class="math inline">\(R_{bd}\)</span>
+表示物体表面对入射自然光的反射率系数，写成反射光光强 <span
+class="math inline">\(I_r\)</span> 与单位时间内单位面积上的入射光能量
+<span class="math inline">\(E_i\)</span> 的比，即 <span
+class="math inline">\(R_{bd}=\frac{I_r}{E_i}\)</span>。式中 <span
+class="math inline">\(E_i\)</span> 可用入射光光强 <span
+class="math inline">\(I_i\)</span> 与单位面积向光源所张立体角 <span
+class="math inline">\(dw\)</span> 表示为 <span
+class="math inline">\(E_i=I_i\cos\theta dw=I_i(\vec N\cdot\vec
+L)dw\)</span>，于是有 <span class="math inline">\(I_r=R_{bd}I_i(\vec
+N\cdot\vec
+L)dw\)</span>。而反射率系数可写为漫反射率与镜面反射率的代数和，即 <span
+class="math inline">\(R_{bd}=K_dR_d+K_sR_s\)</span>，其中 <span
+class="math inline">\(K_d+K_b=1\)</span>，对应漫反射系数与镜面反射系数。
+<span class="math inline">\(R_d=R_d(\lambda)\)</span>
+为物体表面漫反射率，受入射光波长影响；<span
+class="math inline">\(R_s=\frac{DG\rho(\theta,\lambda)}{\pi(\vec
+N\cdot\vec L)(\vec N\cdot\vec V)}\)</span>
+为物体表面镜面反射率。因而局部光照明模型最后表示为 <span
+class="math display">\[
+I_r=I_a K_a+I_i(\vec N\cdot\vec L)dw(K_dR_d+K_sR_s)
+\]</span></p>
+<p><span class="math inline">\(2^{[2]}=\{00,01,10,11\}\)</span></p>
+<p><span class="math inline">\(\mathscr F=\{00,10\}\)</span></p>
+<p>$f_S $</p>
+<p><span class="math inline">\(\hat f_S:S\in \mathscr F\)</span></p>
+<p><span class="math inline">\(f&#39;\sum\limits_{S\in \mathscr F} \hat
+f_S\chi_S(x)\)</span></p>
+<p>function <span class="math inline">\(\mathbb E[(f-f&#39;)^2]\le
+\epsilon\)</span> on <span class="math inline">\(\mathscr
+F\)</span>.</p>
+<p>spectrum <span class="math inline">\(\sum\limits_{S\not \in \mathscr
+F} \hat f_S^2 \le \epsilon\)</span> on <span
+class="math inline">\(\mathscr F\)</span></p>
+<h4 id="光透射模型">2.2.4 光透射模型*</h4>
+<p>透明效果的简单模拟。像素点颜色可通过 <span
+class="math inline">\(I=tI_b+(1-t)I_a\)</span> 进行颜色调和（其中 <span
+class="math inline">\(t\)</span>
+为物体透明度），从而简单模拟出光的透射效果。</p>
+<p><em>Whitted 光透射模型</em> 在简单光照明模型上增加透射光，即得到
+Whitted 光透射模型 <span class="math display">\[
+I=I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_p K_s(\vec H\cdot\vec
+N)^n+I_tK_t&#39;
+\]</span> ​ ，其中 <span class="math inline">\(I_t\)</span>
+为折射方向入射光强度，<span class="math inline">\(K&#39;_t\)</span>
+为透射系数。若透明体为一镜面反射体，则应加上环境反射光一项，得到 Whitted
+整体光照模型 <span class="math display">\[
+I=I_aK_a+I_pK_d(\vec L\cdot\vec N)+I_p K_s(\vec H\cdot\vec
+N)^n+I_tK_t&#39;+I_sK_s&#39;
+\]</span></p>
+<p>​ ，其中 <span class="math inline">\(I_s\)</span>
+为镜面反射方向入射光强度， <span class="math inline">\(K&#39;_s\)</span>
+为镜面反射系数。</p>
+<p>​ 实现细节。给定实现方向 <span class="math inline">\(\vec V\)</span>
+与法向方向 <span class="math inline">\(\vec N\)</span>，视线方向 <span
+class="math inline">\(\vec V\)</span> 的反射方向 <span
+class="math inline">\(\vec S=2(\vec N\cdot\vec V)\vec N-\vec
+V\)</span>，而折射方向 <span class="math inline">\(\vec T=k_f(\vec
+N-\vec V&#39;)-\vec N\)</span>，其中 <span
+class="math inline">\(k_f=\frac{1}{\sqrt{\eta^2|\vec V&#39;|^2-|\vec
+N-\vec V|^2}},\vec V&#39;=\frac{\vec V}{|\vec N\cdot\vec
+V|},\eta=\frac{\eta_1}{\eta_2}=\frac{\sin\theta_1}{\sin\theta_2}\)</span>，
+<span class="math inline">\(\eta_1,\eta_2\)</span>
+分别为视点所在空间的介质折射率、物体的折射率。此时 <span
+class="math inline">\(\vec T\)</span> 为非单位向量。或采用 <span
+class="math inline">\(\vec T=-\frac{1}{\eta}\vec
+V-(\cos\theta_2-\frac{1}{\eta}\cos\theta_1)\vec N\)</span>，其中 <span
+class="math inline">\(\cos\theta_2=\sqrt{1-\frac{1}{\eta^2}(1-\cos^2\theta_1)}\)</span>，<span
+class="math inline">\(\cos\theta_1=\vec N\cdot\vec V\)</span>。此时
+<span class="math inline">\(\vec T\)</span> 为单位向量。</p>
+<p><em>Hall 光透射模型</em> Hall
+光透射模型可模拟透射高光的效果。对于理想漫透射面，透射光光强在各个方向均相等。此时点
+<span class="math inline">\(P\)</span> 处漫透射光光强为 <span
+class="math inline">\(I_{dt}=I_pK_{dt}(-\vec N\cdot\vec
+L)\)</span>，其中 <span class="math inline">\(K_{dt}\in [0,1]\)</span>
+为物体漫透射系数，<span class="math inline">\(\vec L\)</span>
+为光源方向， <span class="math inline">\(\vec N\)</span>
+为面法向。对透射高光现象， <span class="math inline">\(I_t=I_pK_t(\vec
+T\cdot\vec V)^n\)</span>，其中 <span class="math inline">\(I_t\)</span>
+为规则透射光在视线方向的强度， <span class="math inline">\(I_p\)</span>
+为点光源强度， <span class="math inline">\(K_t\)</span> 为物体透明系数，
+<span class="math inline">\(n\)</span>
+为反应物体表面光泽的常数。简化处理同 Phong 光照明模型；区别是用 <span
+class="math inline">\(\vec H_{t}\cdot\vec N\)</span> 代替 <span
+class="math inline">\(\vec T\cdot\vec V\)</span>， 其中 <span
+class="math inline">\(\vec H_t\)</span> 可视为一虚拟理想透射面法向，有
+<span class="math inline">\(\vec H_t=\frac{\vec L+\frac{\vec
+V}{\eta}}{\frac{1}{\eta}\cos\theta_1-\cos\theta_2}\)</span>，简化并单位化有
+<span class="math inline">\(\vec H_t=sign(\eta_1-\eta_2)\frac{\eta_2\vec
+L+\eta_1\vec V}{|\eta_2\vec L+\eta_1\vec V|}\)</span>，其中 <span
+class="math inline">\(\eta_1&gt;\eta_2\Rightarrow
+\theta_1&lt;\theta_2\)</span> 时 <span
+class="math inline">\(sign\)</span> 取正号，否则取负号。</p>
 <p><em>简单光反射透射模型</em></p>
-<p>综合简单光照明模型，Whitted 光透射模型和 Hall 光透射模型，<br>$$<br>I&#x3D;I_aK_a+\sum\limits_{i}I_{p,i}(K_{ds}(L_i\cdot N)+K_s(\vec H_{s,i}\cdot \vec N)^{n_i})+\sum\limits_{j}I_{p,j}[K_{dt}(-\vec N\cdot L_j)+K_t(\vec N\cdot\vec H_{t,j})^{n_t}]+I_tK_t’+I_sK_s’<br>$$</p>
-<h4 id="2-2-5-整体光照明模型"><a href="#2-2-5-整体光照明模型" class="headerlink" title="2.2.5 整体光照明模型*"></a>2.2.5 整体光照明模型*</h4><p><em>光线追踪算法</em> 从视点进行视线跟踪，跟踪镜面反射与折射。算法终止当且仅当 1）光线未碰到任何物体 2）光线碰到了背景 3）光线经多次反射与折射后对于视点的光强贡献衰减到很小 4）光线反射或折射次数大于给定值。</p>
-<p>算法加速。自适应深度控制；包围盒及层次结构；三维 DDA 算法；空间八叉树剖分技术。</p>
+<p>综合简单光照明模型，Whitted 光透射模型和 Hall 光透射模型， <span
+class="math display">\[
+I=I_aK_a+\sum\limits_{i}I_{p,i}(K_{ds}(L_i\cdot N)+K_s(\vec H_{s,i}\cdot
+\vec N)^{n_i})+\sum\limits_{j}I_{p,j}[K_{dt}(-\vec N\cdot L_j)+K_t(\vec
+N\cdot\vec H_{t,j})^{n_t}]+I_tK_t&#39;+I_sK_s&#39;
+\]</span></p>
+<h4 id="整体光照明模型">2.2.5 整体光照明模型*</h4>
+<p><em>光线追踪算法</em>
+从视点进行视线跟踪，跟踪镜面反射与折射。算法终止当且仅当
+1）光线未碰到任何物体 2）光线碰到了背景
+3）光线经多次反射与折射后对于视点的光强贡献衰减到很小
+4）光线反射或折射次数大于给定值。</p>
+<p>算法加速。自适应深度控制；包围盒及层次结构；三维 DDA
+算法；空间八叉树剖分技术。</p>
 <p><em>辐射度方法</em> 略。<del>当时没学会，饶了我吧。</del></p>
-<h4 id="2-2-6-实时真实感图形学技术"><a href="#2-2-6-实时真实感图形学技术" class="headerlink" title="2.2.6 实时真实感图形学技术*"></a>2.2.6 实时真实感图形学技术*</h4><p>基于图像的绘制技术。通过视图插值还原六维全光函数，从而实现加速绘制。</p>
+<h4 id="实时真实感图形学技术">2.2.6 实时真实感图形学技术*</h4>
+<p>基于图像的绘制技术。通过视图插值还原六维全光函数，从而实现加速绘制。</p>
 <p>景物模拟。将物理原理引入图形学中，如布料模拟采用质点-弹簧模型。</p>
-<h2 id="3-图形流水线"><a href="#3-图形流水线" class="headerlink" title="3 图形流水线"></a>3 图形流水线</h2><h3 id="3-1-观察"><a href="#3-1-观察" class="headerlink" title="3.1 观察"></a>3.1 观察</h3><p>假如将我们丢到计算机里一个包含若干物体的三维“世界”空间，我们需要什么样的信息去“看”这个世界，或者说，怎么去获得图像呢？事实上，最简单的模型只需要我们相对于世界坐标的位置以及我们看的角度（即视角），共五维。更复杂的模型还需要考虑其他的信息，例如，我们的眼睛可以看作是一台带凸透镜的相机，这个凸透镜的焦距、视屏距离透镜中心的距离，都可能是我们需要考虑的因素。</p>
-<p>有了这些信息，我们又应当如何去将物体投影到我们的视平面呢？图形学一般采用<strong>视图变换</strong>来将视野内的物体投影到屏幕空间，然后做进一步地处理。视图变换将对象由对象空间转换到普遍的世界空间，再通过镜头变换转换到相机空间（以相机为原点的坐标轴），经过投影变换转换到 Canonical View Volumn（或 NDC，归一化设备坐标），最后通过视口变换转换到屏幕空间。</p>
+<h2 id="图形流水线">3 图形流水线</h2>
+<h3 id="观察">3.1 观察</h3>
+<p>假如将我们丢到计算机里一个包含若干物体的三维“世界”空间，我们需要什么样的信息去“看”这个世界，或者说，怎么去获得图像呢？事实上，最简单的模型只需要我们相对于世界坐标的位置以及我们看的角度（即视角），共五维。更复杂的模型还需要考虑其他的信息，例如，我们的眼睛可以看作是一台带凸透镜的相机，这个凸透镜的焦距、视屏距离透镜中心的距离，都可能是我们需要考虑的因素。</p>
+<p>有了这些信息，我们又应当如何去将物体投影到我们的视平面呢？图形学一般采用<strong>视图变换</strong>来将视野内的物体投影到屏幕空间，然后做进一步地处理。视图变换将对象由对象空间转换到普遍的世界空间，再通过镜头变换转换到相机空间（以相机为原点的坐标轴），经过投影变换转换到
+Canonical View Volumn（或
+NDC，归一化设备坐标），最后通过视口变换转换到屏幕空间。</p>
 <p>要想实现变换，我们需要变换矩阵这一基本工具来帮助我们在世界空间内进行坐标的转化。这一部分的内容见“变换矩阵”一节。上述的投影变换、视口变换以及镜头转换，详见“视图变换”一节。由世界空间向相机空间的转换，详见“相机模型”一节。</p>
-<h4 id="3-1-1-变换矩阵"><a href="#3-1-1-变换矩阵" class="headerlink" title="3.1.1 变换矩阵"></a>3.1.1 变换矩阵</h4><ul>
+<h4 id="变换矩阵">3.1.1 变换矩阵</h4>
+<ul>
 <li><p><strong>2D 变换</strong></p>
 <p>2D 变换矩阵主要包括</p>
 <ul>
-<li><p>缩放（Scaling）：$\begin{bmatrix}a&amp;0\0&amp;b\end{bmatrix}$。</p>
-</li>
+<li><p>缩放（Scaling）：<span
+class="math inline">\(\begin{bmatrix}a&amp;0\\0&amp;b\end{bmatrix}\)</span>。</p></li>
 <li><p>错切（Shearing）</p>
-<p>沿 $x$ 方向$\begin{bmatrix}1&amp;s\0&amp;1\end{bmatrix}$，沿 $y$ 方向 $\begin{bmatrix}1&amp;0\s&amp;1\end{bmatrix}$。（$s$ 可以看作是错切距离，也可看作是错切角度 $s&#x3D;\tan \phi$）</p>
-</li>
-<li><p>旋转（Rotation）：$\begin{bmatrix}\cos\phi&amp;-\sin\phi\\sin\phi&amp;\cos\phi\end{bmatrix}$。</p>
-</li>
+<p>沿 <span class="math inline">\(x\)</span> 方向<span
+class="math inline">\(\begin{bmatrix}1&amp;s\\0&amp;1\end{bmatrix}\)</span>，沿
+<span class="math inline">\(y\)</span> 方向 <span
+class="math inline">\(\begin{bmatrix}1&amp;0\\s&amp;1\end{bmatrix}\)</span>。（<span
+class="math inline">\(s\)</span> 可以看作是错切距离，也可看作是错切角度
+<span class="math inline">\(s=\tan \phi\)</span>）</p></li>
+<li><p>旋转（Rotation）：<span
+class="math inline">\(\begin{bmatrix}\cos\phi&amp;-\sin\phi\\\sin\phi&amp;\cos\phi\end{bmatrix}\)</span>。</p></li>
 <li><p>镜像（Reflection）：</p>
-<p>$x$ 轴对称 $\begin{bmatrix}1&amp;0\0&amp;-1\end{bmatrix}$，$y$ 轴对称 $\begin{bmatrix}-1&amp;0\0&amp;1\end{bmatrix}$。</p>
-<p>变换的合成遵循右先原则，而分解一般采用 SVD 分解（一般分解出 3 个：旋转，缩放，旋转）。逆运算可以应用矩阵的性质（例如对角矩阵取倒数，正交矩阵取转置）。</p>
-</li>
-</ul>
-</li>
+<p><span class="math inline">\(x\)</span> 轴对称 <span
+class="math inline">\(\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}\)</span>，<span
+class="math inline">\(y\)</span> 轴对称 <span
+class="math inline">\(\begin{bmatrix}-1&amp;0\\0&amp;1\end{bmatrix}\)</span>。</p>
+<p>变换的合成遵循右先原则，而分解一般采用 SVD 分解（一般分解出 3
+个：旋转，缩放，旋转）。逆运算可以应用矩阵的性质（例如对角矩阵取倒数，正交矩阵取转置）。</p></li>
+</ul></li>
 <li><p>3D 变换</p>
-<p>3D 变换与 2D 变换类似，大部分情况可以转化为固定某一坐标轴做变换。一些需要补充的情况如下：</p>
+<p>3D 变换与 2D
+变换类似，大部分情况可以转化为固定某一坐标轴做变换。一些需要补充的情况如下：</p>
 <ul>
-<li><p>绕给定方向 $\textbf{w}$ 旋转：先求旋转矩阵 $\textbf{R}$，将 $z$ 轴旋转到 $\textbf{w}$ 方向，绕方向旋转后再把 $z$ 轴转回来。可以通过限定特征值 $\lambda&#x3D;1$ 来确定唯一的旋转矩阵。</p>
-</li>
-<li><p>变换法线：对表面施加 $\textbf{M}$ 变换后，法线旋转矩阵为 $\textbf{N}&#x3D;(\textbf M^{-1})^\top$。证明略。</p>
-</li>
-<li><p>平移变换：有时我们需要移动坐标。我们只需要多加一维代表“常数 $1$”即可。2D、3D 平移变换如下。<br>$$<br>\begin{bmatrix}1&amp;0&amp;x_t\0&amp;1&amp;y_t\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\y\1\end{bmatrix}\quad \begin{bmatrix}1&amp;0&amp;0&amp;x_t\0&amp;1&amp;0&amp;y_t\0&amp;0&amp;1&amp;z_t\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\y\z\1\end{bmatrix}<br>$$</p>
-</li>
-<li><p>仿射变换：将平移、缩放、旋转混合起来。任何一个矩阵都可以用仿射变换表示，并分解成平移、缩放、旋转矩阵。<br>$$<br>\begin{bmatrix}1&amp;0&amp;0&amp;x_t\0&amp;1&amp;0&amp;y_t\0&amp;0&amp;1&amp;z_t\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}&amp;0\a_{21}&amp;a_{22}&amp;a_{23}&amp;0\a_{31}&amp;a_{32}&amp;a_{33}&amp;0\0&amp;0&amp;0&amp;1\end{bmatrix}<br>$$<br>不同坐标系之间的转换可以通过仿射变换实现。</p>
-</li>
+<li><p>绕给定方向 <span class="math inline">\(\textbf{w}\)</span>
+旋转：先求旋转矩阵 <span class="math inline">\(\textbf{R}\)</span>，将
+<span class="math inline">\(z\)</span> 轴旋转到 <span
+class="math inline">\(\textbf{w}\)</span> 方向，绕方向旋转后再把 <span
+class="math inline">\(z\)</span> 轴转回来。可以通过限定特征值 <span
+class="math inline">\(\lambda=1\)</span> 来确定唯一的旋转矩阵。</p></li>
+<li><p>变换法线：对表面施加 <span
+class="math inline">\(\textbf{M}\)</span> 变换后，法线旋转矩阵为 <span
+class="math inline">\(\textbf{N}=(\textbf
+M^{-1})^\top\)</span>。证明略。</p></li>
+<li><p>平移变换：有时我们需要移动坐标。我们只需要多加一维代表“常数 <span
+class="math inline">\(1\)</span>”即可。2D、3D 平移变换如下。 <span
+class="math display">\[
+\begin{bmatrix}1&amp;0&amp;x_t\\0&amp;1&amp;y_t\\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\1\end{bmatrix}\quad
+\begin{bmatrix}1&amp;0&amp;0&amp;x_t\\0&amp;1&amp;0&amp;y_t\\0&amp;0&amp;1&amp;z_t\\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\\1\end{bmatrix}
+\]</span></p></li>
+<li><p>仿射变换：将平移、缩放、旋转混合起来。任何一个矩阵都可以用仿射变换表示，并分解成平移、缩放、旋转矩阵。
+<span class="math display">\[
+\begin{bmatrix}1&amp;0&amp;0&amp;x_t\\0&amp;1&amp;0&amp;y_t\\0&amp;0&amp;1&amp;z_t\\0&amp;0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}&amp;0\\a_{21}&amp;a_{22}&amp;a_{23}&amp;0\\a_{31}&amp;a_{32}&amp;a_{33}&amp;0\\0&amp;0&amp;0&amp;1\end{bmatrix}
+\]</span> 不同坐标系之间的转换可以通过仿射变换实现。</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="3-1-2-视图变换"><a href="#3-1-2-视图变换" class="headerlink" title="3.1.2 视图变换"></a>3.1.2 视图变换</h4><p>正如本章序所述，</p>
+<h4 id="视图变换">3.1.2 视图变换</h4>
+<p>正如本章序所述，</p>
 <blockquote>
-<p>图形学一般采用视图变换来将视野内的物体投影到屏幕空间，然后进行进一步地处理。视图变换将对象由对象空间转换到普遍的世界空间，再通过<strong>镜头变换</strong>转换到相机空间（以相机为原点的坐标轴），经过<strong>投影变换</strong>转换到 Canonical View Volumn（或 NDC，归一化设备坐标），最后通过<strong>视口变换</strong>转换到屏幕空间。</p>
+<p>图形学一般采用视图变换来将视野内的物体投影到屏幕空间，然后进行进一步地处理。视图变换将对象由对象空间转换到普遍的世界空间，再通过<strong>镜头变换</strong>转换到相机空间（以相机为原点的坐标轴），经过<strong>投影变换</strong>转换到
+Canonical View Volumn（或
+NDC，归一化设备坐标），最后通过<strong>视口变换</strong>转换到屏幕空间。</p>
 </blockquote>
-<p><img src="https://pic3.zhimg.com/80/v2-8e45a895e2f91a9e68287ab20f7541d2_720w.webp"></p>
+<p><img
+src="https://pic3.zhimg.com/80/v2-8e45a895e2f91a9e68287ab20f7541d2_720w.webp" /></p>
 <p><strong>视口变换</strong></p>
-<p>在 OpenGL 中，NDC 范围一般是 $[-1,1]^3$ 的正方体，而对于我们的屏幕空间，若分辨率为 $n_x\times n_y$，屏幕空间的范围即为 $[-0.5,n_x-0.5]\times [-0.5,n_y-0.5]$（像素中央为整点）。对应的变换矩阵容易写出。（注意 $z$ 轴的深度信息保持不变，用于后续做消隐等工作）<br>$$<br>\begin{bmatrix}x_{screen}\y_{screen}\z_{screen}\1\end{bmatrix}&#x3D;\begin{bmatrix}\frac{n_x}{2} &amp; 0&amp;0&amp;\frac{n_x-1}{2}\0&amp;\frac{n_y}{2}&amp;0&amp;\frac{n_y-1}{2}\0&amp;0&amp;1&amp;0\0&amp;0&amp;0&amp;1 \end{bmatrix}\begin{bmatrix}x_{ndc}\y_{ndc}\z_{ndc}\1\end{bmatrix}<br>$$<br><strong>投影变换</strong></p>
+<p>在 OpenGL 中，NDC 范围一般是 <span
+class="math inline">\([-1,1]^3\)</span>
+的正方体，而对于我们的屏幕空间，若分辨率为 <span
+class="math inline">\(n_x\times n_y\)</span>，屏幕空间的范围即为 <span
+class="math inline">\([-0.5,n_x-0.5]\times
+[-0.5,n_y-0.5]\)</span>（像素中央为整点）。对应的变换矩阵容易写出。（注意
+<span class="math inline">\(z\)</span>
+轴的深度信息保持不变，用于后续做消隐等工作） <span
+class="math display">\[
+\begin{bmatrix}x_{screen}\\y_{screen}\\z_{screen}\\1\end{bmatrix}=\begin{bmatrix}\frac{n_x}{2}
+&amp;
+0&amp;0&amp;\frac{n_x-1}{2}\\0&amp;\frac{n_y}{2}&amp;0&amp;\frac{n_y-1}{2}\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1
+\end{bmatrix}\begin{bmatrix}x_{ndc}\\y_{ndc}\\z_{ndc}\\1\end{bmatrix}
+\]</span> <strong>投影变换</strong></p>
 <ul>
 <li><p>正投影变换</p>
 <p>我们先考虑最简单的投影变换：正投影变换。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-56a07c35e2f6bc752dcea3110fe85362_720w.webp"></p>
-<p>假定我们的视野空间（视屏所能看到的空间）为 $[l,r]\times[b,t]\times[f,n]$。那么变换矩阵为<br>$$<br>\textbf{M}_{orth}&#x3D;\begin{bmatrix}\frac 2 {r-l} &amp;0&amp;0&amp;-\frac{r+l}{r-l}\0&amp;\frac 2 {t-b}&amp;0&amp;-\frac{t+b}{t-b}\0&amp;0&amp;\frac 2 {n-f}&amp;-\frac{n+f}{n-f}\0&amp;0&amp;0&amp;1\end{bmatrix}<br>$$</p>
-</li>
+<p><img
+src="https://pic3.zhimg.com/80/v2-56a07c35e2f6bc752dcea3110fe85362_720w.webp" /></p>
+<p>假定我们的视野空间（视屏所能看到的空间）为 <span
+class="math inline">\([l,r]\times[b,t]\times[f,n]\)</span>。那么变换矩阵为
+<span class="math display">\[
+\textbf{M}_{orth}=\begin{bmatrix}\frac 2 {r-l}
+&amp;0&amp;0&amp;-\frac{r+l}{r-l}\\0&amp;\frac 2
+{t-b}&amp;0&amp;-\frac{t+b}{t-b}\\0&amp;0&amp;\frac 2
+{n-f}&amp;-\frac{n+f}{n-f}\\0&amp;0&amp;0&amp;1\end{bmatrix}
+\]</span></p></li>
 <li><p>投影变换</p>
-<p>假如我们想实现透视的“近大远小”，如下图，点 $(1,0)$ 变换到 $(3,0)$，点 $(1,1)$ 变换到 $(1,3)$：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-95255593b8fbd77b7c4cf8d802c0ffc2_1440w.webp"></p>
-<p>一种实现这种效果的方法是，离的近的坐标除以一个小的分母，离得远的坐标除以一个大的分母。以我们现有的定义还无法做到，但是仍然有办法：只需要把第四维常数 $1$ 改为常数 $w$ 即可：<br>$$<br>\begin{bmatrix}x\y\z\1\end{bmatrix}\rightarrow\begin{bmatrix}x’\y’\z’\w\end{bmatrix}(x_{fact}&#x3D;\frac{x’}{w},etc.)<br>$$</p>
-<p>透视变换的变换矩阵如下。（注：由于采用右手坐标系，$z$ 轴正方向指向垂直视屏向内，$n,f$ 均为负数。我们也可以引入 $\theta$（相机到视平面的角度）来表示 $n,f$）<br>$$<br>\textbf{P}&#x3D;\begin{bmatrix}n&amp;0&amp;0&amp;0\0&amp;n&amp;0&amp;0\0&amp;0&amp;n+f&amp;-fn\0&amp;0&amp;1&amp;0\end{bmatrix}\Rightarrow \textbf{P}\begin{bmatrix}x\y\z\1\end{bmatrix}\sim\begin{bmatrix}\frac {nx}{z}\\frac{ny}{z}\n+f-\frac{fn}{z}\1\end{bmatrix}<br>$$</p>
-<p><img src="https://pic3.zhimg.com/80/v2-cfc56179153eeadaa72795ddb1554caa_720w.webp" alt="img"></p>
-<p>因而采用透视的投影变换对应的变换矩阵为 $\textbf{M}_{orth}\textbf{P}$。（注意，各坐标要除以 $w$ 才是正确的 NDC）</p>
-</li>
+<p>假如我们想实现透视的“近大远小”，如下图，点 <span
+class="math inline">\((1,0)\)</span> 变换到 <span
+class="math inline">\((3,0)\)</span>，点 <span
+class="math inline">\((1,1)\)</span> 变换到 <span
+class="math inline">\((1,3)\)</span>：</p>
+<p><img
+src="https://pic3.zhimg.com/80/v2-95255593b8fbd77b7c4cf8d802c0ffc2_1440w.webp" /></p>
+<p>一种实现这种效果的方法是，离的近的坐标除以一个小的分母，离得远的坐标除以一个大的分母。以我们现有的定义还无法做到，但是仍然有办法：只需要把第四维常数
+<span class="math inline">\(1\)</span> 改为常数 <span
+class="math inline">\(w\)</span> 即可： <span class="math display">\[
+\begin{bmatrix}x\\y\\z\\1\end{bmatrix}\rightarrow\begin{bmatrix}x&#39;\\y&#39;\\z&#39;\\w\end{bmatrix}(x_{fact}=\frac{x&#39;}{w},etc.)
+\]</span></p>
+<p>透视变换的变换矩阵如下。（注：由于采用右手坐标系，<span
+class="math inline">\(z\)</span> 轴正方向指向垂直视屏向内，<span
+class="math inline">\(n,f\)</span> 均为负数。我们也可以引入 <span
+class="math inline">\(\theta\)</span>（相机到视平面的角度）来表示 <span
+class="math inline">\(n,f\)</span>） <span class="math display">\[
+\textbf{P}=\begin{bmatrix}n&amp;0&amp;0&amp;0\\0&amp;n&amp;0&amp;0\\0&amp;0&amp;n+f&amp;-fn\\0&amp;0&amp;1&amp;0\end{bmatrix}\Rightarrow
+\textbf{P}\begin{bmatrix}x\\y\\z\\1\end{bmatrix}\sim\begin{bmatrix}\frac
+{nx}{z}\\\frac{ny}{z}\\n+f-\frac{fn}{z}\\1\end{bmatrix}
+\]</span></p>
+<figure>
+<img
+src="https://pic3.zhimg.com/80/v2-cfc56179153eeadaa72795ddb1554caa_720w.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>因而采用透视的投影变换对应的变换矩阵为 <span
+class="math inline">\(\textbf{M}_{orth}\textbf{P}\)</span>。（注意，各坐标要除以
+<span class="math inline">\(w\)</span> 才是正确的 NDC）</p></li>
 </ul>
 <p><strong>镜头转换</strong></p>
-<p>假定镜头空间转换到世界空间对应的变换矩阵为 $\textbf{M}<em>{cam}$（类似于物体空间向世界空间的转化）。那么镜头转换的变换矩阵即为 $\textbf{M}</em>{cam}^{-1}$。</p>
-<h3 id="3-2-图形流水线"><a href="#3-2-图形流水线" class="headerlink" title="3.2 图形流水线"></a>3.2 图形流水线</h3><p>按对象顺序绘制的图形流水线主要分为以下四个步骤：</p>
-<p>[应用层] 命令流 -&gt; <strong>顶点处理</strong> -&gt; 变换几何 -&gt; <strong>光栅化</strong> -&gt; 片元 -&gt; <strong>片元处理</strong> -&gt; <strong>混合</strong> -&gt; [输出] 帧缓冲图像</p>
+<p>假定镜头空间转换到世界空间对应的变换矩阵为 <span
+class="math inline">\(\textbf{M}_{cam}\)</span>（类似于物体空间向世界空间的转化）。那么镜头转换的变换矩阵即为
+<span class="math inline">\(\textbf{M}_{cam}^{-1}\)</span>。</p>
+<h3 id="图形流水线-1">3.2 图形流水线</h3>
+<p>按对象顺序绘制的图形流水线主要分为以下四个步骤：</p>
+<p>[应用层] 命令流 -&gt; <strong>顶点处理</strong> -&gt; 变换几何 -&gt;
+<strong>光栅化</strong> -&gt; 片元 -&gt; <strong>片元处理</strong> -&gt;
+<strong>混合</strong> -&gt; [输出] 帧缓冲图像</p>
 <p>图像渲染管线 API 包括</p>
 <ul>
-<li>硬件管线 API，如 OpenGL, Direct3D 等。这些多用于游戏渲染等实时渲染。</li>
-<li>软件管线 API，如 RenderMan。主要用于高质量动画，耗时长，渲染质量好。</li>
+<li>硬件管线 API，如 OpenGL, Direct3D
+等。这些多用于游戏渲染等实时渲染。</li>
+<li>软件管线 API，如
+RenderMan。主要用于高质量动画，耗时长，渲染质量好。</li>
 </ul>
-<h4 id="3-1-剔除"><a href="#3-1-剔除" class="headerlink" title="3.1 剔除"></a>3.1 剔除</h4><p>图形流水线一般是 Object-order Rendering，换而言之，对每个对象进行处理。考虑到视野空间内只有若干对象可见，我们需要考虑一些比较有效的方式快速剔除掉不在视野内的对象。</p>
+<h4 id="剔除">3.1 剔除</h4>
+<p>图形流水线一般是 Object-order
+Rendering，换而言之，对每个对象进行处理。考虑到视野空间内只有若干对象可见，我们需要考虑一些比较有效的方式快速剔除掉不在视野内的对象。</p>
 <ul>
 <li><p><strong>视景体剔除</strong>（View Volume Culling）</p>
-<p>将若干对象打包在一起做一次快速检测。例如若干对象的位置都在某个球内，只需要简单衡量球与视野空间是否有交，即可进行快速剔除。</p>
-</li>
+<p>将若干对象打包在一起做一次快速检测。例如若干对象的位置都在某个球内，只需要简单衡量球与视野空间是否有交，即可进行快速剔除。</p></li>
 <li><p><strong>闭合剔除</strong>（Occlusion Culling）</p>
-<p>对象包在其他对象之内无法被看见。</p>
-</li>
+<p>对象包在其他对象之内无法被看见。</p></li>
 <li><p><strong>背面剔除</strong>（Backface Culling）</p>
-<p>对于那些“背对”我们视平面法向量的对象（点积简单判断），即可快速剔除。</p>
-</li>
+<p>对于那些“背对”我们视平面法向量的对象（点积简单判断），即可快速剔除。</p></li>
 </ul>
-<h4 id="3-2-顶点处理"><a href="#3-2-顶点处理" class="headerlink" title="3.2 顶点处理"></a>3.2 顶点处理</h4><p>顶点处理实质就是准备光栅化所需要的对象顶点的若干信息。通过应用若干矩阵变换（见前文“照相模型”一节），顶点在屏幕空间的坐标可以由世界空间坐标求得。其他包括顶点的颜色、表面法线、对应材质&#x2F;纹理的坐标等信息，也可通过一定方法获得。</p>
+<h4 id="顶点处理">3.2 顶点处理</h4>
+<p>顶点处理实质就是准备光栅化所需要的对象顶点的若干信息。通过应用若干矩阵变换（见前文“照相模型”一节），顶点在屏幕空间的坐标可以由世界空间坐标求得。其他包括顶点的颜色、表面法线、对应材质/纹理的坐标等信息，也可通过一定方法获得。</p>
 <p>注：注意在透视中表面法向量不能简单通过变换矩阵做变换，还需要进行修正。</p>
-<h4 id="3-3-光栅化"><a href="#3-3-光栅化" class="headerlink" title="3.3 光栅化"></a>3.3 光栅化</h4><p>众所周知，我们在屏幕平面看到的图片是由一个个像素组成的，像素有大小，因而看到的线其实是一个个像素（矩形）组成，而并非一条精确的线。因此需要考虑如何填充像素。这就是光栅化需要做的事情。</p>
+<h4 id="光栅化">3.3 光栅化</h4>
+<p>众所周知，我们在屏幕平面看到的图片是由一个个像素组成的，像素有大小，因而看到的线其实是一个个像素（矩形）组成，而并非一条精确的线。因此需要考虑如何填充像素。这就是光栅化需要做的事情。</p>
 <p>下文的光栅化主要考虑线段和三角形的光栅化。多边形可以简单规约到三角形的处理。</p>
-<p><em><strong>裁剪</strong></em></p>
+<p><strong><em>裁剪</em></strong></p>
 <p>我们的屏幕大小并不是无限大，有时我们会遇到图形的一部分处于屏幕之外。这时我们就需要进行裁剪。一般裁剪会选择在进行几何转换后进行。</p>
 <ul>
 <li><p><strong>直线段裁剪</strong></p>
 <p><em>朴素</em>：利用平面法线等信息判断两个端点是否在平面两端，然后朴素求解交点。</p>
-<p><em>Cohen-Sutherland</em>：对主窗口边界直线所划分出的九个方块编码，处理直线时先求两端点编码，之后利用位运算判断是否部分&#x2F;完全丢弃该线段。如果部分丢弃，则求出线段与窗口某边的交点，一分为二，对两条再进行考虑。</p>
+<p><em>Cohen-Sutherland</em>：对主窗口边界直线所划分出的九个方块编码，处理直线时先求两端点编码，之后利用位运算判断是否部分/完全丢弃该线段。如果部分丢弃，则求出线段与窗口某边的交点，一分为二，对两条再进行考虑。</p>
 <p><em>中点分割</em>：如果部分丢弃，则取中点一分为二，对两条线再进行考虑。只有加法和除二运算，非常适合。</p>
-<p><em>梁友栋-Barskey</em>（据说更快）：将裁剪问题转化为不等式条件，形如 $x_1\le x+u\Delta x\le x_2,y_1\le y+u\Delta y\le y_2$，然后求式子中的 $u$，从而确定裁剪坐标。</p>
-</li>
+<p><em>梁友栋-Barskey</em>（据说更快）：将裁剪问题转化为不等式条件，形如
+<span class="math inline">\(x_1\le x+u\Delta x\le x_2,y_1\le y+u\Delta
+y\le y_2\)</span>，然后求式子中的 <span
+class="math inline">\(u\)</span>，从而确定裁剪坐标。</p></li>
 <li><p><strong>三角形裁剪</strong></p>
-<p>实际裁剪一般采用 BSP 树程序进行（我还没看，这一部分先跳过）。用直线段裁剪的方法类似处理即可。</p>
-</li>
+<p>实际裁剪一般采用 BSP
+树程序进行（我还没看，这一部分先跳过）。用直线段裁剪的方法类似处理即可。</p></li>
 <li><p><strong>多边形裁剪</strong></p>
-<p><em>Sutherland-Hodgman</em>。考虑多边形是由有序点集&#x2F;有向边表示的，从起点开始取点，每次考虑下一条边是否部分&#x2F;完全可见，并返回对应的端点，从而得到新的有序点集。</p>
-</li>
+<p><em>Sutherland-Hodgman</em>。考虑多边形是由有序点集/有向边表示的，从起点开始取点，每次考虑下一条边是否部分/完全可见，并返回对应的端点，从而得到新的有序点集。</p></li>
 </ul>
-<p><em><strong>扫描转换</strong></em></p>
+<p><strong><em>扫描转换</em></strong></p>
 <ul>
 <li><p><strong>直线段的扫描转换算法（画线算法）</strong></p>
-<p>考虑一条给定端点的直线段进行像素填充。为方便进行绘图，我们要求直线斜率 $|k|\le 1$。 若不然，则将 $x,y$ 位置调换。</p>
+<p>考虑一条给定端点的直线段进行像素填充。为方便进行绘图，我们要求直线斜率
+<span class="math inline">\(|k|\le 1\)</span>。 若不然，则将 <span
+class="math inline">\(x,y\)</span> 位置调换。</p>
 <ul>
 <li><p><strong>中点画线法</strong></p>
-<p>考虑在 $x_p+1$ 处的情况，假定 $y_p &lt; f(x_p+1) &lt; y_p+1$。如果 $f(x_p+1)$ 不大于区间中点，取 $y_p$，否则取 $y_p+1$。</p>
-<p>实际用的更多是 $F(x,y)$，只需求 $F(x_p+1, y_p+0.5)$，若不为正则取 $y_p$，否则取 $y_p+1$。</p>
-<p>为省去乘法运算，可使用步进。为省去小数运算，整体可以乘一定值从而消去分母。</p>
-</li>
+<p>考虑在 <span class="math inline">\(x_p+1\)</span> 处的情况，假定
+<span class="math inline">\(y_p &lt; f(x_p+1) &lt; y_p+1\)</span>。如果
+<span class="math inline">\(f(x_p+1)\)</span> 不大于区间中点，取 <span
+class="math inline">\(y_p\)</span>，否则取 <span
+class="math inline">\(y_p+1\)</span>。</p>
+<p>实际用的更多是 <span class="math inline">\(F(x,y)\)</span>，只需求
+<span class="math inline">\(F(x_p+1, y_p+0.5)\)</span>，若不为正则取
+<span class="math inline">\(y_p\)</span>，否则取 <span
+class="math inline">\(y_p+1\)</span>。</p>
+<p>为省去乘法运算，可使用步进。为省去小数运算，整体可以乘一定值从而消去分母。</p></li>
 <li><p><strong>Bresenham</strong></p>
-<p>其实就是上面 $f(x)$ 的改良，同样使用步进，然后扣掉0.5，从而变成只用判断正负即可确认下一坐标取值。</p>
-</li>
+<p>其实就是上面 <span class="math inline">\(f(x)\)</span>
+的改良，同样使用步进，然后扣掉0.5，从而变成只用判断正负即可确认下一坐标取值。</p></li>
 </ul>
-<p>画线可能遇到的走样问题：可以将原先的单个 pixel 模糊成若干个 pixels，片元增多。</p>
-</li>
+<p>画线可能遇到的走样问题：可以将原先的单个 pixel 模糊成若干个
+pixels，片元增多。</p></li>
 <li><p><strong>三角形的扫描转换算法</strong></p>
-<p>三角形各边的转换可以采用画线算法。对于三角形内部，可以根据顶点设定 $x$ 和 $y$ 的范围，然后计算重心坐标是否满足要求。（对于三角形片元的着色，可以使用重心坐标以及顶点颜色进行简单的线性插值。）</p>
-</li>
+<p>三角形各边的转换可以采用画线算法。对于三角形内部，可以根据顶点设定
+<span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span>
+的范围，然后计算重心坐标是否满足要求。（对于三角形片元的着色，可以使用重心坐标以及顶点颜色进行简单的线性插值。）</p></li>
 </ul>
 <details class="note warning"><summary><p>了解更多</p>
 </summary>
 <ul>
 <li><p><strong>圆弧的扫描转换算法</strong></p>
-<p>圆具有良好的对称性，一般绘制边界时只考虑 $\frac 1 8$ 圆弧，剩下的圆弧可以通过对称方式模仿填充。只考虑1&#x2F;8圆弧也有一个好处，取斜率绝对值显然不大于1的部分，这样我们可以模仿直线段的中点画线法画圆。可以采用顶端右侧 $\frac 1 8$ 圆弧，每次取点考虑 $y_p$ 和 $y_p-1$。</p>
-</li>
+<p>圆具有良好的对称性，一般绘制边界时只考虑 <span
+class="math inline">\(\frac 1 8\)</span>
+圆弧，剩下的圆弧可以通过对称方式模仿填充。只考虑1/8圆弧也有一个好处，取斜率绝对值显然不大于1的部分，这样我们可以模仿直线段的中点画线法画圆。可以采用顶端右侧
+<span class="math inline">\(\frac 1 8\)</span> 圆弧，每次取点考虑 <span
+class="math inline">\(y_p\)</span> 和 <span
+class="math inline">\(y_p-1\)</span>。</p></li>
 <li><p><strong>多边形的扫描转换与区域填充</strong></p>
 <ul>
 <li><p><em>多边形的扫描转换</em></p>
 <p>扫描线算法：利用所谓活性边表（其实就是通过排序确认哪条边会先被扫描到），只考虑当前在集合内的边与扫描线的交。同时注意正确的交点取舍（例如边界与扫描线重合计为1，或端点与扫描线重合计为0）。</p>
-<p>边界标志算法：对多边形边界经过的扫描线上的像素打标记，真则填充，假则不填。不需维护边表及排序，比扫描线更适合硬件实现。</p>
-</li>
+<p>边界标志算法：对多边形边界经过的扫描线上的像素打标记，真则填充，假则不填。不需维护边表及排序，比扫描线更适合硬件实现。</p></li>
 <li><p><em>区域填充算法</em></p>
 <p>递归算法。非常简单，不赘述。</p>
-<p>扫描线算法。从栈中取出种子店，先左右横着填，然后对刚刚填过的每个像素检查上下相邻的像素，确认是否需要填充；如果要，就将该段空白区间的最右像素压入栈中。</p>
-</li>
-</ul>
-</li>
+<p>扫描线算法。从栈中取出种子店，先左右横着填，然后对刚刚填过的每个像素检查上下相邻的像素，确认是否需要填充；如果要，就将该段空白区间的最右像素压入栈中。</p></li>
+</ul></li>
 </ul>
 
 </details>
-
-<h4 id="3-4-片元处理与混合"><a href="#3-4-片元处理与混合" class="headerlink" title="3.4 片元处理与混合"></a>3.4 片元处理与混合</h4><p>片元处理阶段主要是计算每个片元的颜色和深度，而混合阶段则对片元进行混合，得到对应像素。最常见的方式是选择深度最小的片元的颜色（消隐）。</p>
-<p><em><strong>消隐</strong></em></p>
+<h4 id="片元处理与混合">3.4 片元处理与混合</h4>
+<p>片元处理阶段主要是计算每个片元的颜色和深度，而混合阶段则对片元进行混合，得到对应像素。最常见的方式是选择深度最小的片元的颜色（消隐）。</p>
+<p><strong><em>消隐</em></strong></p>
 <p>在光栅化阶段我们获得了若干片元的信息，如颜色，深度等。考虑到片元之间存在遮挡关系，我们要将应当被隐藏的片元消去不显示。</p>
 <ul>
 <li><strong>消除隐藏线</strong></li>
 </ul>
-<p>平面对直线段的遮挡判断算法。先包围盒简单判断。求直线与相应无穷平面的交，若有交，一段不遮挡一段部分或完全遮挡。求投影与平面边界投影的所有焦点，对于切割出的所有线段，取第一段中点，若中点在投影内则第一段被遮挡，其他交替不被&#x2F;被遮挡。</p>
+<p>平面对直线段的遮挡判断算法。先包围盒简单判断。求直线与相应无穷平面的交，若有交，一段不遮挡一段部分或完全遮挡。求投影与平面边界投影的所有焦点，对于切割出的所有线段，取第一段中点，若中点在投影内则第一段被遮挡，其他交替不被/被遮挡。</p>
 <p>多平面情况可以用栈解决。</p>
 <ul>
 <li><strong>消除隐藏面</strong></li>
 </ul>
-<p><em>Z 缓冲区算法</em>。补充一深度缓冲器，只有当待绘制像素深度值大于缓冲器中对应深度值时才更新帧缓冲器。为节省空间，可逐个处理帧缓冲器上的每个像素。为了加速处理可以对深度做一个简单的离散化（$2^b$ 切割 $[0,1]$ 区间，可以均匀切割，也可以在处理透视情况时采用非线性切割）。处理点与多边形的包含性检测可采用射线法、弧长法（稳定但弧长难求，可通过建立四象限，查看象限变化并对每种情况赋弧长变化）。扫描线 Z-Buffer,区间扫描线法略去。</p>
+<p><em>Z
+缓冲区算法</em>。补充一深度缓冲器，只有当待绘制像素深度值大于缓冲器中对应深度值时才更新帧缓冲器。为节省空间，可逐个处理帧缓冲器上的每个像素。为了加速处理可以对深度做一个简单的离散化（<span
+class="math inline">\(2^b\)</span> 切割 <span
+class="math inline">\([0,1]\)</span>
+区间，可以均匀切割，也可以在处理透视情况时采用非线性切割）。处理点与多边形的包含性检测可采用射线法、弧长法（稳定但弧长难求，可通过建立四象限，查看象限变化并对每种情况赋弧长变化）。扫描线
+Z-Buffer,区间扫描线法略去。</p>
 <p><em>区域子分割算法</em>。将窗口不断四分割，直到情况足够简单为止，根据实际情况绘图。</p>
-<p><em>光线投射算法</em>。从窗口像素位置做射线，与物体求交。实际仍然是 Z-Buffer。</p>
-<p><em><strong>着色</strong></em></p>
+<p><em>光线投射算法</em>。从窗口像素位置做射线，与物体求交。实际仍然是
+Z-Buffer。</p>
+<p><strong><em>着色</em></strong></p>
 <ul>
 <li><p><strong>逐顶点着色</strong>（Gouraud Shading）</p>
-<p>在顶点处理阶段计算各顶点对应的颜色，然后光栅化阶段根据顶点颜色做插值。缺点是几何片元不够多、不够小时着色细节不足。</p>
-</li>
+<p>在顶点处理阶段计算各顶点对应的颜色，然后光栅化阶段根据顶点颜色做插值。缺点是几何片元不够多、不够小时着色细节不足。</p></li>
 <li><p><strong>按片元着色</strong>（Phong Shading）</p>
-<p>在光栅化阶段插值每个顶点的法向量、位置，在片元处理阶段再计算每个片元的颜色。具有更优秀的着色细节。</p>
-</li>
+<p>在光栅化阶段插值每个顶点的法向量、位置，在片元处理阶段再计算每个片元的颜色。具有更优秀的着色细节。</p></li>
 </ul>
 <p>着色还需要考虑着色频率的问题。着色频率反应像素之间颜色变化的快慢，着色频率越大，需要的细节程度也就越高，计算精度也要求越高。（比如高光的着色频率应当显著高于漫反射的频率。）</p>
-<p><em><strong>纹理映射</strong></em></p>
+<p><strong><em>纹理映射</em></strong></p>
 <p>我们想给对象加上一些特殊的“皮肤”，比如圆木凹凸不平的树皮。这时可以添加纹理，进行纹理映射。这一部分的内容见“图像处理”下纹理映射一节。</p>
-<h2 id="4-图像处理"><a href="#4-图像处理" class="headerlink" title="4 图像处理"></a>4 图像处理</h2><h3 id="4-1-信号处理"><a href="#4-1-信号处理" class="headerlink" title="4.1 信号处理"></a>4.1 信号处理</h3><h4 id="4-1-1-引入"><a href="#4-1-1-引入" class="headerlink" title="4.1.1 引入"></a>4.1.1 引入</h4><p>假定我们需要将某个连续函数存储在计算机中，需要计算某个位置的值。这个函数也许是非代数的（不存在解析解），也许解析解非常复杂，总之，计算非常麻烦。是否有一种替代方法呢？有！我们可以适当地对函数进行采样（在若干个不同的位置上计算函数的值），并且根据这些样本重构这个函数（插值）。一个明显的事实是：重构往往不能真正的还原这个函数。我们采集样本的数量，或者<em>采样频率</em>，很大程度上会影响我们重构函数与原函数之间的偏差（<em>失真</em>）。怎么去尽可能的降低失真，正是接下来我们需要研究的问题。</p>
-<p>信号处理的一大应用在于“打电话”（一维信号处理）。我们的手机&#x2F;座机需要将周围的声音转化为特定的数字信号，之后再用这些信号尽可能地还原出原本的声音。考虑到波动，数字信号并不能连续地采集声音，因而只能离散地进行采样。同时，我们也不可能无限制的提高采样频率。那么，有没有什么办法实现反失真呢？</p>
+<h2 id="图像处理">4 图像处理</h2>
+<h3 id="信号处理">4.1 信号处理</h3>
+<h4 id="引入-1">4.1.1 引入</h4>
+<p>假定我们需要将某个连续函数存储在计算机中，需要计算某个位置的值。这个函数也许是非代数的（不存在解析解），也许解析解非常复杂，总之，计算非常麻烦。是否有一种替代方法呢？有！我们可以适当地对函数进行采样（在若干个不同的位置上计算函数的值），并且根据这些样本重构这个函数（插值）。一个明显的事实是：重构往往不能真正的还原这个函数。我们采集样本的数量，或者<em>采样频率</em>，很大程度上会影响我们重构函数与原函数之间的偏差（<em>失真</em>）。怎么去尽可能的降低失真，正是接下来我们需要研究的问题。</p>
+<p>信号处理的一大应用在于“打电话”（一维信号处理）。我们的手机/座机需要将周围的声音转化为特定的数字信号，之后再用这些信号尽可能地还原出原本的声音。考虑到波动，数字信号并不能连续地采集声音，因而只能离散地进行采样。同时，我们也不可能无限制的提高采样频率。那么，有没有什么办法实现反失真呢？</p>
 <p>我们可以思考一下，在特定采样频率下，什么时候会出现失真。简单地思考，在两次采样之间，如果信号发生了较大的波动（即出现高频信号），那么就很容易造成失真。<em>低通滤波器</em>正是用于过滤高频噪声的滤波电路。</p>
-<h4 id="4-1-2-卷积"><a href="#4-1-2-卷积" class="headerlink" title="4.1.2 卷积"></a>4.1.2 卷积</h4><p>低通滤波器是如何在保留尽可能多的细节的同时裁剪高频信号的呢？这就要提到<em>卷积</em>——将两个函数“杂糅”组合成一个函数的方法，可以用于数据的平滑处理。连续函数之间、离散函数之间的卷积分别为<br>$$<br>(f<em>g)(t)&#x3D;\int_{-\infty}^{\infty} f(p)g(t-p)dp\<br>(f</em>g)[t]&#x3D;\sum\limits_{i}f[i]g[t-i]<br>$$<br>想简单了解卷积，可参考 3B1B 的相关视频，在此不再赘述。可以简单验证卷积具有交换律、结合律与分配律。为了由数字信号重建模拟信号，我们定义连续函数与离散函数之间的卷积<br>$$<br>(f<em>g)(x)&#x3D;\sum\limits_{i}f(x-i)g[i]<br>$$<br>二维的卷积也很好定义：<br>$$<br>(f</em>g)(x,y)&#x3D;\int\int f(x’,y’)g(x-x’,y-y’)dx’dy’\<br>(f*g)[x,y]&#x3D;\sum\limits_i\sum\limits_j f[i,j]g[x-i,y-j]<br>$$<br>更高维度的卷积以此类推。</p>
-<h4 id="4-1-3-滤波器"><a href="#4-1-3-滤波器" class="headerlink" title="4.1.3 滤波器"></a>4.1.3 滤波器</h4><p>假定我们现在想处理模拟信号 $f$，而 $g$ 则是我们的（卷积）滤波器。为了不影响信号，$g$ 的和一般为 $1$。一些常见的卷积滤波器包括：</p>
+<h4 id="卷积">4.1.2 卷积</h4>
+<p>低通滤波器是如何在保留尽可能多的细节的同时裁剪高频信号的呢？这就要提到<em>卷积</em>——将两个函数“杂糅”组合成一个函数的方法，可以用于数据的平滑处理。连续函数之间、离散函数之间的卷积分别为
+<span class="math display">\[
+(f*g)(t)=\int_{-\infty}^{\infty} f(p)g(t-p)dp\\
+(f*g)[t]=\sum\limits_{i}f[i]g[t-i]
+\]</span> 想简单了解卷积，可参考 3B1B
+的相关视频，在此不再赘述。可以简单验证卷积具有交换律、结合律与分配律。为了由数字信号重建模拟信号，我们定义连续函数与离散函数之间的卷积
+<span class="math display">\[
+(f*g)(x)=\sum\limits_{i}f(x-i)g[i]
+\]</span> 二维的卷积也很好定义： <span class="math display">\[
+(f*g)(x,y)=\int\int f(x&#39;,y&#39;)g(x-x&#39;,y-y&#39;)dx&#39;dy&#39;\\
+(f*g)[x,y]=\sum\limits_i\sum\limits_j f[i,j]g[x-i,y-j]
+\]</span> 更高维度的卷积以此类推。</p>
+<h4 id="滤波器">4.1.3 滤波器</h4>
+<p>假定我们现在想处理模拟信号 <span class="math inline">\(f\)</span>，而
+<span class="math inline">\(g\)</span>
+则是我们的（卷积）滤波器。为了不影响信号，<span
+class="math inline">\(g\)</span> 的和一般为 <span
+class="math inline">\(1\)</span>。一些常见的卷积滤波器包括：</p>
 <ul>
-<li><p>盒状滤波器 $B$（Box Filter）<br>$$<br>B(x)&#x3D;\begin{cases}\frac 1 {2r} &amp;-r\le x\le r,\0&amp;otherwise\end{cases}\<br>B[x]&#x3D;\begin{cases}\frac 1 {2r+1} &amp;-r\le x\le r,\0&amp;otherwise\end{cases}<br>$$</p>
-</li>
-<li><p>帐篷滤波器 $T$ （Tent Filter）<br>$$<br>T(x)&#x3D;\begin{cases}1-|x|&amp;|x|\le 1,\0&amp;otherwise\end{cases}<br>$$</p>
-</li>
-<li><p>冲激滤波器 $\delta$（Dirac Impulse &#x2F; Dirac Delta Filter）<br>$$<br>\int_{-\infty}^{\infty}\delta(x)f(x)dx&#x3D;f(0)<br>$$<br>简单理解：$\delta(x)$ 在 $x&#x3D;0$ 处为 $+\infty$，但和依然为 $1$。这个实际没啥用，等同于什么也没滤掉。</p>
-</li>
-<li><p>高斯滤波器 $G$（Gaussian Filter）<br>$$<br>G_{\sigma}(x)&#x3D;\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{x^2}{2\sigma^2}}<br>$$<br>$\sigma$ 即标准差。考虑到高斯滤波器收敛到 $0$ 的速度较快，可以直接截取成离散形式。</p>
-</li>
-<li><p>B 样条滤波器 $BS$ （B-Spline Cubic Filter）<br>$$<br>BS(x)&#x3D;\frac 1 6\begin{cases}-3(1-|x|)^3+3(1-|x|)^2+3(1-|x|)+1&amp;|x|\le 1,\(2-|x|)^3&amp;1\le |x|\le 2,\0&amp;otherwise\end{cases}<br>$$<br>一种简洁的记法： $BS&#x3D;B<em>B</em>B*B$.</p>
-</li>
-<li><p>卡特穆尔-罗姆立方过滤器 $C$（Catmull-Rom Cubic Filter）<br>$$<br>C(x)&#x3D;\frac 1 2\begin{cases}-3(1-|x|)^3+4(1-|x|)^2+(1-|x|)&amp;|x|\le 1,\(2-|x|)^3-(2-|x|)^2&amp;1\le |x|\le 2,\0&amp;otherwise\end{cases}<br>$$</p>
-</li>
-<li><p>米切尔-内特拉瓦利立方过滤器 $M$（Mitchell-Netravali Cubic Filter）<br>$$<br>M(x)&#x3D;\frac 1 3BS(x)+\frac 2 3 C(x)<br>$$</p>
-</li>
+<li><p>盒状滤波器 <span class="math inline">\(B\)</span>（Box Filter）
+<span class="math display">\[
+B(x)=\begin{cases}\frac 1 {2r} &amp;-r\le x\le
+r,\\0&amp;otherwise\end{cases}\\
+B[x]=\begin{cases}\frac 1 {2r+1} &amp;-r\le x\le
+r,\\0&amp;otherwise\end{cases}
+\]</span></p></li>
+<li><p>帐篷滤波器 <span class="math inline">\(T\)</span> （Tent Filter）
+<span class="math display">\[
+T(x)=\begin{cases}1-|x|&amp;|x|\le 1,\\0&amp;otherwise\end{cases}
+\]</span></p></li>
+<li><p>冲激滤波器 <span class="math inline">\(\delta\)</span>（Dirac
+Impulse / Dirac Delta Filter） <span class="math display">\[
+\int_{-\infty}^{\infty}\delta(x)f(x)dx=f(0)
+\]</span> 简单理解：<span class="math inline">\(\delta(x)\)</span> 在
+<span class="math inline">\(x=0\)</span> 处为 <span
+class="math inline">\(+\infty\)</span>，但和依然为 <span
+class="math inline">\(1\)</span>。这个实际没啥用，等同于什么也没滤掉。</p></li>
+<li><p>高斯滤波器 <span class="math inline">\(G\)</span>（Gaussian
+Filter） <span class="math display">\[
+G_{\sigma}(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{x^2}{2\sigma^2}}
+\]</span> <span class="math inline">\(\sigma\)</span>
+即标准差。考虑到高斯滤波器收敛到 <span class="math inline">\(0\)</span>
+的速度较快，可以直接截取成离散形式。</p></li>
+<li><p>B 样条滤波器 <span class="math inline">\(BS\)</span> （B-Spline
+Cubic Filter） <span class="math display">\[
+BS(x)=\frac 1 6\begin{cases}-3(1-|x|)^3+3(1-|x|)^2+3(1-|x|)+1&amp;|x|\le
+1,\\(2-|x|)^3&amp;1\le |x|\le 2,\\0&amp;otherwise\end{cases}
+\]</span> 一种简洁的记法： <span
+class="math inline">\(BS=B*B*B*B\)</span>.</p></li>
+<li><p>卡特穆尔-罗姆立方过滤器 <span
+class="math inline">\(C\)</span>（Catmull-Rom Cubic Filter） <span
+class="math display">\[
+C(x)=\frac 1 2\begin{cases}-3(1-|x|)^3+4(1-|x|)^2+(1-|x|)&amp;|x|\le
+1,\\(2-|x|)^3-(2-|x|)^2&amp;1\le |x|\le 2,\\0&amp;otherwise\end{cases}
+\]</span></p></li>
+<li><p>米切尔-内特拉瓦利立方过滤器 <span
+class="math inline">\(M\)</span>（Mitchell-Netravali Cubic Filter）
+<span class="math display">\[
+M(x)=\frac 1 3BS(x)+\frac 2 3 C(x)
+\]</span></p></li>
 </ul>
-<p>要想将上述一维卷积滤波器应用到二维，只需要简单的<br>$$<br>f’(x,y)&#x3D;f(x)f(y)<br>$$<br>容易证明和依然为 $1$。这种由低维滤波器组合得到的高维滤波器一般称为可分离滤波器。</p>
+<p>要想将上述一维卷积滤波器应用到二维，只需要简单的 <span
+class="math display">\[
+f&#39;(x,y)=f(x)f(y)
+\]</span> 容易证明和依然为 <span
+class="math inline">\(1\)</span>。这种由低维滤波器组合得到的高维滤波器一般称为可分离滤波器。</p>
 <p>滤波器还有一些需要考虑的性质：</p>
 <ul>
 <li><p>纹波</p>
-<p>无纹波（Ripple Free）指滤波器在整数范围内和为 $1$，而有纹波则指和不为 $1$。除高斯滤波器，上述的滤波器均为无纹波滤波器。</p>
-</li>
+<p>无纹波（Ripple Free）指滤波器在整数范围内和为 <span
+class="math inline">\(1\)</span>，而有纹波则指和不为 <span
+class="math inline">\(1\)</span>。除高斯滤波器，上述的滤波器均为无纹波滤波器。</p></li>
 <li><p>连续性</p>
 <ul>
 <li>盒状滤波器不连续；</li>
-<li>$C^0$：帐篷滤波器；</li>
-<li>$C^2$：B 样条滤波器；</li>
+<li><span class="math inline">\(C^0\)</span>：帐篷滤波器；</li>
+<li><span class="math inline">\(C^2\)</span>：B 样条滤波器；</li>
 <li>etc.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="4-1-4-采样理论"><a href="#4-1-4-采样理论" class="headerlink" title="4.1.4 采样理论"></a>4.1.4 采样理论</h4><p>如果你看过一些通过若干正弦波叠加，无限逼近某个函数（信号）：</p>
-<p><img src="https://pic1.zhimg.com/v2-2dd1adbfcef4777462d8efa358091fff_720w.jpg?source=d16d100b"></p>
-<p>也许你会产生这样的疑问：这些正弦波是怎么确定的？傅里叶变换 $\mathcal F$ 正是解决这一问题的利器：傅里叶变换实现了信号“时域” $f$ 与“频域” $\hat f$ 之间的转换。假如你有一个时域上的信号 $f$，希望由若干个频率为 $w_i$ 的正弦波表示（如果你知道傅里叶级数……），傅里叶变换可以告诉你这些正弦波对应的幅值 $\hat f(w_i)$；同样的，如果你知道频域上的 $\hat f$，可以通过逆变换来还原时域上的信号 $f$。<br>$$<br>\hat f(w)&#x3D;\int_{-\infty}^{\infty} f(t)e^{-iwt}dt\<br>f(t)&#x3D;\frac 1 {2\pi}\int_{-\infty}^{\infty}\hat f(w)e^{iwt}dw<br>$$<br>傅里叶变换有一些美妙的性质：</p>
+<h4 id="采样理论">4.1.4 采样理论</h4>
+<p>如果你看过一些通过若干正弦波叠加，无限逼近某个函数（信号）：</p>
+<p><img
+src="https://pic1.zhimg.com/v2-2dd1adbfcef4777462d8efa358091fff_720w.jpg?source=d16d100b" /></p>
+<p>也许你会产生这样的疑问：这些正弦波是怎么确定的？傅里叶变换 <span
+class="math inline">\(\mathcal F\)</span>
+正是解决这一问题的利器：傅里叶变换实现了信号“时域” <span
+class="math inline">\(f\)</span> 与“频域” <span
+class="math inline">\(\hat f\)</span>
+之间的转换。假如你有一个时域上的信号 <span
+class="math inline">\(f\)</span>，希望由若干个频率为 <span
+class="math inline">\(w_i\)</span>
+的正弦波表示（如果你知道傅里叶级数……），傅里叶变换可以告诉你这些正弦波对应的幅值
+<span class="math inline">\(\hat
+f(w_i)\)</span>；同样的，如果你知道频域上的 <span
+class="math inline">\(\hat f\)</span>，可以通过逆变换来还原时域上的信号
+<span class="math inline">\(f\)</span>。 <span class="math display">\[
+\hat f(w)=\int_{-\infty}^{\infty} f(t)e^{-iwt}dt\\
+f(t)=\frac 1 {2\pi}\int_{-\infty}^{\infty}\hat f(w)e^{iwt}dw
+\]</span> 傅里叶变换有一些美妙的性质：</p>
 <ul>
-<li><p>平方的积分相同。简单理解：信号的能量在时域上和频域上都应当是相等的。<br>$$<br>\int (f(t))^2dt&#x3D;\int(\hat f(w))^2dw<br>$$</p>
-</li>
-<li><p>时域与频域上的伸缩反向。<br>$$<br>\mathcal F{f(\frac x b)}&#x3D;b\hat f(bx)<br>$$</p>
-</li>
-<li><p>时域的平均值即为频域中 $0$ 位置的幅值。</p>
-</li>
+<li><p>平方的积分相同。简单理解：信号的能量在时域上和频域上都应当是相等的。
+<span class="math display">\[
+\int (f(t))^2dt=\int(\hat f(w))^2dw
+\]</span></p></li>
+<li><p>时域与频域上的伸缩反向。 <span class="math display">\[
+\mathcal F\{f(\frac x b)\}=b\hat f(bx)
+\]</span></p></li>
+<li><p>时域的平均值即为频域中 <span class="math inline">\(0\)</span>
+位置的幅值。</p></li>
 </ul>
-<p>最为美妙的性质与卷积相关：两函数时域卷积的傅里叶变换即为频域乘积，频域卷积即为时域乘积的傅里叶变换。<br>$$<br>\mathcal F(f<em>g)&#x3D;\hat f\hat g\quad \hat f</em>\hat g&#x3D;\mathcal F(fg)<br>$$<br>于是我们的卷积处理可以考虑在频域上解决。上文中提及的部分（一维）滤波器在频域中的表示如下：<br>$$<br>\mathcal F{B}&#x3D;\frac{\sin \pi u}{\pi u}\<br>\mathcal F{T}&#x3D;\frac{\sin^2 \pi u}{(\pi u)^2}\<br>\mathcal F{BS}&#x3D;\frac{\sin^4 \pi u}{(\pi u)^4}\<br>\mathcal F{G_\sigma}&#x3D;\sqrt {2\pi}G_{\sigma}(2\pi u)&#x3D;\frac{1}{\sigma}e^{-\frac{(2\pi u)^2}{2\sigma^2}}<br>$$<br><del>这是否也算是高斯滤波器的一个独特性质。</del></p>
-<p>接下来我们回到走样（失真）的问题。我们此前采用的采样方法是：每间隔 $T$ 时间在时域上对信号 $f$ 进行采样，得到若干采样脉冲 $fs_T$，其中<br>$$<br>s_T(t)&#x3D;\sum\limits_{i}\delta(i-T)<br>$$<br>经过傅里叶变换后，我们得到的是一系列几乎无差别的，形状相同的函数图像：<br>$$<br>\mathcal F{fs_T}(u)&#x3D;(\hat f<em>\hat s_T)(u)&#x3D;(\hat f</em>s_{\frac 1 T})(u)&#x3D;\sum\limits_i \hat f(u-\frac i T)<br>$$<br>因而，在不使用滤波器的情况下，当采样间隔 $T$ 过大（采样率不足），频域图像高频段会出现重叠的部分（高次混叠波），进而产生走样<sup id="fnref:4141"><a href="#fn:4141" rel="footnote">4141</a></sup>。因而在采样时，我们有如下方法实现反走样：</p>
+<p>最为美妙的性质与卷积相关：两函数时域卷积的傅里叶变换即为频域乘积，频域卷积即为时域乘积的傅里叶变换。
+<span class="math display">\[
+\mathcal F(f*g)=\hat f\hat g\quad \hat f*\hat g=\mathcal F(fg)
+\]</span>
+于是我们的卷积处理可以考虑在频域上解决。上文中提及的部分（一维）滤波器在频域中的表示如下：
+<span class="math display">\[
+\mathcal F\{B\}=\frac{\sin \pi u}{\pi u}\\
+\mathcal F\{T\}=\frac{\sin^2 \pi u}{(\pi u)^2}\\
+\mathcal F\{BS\}=\frac{\sin^4 \pi u}{(\pi u)^4}\\
+\mathcal F\{G_\sigma\}=\sqrt {2\pi}G_{\sigma}(2\pi
+u)=\frac{1}{\sigma}e^{-\frac{(2\pi u)^2}{2\sigma^2}}
+\]</span> <del>这是否也算是高斯滤波器的一个独特性质。</del></p>
+<p>接下来我们回到走样（失真）的问题。我们此前采用的采样方法是：每间隔
+<span class="math inline">\(T\)</span> 时间在时域上对信号 <span
+class="math inline">\(f\)</span> 进行采样，得到若干采样脉冲 <span
+class="math inline">\(fs_T\)</span>，其中 <span class="math display">\[
+s_T(t)=\sum\limits_{i}\delta(i-T)
+\]</span>
+经过傅里叶变换后，我们得到的是一系列几乎无差别的，形状相同的函数图像：
+<span class="math display">\[
+\mathcal F\{fs_T\}(u)=(\hat f*\hat s_T)(u)=(\hat f*s_{\frac 1
+T})(u)=\sum\limits_i \hat f(u-\frac i T)
+\]</span> 因而，在不使用滤波器的情况下，当采样间隔 <span
+class="math inline">\(T\)</span>
+过大（采样率不足），频域图像高频段会出现重叠的部分（高次混叠波），进而产生走样<sup id="fnref:4141"><a href="#fn:4141" rel="footnote">4141</a></sup>。因而在采样时，我们有如下方法实现反走样：</p>
 <ul>
 <li>增加采样率，从而减少高频信号重叠区域大小。</li>
 <li>采样前使用低通滤波器，去除高频信息。<sup id="fnref:4142"><a href="#fn:4142" rel="footnote">4142</a></sup></li>
 </ul>
 <p>利用样本重建信号时，也可以选用适合的滤波器来实现反走样，在保留基波的同时降低高次混叠波。重采样由于带宽（频谱宽度）减少，也可以降低混叠。</p>
-<h4 id="4-1-5-图像信号"><a href="#4-1-5-图像信号" class="headerlink" title="4.1.5 图像信号"></a>4.1.5 图像信号</h4><p>图像信号是一种二维信号，同一维信号类似，我们也可以用（离散）滤波器对信号进行处理，从而实现我们想要的图像处理效果。例如：</p>
+<h4 id="图像信号">4.1.5 图像信号</h4>
+<p>图像信号是一种二维信号，同一维信号类似，我们也可以用（离散）滤波器对信号进行处理，从而实现我们想要的图像处理效果。例如：</p>
 <ul>
-<li><p>图像模糊：让图像中的“轮廓”变得更加平滑，对应保留低频信息，去除高频信息。可以采用高斯滤波器做高斯模糊。</p>
-</li>
-<li><p>图像锐化：让图像中的“轮廓”变得更加突出，对应保留高频信息，去除低频信息。可以让原图减去高斯模糊。</p>
-</li>
-<li><p>阴影投射：给图像加阴影。平移原图像后进行模糊。</p>
-</li>
+<li><p>图像模糊：让图像中的“轮廓”变得更加平滑，对应保留低频信息，去除高频信息。可以采用高斯滤波器做高斯模糊。</p></li>
+<li><p>图像锐化：让图像中的“轮廓”变得更加突出，对应保留高频信息，去除低频信息。可以让原图减去高斯模糊。</p></li>
+<li><p>阴影投射：给图像加阴影。平移原图像后进行模糊。</p></li>
 </ul>
 <p>对图像进行采样也会遇到走样的问题，这种走样一般表现为锯齿和摩尔纹。如上文所述，我们可以先对原图进行适当模糊，再进行采样。</p>
-<p>如果要改变图像分辨率&#x2F;采样频率，我们就需要对图像信号进行重采样。重采样一般分为重构与采样两个步骤。利用卷积，我们可以将重构与采样时应用的滤波器组合起来，得到重采样滤波器<sup id="fnref:4151"><a href="#fn:4151" rel="footnote">4151</a></sup>。</p>
+<p>如果要改变图像分辨率/采样频率，我们就需要对图像信号进行重采样。重采样一般分为重构与采样两个步骤。利用卷积，我们可以将重构与采样时应用的滤波器组合起来，得到重采样滤波器<sup id="fnref:4151"><a href="#fn:4151" rel="footnote">4151</a></sup>。</p>
 <p>对图像信号做滤波时会遇到如下的问题：</p>
 <ul>
 <li>图像边缘的处理。比较好的方法是在接近边缘时选择不同大小的滤波器。</li>
 <li>滤波器（半径）大小。一般来说，滤波器越大，处理得到的图像越模糊。</li>
 </ul>
-<h3 id="4-2-纹理映射"><a href="#4-2-纹理映射" class="headerlink" title="4.2 纹理映射"></a>4.2 纹理映射</h3><h4 id="4-2-1-引入"><a href="#4-2-1-引入" class="headerlink" title="4.2.1 引入"></a>4.2.1 引入</h4><p>如何在计算机里存一个有着各种复杂花纹的花瓶呢？一种简单的方法是：将花瓶外观的细节记录在一张图上，再将图映射到我们的模型表面。这张图就是纹理图，而映射即是我们接下来将要研究的纹理映射。</p>
+<h3 id="纹理映射">4.2 纹理映射</h3>
+<h4 id="引入-2">4.2.1 引入</h4>
+<p>如何在计算机里存一个有着各种复杂花纹的花瓶呢？一种简单的方法是：将花瓶外观的细节记录在一张图上，再将图映射到我们的模型表面。这张图就是纹理图，而映射即是我们接下来将要研究的纹理映射。</p>
 <p>纹理可以简单地做个划分：</p>
 <ul>
-<li><p>二维纹理域：将纹理变换到三维物体表面形成最终图像。</p>
-</li>
-<li><p>三维纹理域：各点对应的纹理由三维纹理函数唯一确定。</p>
-</li>
-<li><p>几何纹理：对物体表面每个点沿法向量方向位移若干单位长度，从而实现粗糙外观。</p>
-</li>
-<li><p>etc.</p>
-</li>
+<li><p>二维纹理域：将纹理变换到三维物体表面形成最终图像。</p></li>
+<li><p>三维纹理域：各点对应的纹理由三维纹理函数唯一确定。</p></li>
+<li><p>几何纹理：对物体表面每个点沿法向量方向位移若干单位长度，从而实现粗糙外观。</p></li>
+<li><p>etc.</p></li>
 </ul>
 <p>假定我们现在已经有了纹理图，做纹理映射不可避免地要遇到两个问题：如何映射，以及如何解决走样问题（例如相机离物体很远时产生的锯齿）。</p>
 <p>纹理查找问题。</p>
-<h4 id="4-2-2-映射函数"><a href="#4-2-2-映射函数" class="headerlink" title="4.2.2 映射函数"></a>4.2.2 映射函数</h4><h4 id="4-2-3-反走样"><a href="#4-2-3-反走样" class="headerlink" title="4.2.3 反走样"></a>4.2.3 反走样</h4><p><u>TAT 施工部分</u></p>
+<h4 id="映射函数">4.2.2 映射函数</h4>
+<h4 id="反走样">4.2.3 反走样</h4>
+<p><u>TAT 施工部分</u></p>
 <p>之后应该会在这里加一些有关纹理查找问题的 Notes，参考 Games 101。</p>
-<h2 id="5-几何表示"><a href="#5-几何表示" class="headerlink" title="5 几何表示"></a>5 几何表示</h2><h3 id="5-1-引入与基础"><a href="#5-1-引入与基础" class="headerlink" title="5.1 引入与基础"></a>5.1 引入与基础</h3><h4 id="5-1-1-显示表示"><a href="#5-1-1-显示表示" class="headerlink" title="5.1.1 显示表示"></a>5.1.1 显示表示</h4><h4 id="5-1-2-隐式表示"><a href="#5-1-2-隐式表示" class="headerlink" title="5.1.2 隐式表示"></a>5.1.2 隐式表示</h4><h3 id="5-2-曲线"><a href="#5-2-曲线" class="headerlink" title="5.2 曲线"></a>5.2 曲线</h3><h4 id="5-2-1-贝塞尔曲线"><a href="#5-2-1-贝塞尔曲线" class="headerlink" title="5.2.1 贝塞尔曲线"></a>5.2.1 贝塞尔曲线</h4><h4 id="5-2-2-B-样条曲线"><a href="#5-2-2-B-样条曲线" class="headerlink" title="5.2.2 B 样条曲线*"></a>5.2.2 B 样条曲线*</h4><h3 id="5-3-平面"><a href="#5-3-平面" class="headerlink" title="5.3 平面"></a>5.3 平面</h3><h4 id="5-3-1-贝塞尔平面"><a href="#5-3-1-贝塞尔平面" class="headerlink" title="5.3.1 贝塞尔平面"></a>5.3.1 贝塞尔平面</h4><h3 id="5-4-三维表示"><a href="#5-4-三维表示" class="headerlink" title="5.4 三维表示"></a>5.4 三维表示</h3><h2 id="F-脚注"><a href="#F-脚注" class="headerlink" title="F 脚注"></a>F 脚注</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:4141"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4141.</span><span style="display: inline-block; vertical-align: top;">上文提到，信息的采样频率过低会造成走样。要正确采样（能够从采样后的信息重建出原始信号），采样频率必须大于原始信号最大频率的2倍，这通常被称为采样定理，采样频率称为 Nyquist limit 或 Nyquist rate。这个定理使用了&quot;最大频率&quot;术语，这就意味着这个信号必须是有带宽限制(band-limited)的，没有任何频率能超过这个限制。换句话说，在相邻采样的间隔中，信号必须足够平滑。</span><a href="#fnref:4141" rev="footnote"> ↩</a></li><li id="fn:4142"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4142.</span><span style="display: inline-block; vertical-align: top;">按此描述，盒状滤波器的处理效果似乎是最好的：它在完全剔除了高频信息的同时保存了低频信息。然而，它的实用性并不强：一是频域函数难用，还存在着负数部分，二是实际效果并不如想象的那般出色。相较而言，帐篷滤波器、高斯滤波器更实用，效果也较为出色。</span><a href="#fnref:4142" rev="footnote"> ↩</a></li><li id="fn:4151"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4151.</span><span style="display: inline-block; vertical-align: top;">实际应用中，重采样时可以先对行进行重采样，然后再对列进行重采样，从而实现“空间换时间”的效率提升。</span><a href="#fnref:4151" rev="footnote"> ↩</a></li></ol></div></div>
+<h2 id="几何表示">5 几何表示</h2>
+<h3 id="引入与基础">5.1 引入与基础</h3>
+<h4 id="显示表示">5.1.1 显示表示</h4>
+<h4 id="隐式表示">5.1.2 隐式表示</h4>
+<h3 id="曲线">5.2 曲线</h3>
+<h4 id="贝塞尔曲线">5.2.1 贝塞尔曲线</h4>
+<h4 id="b-样条曲线">5.2.2 B 样条曲线*</h4>
+<h3 id="平面">5.3 平面</h3>
+<h4 id="贝塞尔平面">5.3.1 贝塞尔平面</h4>
+<h3 id="三维表示">5.4 三维表示</h3>
+<h2 id="f-脚注">F 脚注</h2>
+<div id="footnotes">
+<hr>
+<div id="footnotelist">
+<ol style="list-style:none; padding-left: 0;">
+<li id="fn:4141">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px;">4141.</span><span
+style="display: inline-block; vertical-align: top;">上文提到，信息的采样频率过低会造成走样。要正确采样（能够从采样后的信息重建出原始信号），采样频率必须大于原始信号最大频率的2倍，这通常被称为采样定理，采样频率称为
+Nyquist limit 或 Nyquist
+rate。这个定理使用了"最大频率"术语，这就意味着这个信号必须是有带宽限制(band-limited)的，没有任何频率能超过这个限制。换句话说，在相邻采样的间隔中，信号必须足够平滑。</span><a href="#fnref:4141" rev="footnote">
+↩︎</a>
+</li>
+<li id="fn:4142">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px;">4142.</span><span
+style="display: inline-block; vertical-align: top;">按此描述，盒状滤波器的处理效果似乎是最好的：它在完全剔除了高频信息的同时保存了低频信息。然而，它的实用性并不强：一是频域函数难用，还存在着负数部分，二是实际效果并不如想象的那般出色。相较而言，帐篷滤波器、高斯滤波器更实用，效果也较为出色。</span><a href="#fnref:4142" rev="footnote">
+↩︎</a>
+</li>
+<li id="fn:4151">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px;">4151.</span><span
+style="display: inline-block; vertical-align: top;">实际应用中，重采样时可以先对行进行重采样，然后再对列进行重采样，从而实现“空间换时间”的效率提升。</span><a href="#fnref:4151" rev="footnote">
+↩︎</a>
+</li>
+</ol>
+</div>
+</div>
+
     </div>
 
     
@@ -781,7 +1270,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
