@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#06a80"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#06a80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Neue:300,300italic,400,400italic,700,700italic%7CNoto+Serif:300,300italic,400,400italic,700,700italic%7CKaiTi:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jasonlannel.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#e42005","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Notes for CSAPP, textbook for ICS.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS:APP Notes">
+<meta property="og:url" content="https://jasonlannel.github.io/2023/02/csapp/index.html">
+<meta property="og:site_name" content="JasonL&#39;s Blog">
+<meta property="og:description" content="Notes for CSAPP, textbook for ICS.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CTypeWithBits.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CShift.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CEncodingInts.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CIntAdd.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CNegAdd.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CProcedureCalls.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CCPUDesign.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CDRAMonMM.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5Cdisk.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CrwHead.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5Caccess.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CMH.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CMType.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CCacheOrg.webp">
+<meta property="og:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CTMountain.webp">
+<meta property="article:published_time" content="2023-02-12T03:15:06.000Z">
+<meta property="article:modified_time" content="2023-02-18T12:02:50.000Z">
+<meta property="article:author" content="JasonL">
+<meta property="article:tag" content="2023">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jasonlannel.github.io/%5Cimages%5Ccsapp%5CTypeWithBits.webp">
+
+
+<link rel="canonical" href="https://jasonlannel.github.io/2023/02/csapp/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://jasonlannel.github.io/2023/02/csapp/","path":"2023/02/csapp/","title":"CS:APP Notes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS:APP Notes | JasonL's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G9X1WXCE3"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8G9X1WXCE3","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">JasonL's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Wander in the stars.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#01-A-Tour-of-Computer-Systems"><span class="nav-number">2.</span> <span class="nav-text">*01 A Tour of Computer Systems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-Representing-and-Manipulating-Information"><span class="nav-number">3.</span> <span class="nav-text">02 Representing and Manipulating Information</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Information-Storage"><span class="nav-number">3.1.</span> <span class="nav-text">Information Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer-Representations"><span class="nav-number">3.2.</span> <span class="nav-text">Integer Representations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer-Arithmetic"><span class="nav-number">3.3.</span> <span class="nav-text">Integer Arithmetic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Floating-Point"><span class="nav-number">3.4.</span> <span class="nav-text">Floating Point</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-Machine-Level-Representation-of-Programs"><span class="nav-number">4.</span> <span class="nav-text">*03 Machine-Level Representation of Programs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-Processor-Architecture"><span class="nav-number">5.</span> <span class="nav-text">*04 Processor Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-Optimizing-Program-Performance"><span class="nav-number">6.</span> <span class="nav-text">05 Optimizing Program Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-The-Memory-Hierarchy"><span class="nav-number">7.</span> <span class="nav-text">06 The Memory Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#07-Linking"><span class="nav-number">8.</span> <span class="nav-text">07 Linking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#08-Exceptional-Control-Flow"><span class="nav-number">9.</span> <span class="nav-text">08 Exceptional Control Flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#09-Virtual-Memory"><span class="nav-number">10.</span> <span class="nav-text">09 Virtual Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-System-Level-I-O"><span class="nav-number">11.</span> <span class="nav-text">10 System-Level I&#x2F;O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Network-Programming"><span class="nav-number">12.</span> <span class="nav-text">*11 Network Programming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-Concurrent-Programming"><span class="nav-number">13.</span> <span class="nav-text">*12 Concurrent Programming</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="JasonL"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">JasonL</p>
+  <div class="site-description" itemprop="description">江潮尽残夜，舟帆盈初阳。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JasonLannel" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JasonLannel" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jasonlanch@qq.com" title="E-Mail → mailto:jasonlanch@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.luogu.com.cn/user/137422" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;137422" rel="noopener" target="_blank">洛谷</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/JasonLan" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;JasonLan" rel="noopener" target="_blank">CodeForces</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/JasonL" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;JasonL" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jasonlannel.github.io/2023/02/csapp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="JasonL">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonL's Blog">
+      <meta itemprop="description" content="江潮尽残夜，舟帆盈初阳。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS:APP Notes | JasonL's Blog">
+      <meta itemprop="description" content="Notes for CSAPP, textbook for ICS.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS:APP Notes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-12 11:15:06" itemprop="dateCreated datePublished" datetime="2023-02-12T11:15:06+08:00">2023-02-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-18 20:02:50" itemprop="dateModified" datetime="2023-02-18T20:02:50+08:00">2023-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ICS/" itemprop="url" rel="index"><span itemprop="name">ICS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ICS/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Notes for CSAPP, textbook for ICS.</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>It’s a long way to learn CS:APP. Notes can mistakenly miss something, and some basic info&#x2F;unnecessary chapters(with stars before the title) would be skipped, so I would commend you readers to read the original book on your own. (I mean the original North American edition; <del>中文版虽然努力了，但是一言难尽</del>)</p>
+<p>Thanks give to ouuan with <a target="_blank" rel="noopener" href="https://ouuan.moe/tag/csapp">CS:APP notes</a> in Chinese. (I write notes in English just because I have to…To prove it, you would find pics from Chinese edition below.)</p>
+<h3 id="01-A-Tour-of-Computer-Systems"><a href="#01-A-Tour-of-Computer-Systems" class="headerlink" title="*01 A Tour of Computer Systems"></a>*01 A Tour of Computer Systems</h3><p>I would just skip this; if necessary I would fill the blank in.</p>
+<h3 id="02-Representing-and-Manipulating-Information"><a href="#02-Representing-and-Manipulating-Information" class="headerlink" title="02 Representing and Manipulating Information"></a>02 Representing and Manipulating Information</h3><h4 id="Information-Storage"><a href="#Information-Storage" class="headerlink" title="Information Storage"></a>Information Storage</h4><ul>
+<li><p><strong>Bit</strong> kept 0&#x2F;1. For numbers count in binary </p>
+<p>e.g. $(\mathrm{00011011111101010010})<em>2$, or $(\mathrm{114514})</em>{10}$ in decimal. Most times we hate binary expression for its length; So we use hexadecimal $(\mathrm{1BF52})_{16}$</p>
+</li>
+<li><p><strong>Byte</strong> &#x3D; 8 bits</p>
+</li>
+<li><p><strong>Word Size</strong> &#x3D; nominal size of integer-valued data and of addresses. Now most machines have 64-bit word size.</p>
+</li>
+</ul>
+<p><img src="/%5Cimages%5Ccsapp%5CTypeWithBits.webp" alt="Word size changes bits used by different types in C."></p>
+<ul>
+<li><p><strong>Byte Ordering</strong></p>
+<ul>
+<li><strong>Big Endian</strong>: Read&#x2F;Write from high bits to low bits. e.g. $\mathrm{00011011111101010010}\rightarrow (114514)_{10}$ </li>
+<li><strong>Little Endian</strong>: Read&#x2F;Write from low bits to high bits. e.g. $\mathrm{01001010111111011000}\rightarrow(114514)_{10}$</li>
+</ul>
+<p>Usually no effect on programming; But consideration need to be taken when:</p>
+<ul>
+<li>communication (e.g. Network)</li>
+<li>check original byte array (in machine-level programming), </li>
+<li>type conversions&#x2F;casting, union, etc.</li>
+</ul>
+</li>
+<li><p><strong>Bit-level Operations</strong></p>
+<ul>
+<li><p><strong>General Boolean Algebra</strong></p>
+<ul>
+<li>Intersection &amp;(AND)</li>
+<li>Union |(OR)</li>
+<li>Symmetric difference ^(XOR)</li>
+<li>Complement ~</li>
+</ul>
+<p>Notice: Contrast to logical operations (&amp;&amp;,||,!) which results are only 0&#x2F;1.</p>
+</li>
+<li><p><strong>Shift Operations</strong></p>
+<p><img src="/%5Cimages%5Ccsapp%5CShift.webp"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Integer-Representations"><a href="#Integer-Representations" class="headerlink" title="Integer Representations"></a>Integer Representations</h4><ul>
+<li><p><strong>Encoding Integers</strong></p>
+<p><img src="/%5Cimages%5Ccsapp%5CEncodingInts.webp"></p>
+<details class="note warning"><summary><p>Warning</p>
+</summary>
+<p>Be cautious when dealing with unsigned and signed. When both operated with operations, signed will be converted to unsigned, and errors can be produced like <code>-1 &gt; 0u</code>.</p>
+
+</details>
+</li>
+<li><p><strong>Expanding</strong> </p>
+<ul>
+<li>Unsigned: fill high bits with 0s</li>
+<li>Signed: fill in sign bit</li>
+</ul>
+</li>
+<li><p><strong>Truncating</strong></p>
+<p>Unsigned&#x2F;signed: high bits are truncated. Similar to mod.</p>
+</li>
+</ul>
+<h4 id="Integer-Arithmetic"><a href="#Integer-Arithmetic" class="headerlink" title="Integer Arithmetic"></a>Integer Arithmetic</h4><ul>
+<li><p><strong>Addition</strong></p>
+<ul>
+<li><p>Unsigned: $u + v &#x3D; (u+v) \mod 2^w$</p>
+<p><img src="/%5Cimages%5Ccsapp%5CIntAdd.webp"></p>
+</li>
+<li><p>Signed: $u+v &#x3D; \mathrm{U2T}(\mathrm{T2U}(u)+\mathrm{T2U}(v))$</p>
+<p><img src="/%5Cimages%5Ccsapp%5CNegAdd.webp"></p>
+</li>
+</ul>
+<p>Extra: $-u &#x3D; (\sim u)+1 $</p>
+</li>
+<li><p><strong>Multiplication</strong></p>
+<p>Do mod $2^w$ again. Do power-of-2 multiply&#x2F;divide, use shift.</p>
+</li>
+</ul>
+<h4 id="Floating-Point"><a href="#Floating-Point" class="headerlink" title="Floating Point"></a>Floating Point</h4><ul>
+<li><p>IEEE Representation: $(-1)^s\times M\times 2^E$</p>
+<ul>
+<li>sign bit($s$)</li>
+<li>exponent field($E$) [Can be negative, like signed integer.]</li>
+<li>fraction field($M$) &#x3D; $?.f_{n-1}\dots f_1f_0$</li>
+</ul>
+<p>32-bit(float): 8 bits for exponent, 23 bits for fraction</p>
+<p>64-bit(double): 11 bits for exponent, 52 bits for fraction</p>
+<ul>
+<li><p>Normalized values (exponent not all 0s&#x2F;1s)</p>
+<p>$E&#x3D;1-\mathrm{Bias},M&#x3D;1.f{n-1}\dots f_1f_0$</p>
+<p>Here $\mathrm{Bias}&#x3D;2^{w-1}-1$.</p>
+</li>
+<li><p>Denormalized values (exponent all 0s)</p>
+<p>$E&#x3D;1-\mathrm{Bias},M&#x3D;0.f{n-1}\dots f_1f_0$</p>
+</li>
+<li><p>Special values (exponent all 1s)</p>
+<p>$\pm \infty$ if fraction all 0s; NaN otherwise.</p>
+</li>
+</ul>
+</li>
+<li><p>Arithmetic</p>
+<ul>
+<li><p>Rounding Modes</p>
+<p>round-to-even(default), round-toward-zero, round-down, round-up.</p>
+</li>
+<li><p>Operations</p>
+<p>Get exact result, then fixing(overflow if out of range, and round to fit precision)</p>
+</li>
+<li><p>Conversions&#x2F;Casting</p>
+<p>Overflow&#x2F;Rounding can be occured.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="03-Machine-Level-Representation-of-Programs"><a href="#03-Machine-Level-Representation-of-Programs" class="headerlink" title="*03 Machine-Level Representation of Programs"></a>*03 Machine-Level Representation of Programs</h3><p>I would like to “borrow” <a target="_blank" rel="noopener" href="https://ouuan.moe/post/2022/09/csapp-3">notes from Ouuan</a> for specific reason: it is said that we use RISC-V rather than x86-64 architecture in Tea Garden(TG in short afterwards).</p>
+<h3 id="04-Processor-Architecture"><a href="#04-Processor-Architecture" class="headerlink" title="*04 Processor Architecture"></a>*04 Processor Architecture</h3><p>I would skip this two chapters for specific reason; if necessary I would fill the blank in.</p>
+<h3 id="05-Optimizing-Program-Performance"><a href="#05-Optimizing-Program-Performance" class="headerlink" title="05 Optimizing Program Performance"></a>05 Optimizing Program Performance</h3><p>Optimize <strong>CPE</strong>(cycles per OP)</p>
+<ul>
+<li><p><strong>Basic Optimizations</strong></p>
+<ul>
+<li><p>Replace costly operation with simpler one</p>
+</li>
+<li><p>Shift, add instead of multiply or divide (power-of-2)</p>
+</li>
+<li><p>Share common subexpressions</p>
+</li>
+<li><p>Procedure calls(e.g. <code>strlen</code>)</p>
+<p><img src="/%5Cimages%5Ccsapp%5CProcedureCalls.webp"></p>
+</li>
+<li><p>Removing aliasing (introducing local variables rather than iteration on arrays)</p>
+</li>
+</ul>
+</li>
+<li><p>Optimizations over modern CPU Design</p>
+<p><img src="/%5Cimages%5Ccsapp%5CCPUDesign.webp"></p>
+<ul>
+<li><p>Make use of pipeline: parallel execution</p>
+<ul>
+<li>Loop Unrolling (normally $\le$ 10 rows)</li>
+<li>Reassociated Computation</li>
+</ul>
+</li>
+<li><p>Branch Prediction</p>
+<p>Reload takes 20-30 clock cycles cost</p>
+</li>
+<li><p>Locality(Chapter 06)</p>
+<p>Temporal locality: Recent accessed data are more likely to be accessed again</p>
+<p>Spatial locality: Data adjacent to last accessed data are more likely to be accessed</p>
+</li>
+<li><p>Blocking(Chapter 06)</p>
+<p>e.g. Matrix multiplication.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="06-The-Memory-Hierarchy"><a href="#06-The-Memory-Hierarchy" class="headerlink" title="06 The Memory Hierarchy"></a>06 The Memory Hierarchy</h3><ul>
+<li><p><strong>RAM</strong>&#x2F;Random-Access Memory</p>
+<p>Volatile memory: info lost once not powered.</p>
+<ul>
+<li><p><strong>SRAM</strong>&#x2F;Static RAM</p>
+<ul>
+<li>Used as cache</li>
+<li>Bistable. Once powered, keep values all the time.</li>
+</ul>
+</li>
+<li><p><strong>DRAM</strong>&#x2F;Dynamic RAM</p>
+<ul>
+<li>Used as main memory, frame buffer (for graphics system)</li>
+<li>Cheaper &amp; Slower than SRAM</li>
+<li>Sensitive to electric noise</li>
+</ul>
+<p><strong>DRAM Chip</strong> A two-dimensional array, each called supercell with $w$-DRAM units. Connected to <em>memory controller</em>, and packaged in the memory <em>module</em>.</p>
+<p>To read supercell $(i,j)$, memory controller send RAS(row access strobe) $i$ and CAS(column access strobe) $j$, then DRAM copy $i$-th row to the internal row buffer, and extract $j$-th bit with CAS.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/%5Cimages%5Ccsapp%5CDRAMonMM.webp"></p>
+<ul>
+<li><p><strong>ROM</strong>&#x2F;Read-Only Memory</p>
+<p>Nonvolatile memory: infos kept even not powered</p>
+<p>Apps kept in ROM called <em>firmware.</em>(BIOS, disk drive controller, etc.)</p>
+<ul>
+<li><strong>PROM</strong>&#x2F;Programmable ROM: Can be programmed only once</li>
+<li><strong>EPROM</strong>&#x2F;Erasable Programmable ROM<ul>
+<li>Use physical way(Ultraviolet light) to erase</li>
+</ul>
+</li>
+<li><strong>EEPROM</strong>&#x2F;Electrically Erasable PROM<ul>
+<li>Application: Flash Memory</li>
+<li>Can be erased&amp;programmed for $10^5$ times</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Bus</strong></p>
+<p>Transfer data between CPU chip and DRAM main memory(procedure called bus transaction, including read &amp; write).</p>
+<p>System bus: linking CPU and I&#x2F;O bridge(memory controller included)</p>
+<p>Memory bus: linking I&#x2F;O bridge and main memory</p>
+<p>(So signals from two buses need to be translated by I&#x2F;O bridge.)</p>
+<p>I&#x2F;O bus: linking I&#x2F;O bridge with I&#x2F;O devices, like USB(Universal Serial Bus) controller, SCSI&#x2F;SATA adapter, host bus adapter, etc.</p>
+</li>
+<li><p><strong>Disk</strong></p>
+<p><img src="/%5Cimages%5Ccsapp%5Cdisk.webp"></p>
+<p>Consist of <strong>platter</strong> with two <strong>surfaces</strong>, covered with circular <strong>track</strong>. Tracks are divided into <strong>sector</strong>(usually 512 kB storage), with <strong>gaps</strong> to separate sectors (so easy to recognize them). Platters share one spindle, and for a certain $k$, all tracks with distance $k$ to spindle called a cylinder.</p>
+<p>Factors to affect disk storage:</p>
+<ul>
+<li><strong>recording density</strong>(bit&#x2F;inch): size of bits track kept for unit length</li>
+<li><strong>track density</strong>(track&#x2F;inch): size of tracks on the area of a circle with unit radius from the center of a platter.</li>
+<li><strong>areal density</strong>(bit&#x2F;inch^2): product of recording density and track density</li>
+</ul>
+<p>To improve storage, cylinder are divided into <strong>recording zones</strong> consisting of several adjacent cylinders, and all tracks have the same size of sectors.</p>
+<p>To read&#x2F;write: using <strong>read&#x2F;write head</strong>. The head <strong>seek</strong> the targeted track and modify the bit.</p>
+<p><img src="/%5Cimages%5Ccsapp%5CrwHead.webp"></p>
+<p><strong>Logical Disk Blocks</strong> indexed sectors to coordinates (surface, track, sector) using disk controller.</p>
+<p><strong>Disk Format</strong> Identify sectors and fill info into gaps; Identify surfaces with failure; Reserve surfaces for potential failure surfaces.</p>
+<p><strong>Access Disk</strong></p>
+<ul>
+<li>Command with target logical disk block number and target main memory address send to disk controller from CPU</li>
+<li>Disk read sectors and transfer data to main memory, so-called DMA(Direct Memory Access). CPU can process other commands until DMA is complete.</li>
+<li>Disk send interrupt signal to CPU and CPU jumps to signal handler.</li>
+</ul>
+<p>High cost for accessing disk, reading&#x2F;writing on sectors.</p>
+<p>access time &#x3D; seek time + rotational latency + transfer time</p>
+<p><strong>SSD</strong>(Solid State Disk)</p>
+<ul>
+<li>Packaged flash memories with a flash translation layer to translate logical block number to address of flash memory.</li>
+<li>Each block(16kB<del>512kB) contains 32 to 128 pages(512 bytes</del>4 kB). Write on pages only after the whole block is erased.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/%5Cimages%5Ccsapp%5Caccess.webp"></p>
+<p><img src="/%5Cimages%5Ccsapp%5CMH.webp"></p>
+<p><img src="/%5Cimages%5Ccsapp%5CMType.webp"></p>
+<ul>
+<li><p><strong>Cache</strong></p>
+<p><img src="/%5Cimages%5Ccsapp%5CCacheOrg.webp"></p>
+<p>We suppose there’re $M&#x3D;2^m$ addresses for the main memory with each saves a byte. Then its cache would divide into $S&#x3D;2^s$ <strong>cache sets</strong>, each contains $E&#x3D;2^e$ <strong>cache lines</strong>, where each line saves a <strong>block</strong> with size of $B&#x3D;2^b$ bytes, a <strong>valid bit</strong>, and <strong>tag bits</strong> with length of $t&#x3D;m-b-s$. So the size of the whole cache is $C&#x3D;S\times E\times B$ bytes.</p>
+<ul>
+<li><p>How it works?</p>
+<p>Each address contains three parts: <strong>tag</strong> for the $t$ high bits, <strong>set index</strong> for $s$ bits in the middle, and <strong>block offset</strong> for the $b$ low bits. To have a cache hit, the machine with the set index find the corresponding cache set, and then find a cache line whose <strong>valid bit is true and the tag bits fit</strong>. Then with block offset the machine finds the targeted byte.</p>
+</li>
+<li><p><strong>Cache miss</strong></p>
+<p>There would be <strong>cache miss</strong> as well when the case above is not satisfied. Once a cache miss happens, the $k$-level cache would gain the block containing the data from the $k+1$-level cache(the procedure is called <strong>placement policy</strong>). If the cache is full, the machine choose a <strong>victim block&#x2F;line</strong> to <strong>evict</strong> based on a <strong>replacement policy</strong>, e.g. random replacement policy, <strong>least frequently used(LFU)</strong> and <strong>least recently used(LRU)</strong>.</p>
+<ul>
+<li>For an empty cache so-called <strong>cold cache</strong>, <strong>cold miss</strong> happens. (So it’s a compulsory miss.)</li>
+<li>Usually, the block which index is $i$ in the $k+1$-level cache would push into the $i \mod (S\times E)$-th block in the $k$-level cache. This causes <strong>conflict miss</strong>, e.g. CPU calls block $0,8,0,8,\dots$ of $k+1$-level cache, and conflict miss occurs in the $k$-level cache.</li>
+<li>If the working set is larger than $C$, the cache would have <strong>capacity miss</strong>.</li>
+</ul>
+</li>
+<li><p>Different types of cache</p>
+<ul>
+<li>When $E&#x3D;1$, it is called <strong>direct-mapped cache.</strong> (Capacity miss occurs.)</li>
+<li>When $E&gt;1$, it is called <strong>set associative cache.</strong><ul>
+<li>For $s&#x3D;0$, naming <strong>fully</strong> associative cache;</li>
+<li>Otherwise, called <strong>E-way set</strong> associative cache.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Write</p>
+<p>For write hits:</p>
+<ul>
+<li><strong>Write-through</strong>: write block to the lower(k to k+1) level immediately. Simple but bus flow produces.</li>
+<li><strong>Write-back</strong>: delay the update until the block is going to be evicted (just like lazy tag in the segment tree). Bus flow reduces but complexity increases; and an extra <strong>dirty bit</strong> is needed to help identify whether a block is modified.</li>
+</ul>
+<p>For write misses:</p>
+<ul>
+<li><strong>Write-allocate:</strong> Gain block from the lower level and process as write hits</li>
+<li><strong>No-write-allocate:</strong> Write straightly without writing into the cache.</li>
+</ul>
+</li>
+<li><p>i-cache and d-cache</p>
+<p><strong>i-cache</strong> only saves commands(so read-only), and <strong>d-cache</strong> only saves data, and <strong>unified cache</strong> saves both. Help optimize them separately, reduce conflict miss.</p>
+</li>
+<li><p>Parameters</p>
+<ul>
+<li><strong>miss rate</strong></li>
+<li><strong>hit rate</strong> &#x3D; 1 - miss rate</li>
+<li><strong>hit time</strong> &#x3D; time takes for transferring a word from cache to CPU</li>
+<li><strong>miss penalty</strong> 10s cycles for L1&#x2F;L2, and 50 cycles for L3, and 200+ cycles for main memory.</li>
+</ul>
+<p>Effects</p>
+<ul>
+<li>Larger the cache size is, higher the hit rate and hit time are.</li>
+<li>Larger the size of block is, higher the hit rate is (programs with better spatial locality); But the lines decreases and the high rate may decrease (for programs with better temporal locality).</li>
+<li>Larger the $E$ is, less the likelihood of conflict miss is; but hit time and miss penalty increases due to the complexity of comparing tags and choosing victim lines.</li>
+<li>Different types of write policy. Usually write-back is better for lower-level caches.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/%5Cimages%5Ccsapp%5CTMountain.webp"></p>
+<h3 id="07-Linking"><a href="#07-Linking" class="headerlink" title="07 Linking"></a>07 Linking</h3><ul>
+<li><p>How to compile?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">G[&quot;other .o&quot;] --&gt;|ld|E</span><br><span class="line">A[&quot;source code(.c)&quot;] --&gt;|cpp| B[&quot;intermediate file(.i)&quot;] --&gt;|cc1| C[&quot;assembly code(.s)&quot;] --&gt;|as| D[&quot;relocatable object file(.o)&quot;] --&gt;|&quot;ld&quot;| E[&quot;executable object file&quot;]</span><br><span class="line">H[&quot;library(.a for archive)&quot;] --&gt;|ld|E</span><br></pre></td></tr></table></figure>
+
+<p>Here, <code>cpp</code>, <code>cc1</code>, <code>as</code> are translators, and <code>ld</code> is linker.</p>
+<p>Object files: including relocatable object file, executable object file and shared object file(used in dynamic linking). Have different formats, e.g., Portable Executable (PE) for Windows and Mach-O for macOS, and <strong>Executable and Linkable Format(ELF)</strong> for x86-64 Linux&#x2F;Unix.</p>
+<p>Static libraries: A package of several object files. Better saving space, and less importing modules. To create one, use commands like <code>ar rcs libabc.a a.o b.o c.o</code>. When using it, use command like <code>./libabc.a</code> or <code>-L. -labc</code>(import path to the linker).</p>
+<ul>
+<li><p>ELF Format</p>
+<table>
+<thead>
+<tr>
+<th>Header&#x2F;Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>ELF header</em></td>
+<td>Word size, byte ordering, file type(.o, exec, .so), machine type, etc.</td>
+</tr>
+<tr>
+<td><em>Segment header table</em></td>
+<td>Page size, virtual addresses memory segments(sections), segment sizes.</td>
+</tr>
+<tr>
+<td><code>.text</code></td>
+<td>Code</td>
+</tr>
+<tr>
+<td><code>.rodata</code></td>
+<td>Read only data e.g. jump tables</td>
+</tr>
+<tr>
+<td><code>.data</code></td>
+<td>Initialized global variables (as <strong>strong</strong> symbols. Procedures are strong as well)</td>
+</tr>
+<tr>
+<td><code>.bss</code></td>
+<td>Uninitialized global variables (as <strong>weak</strong> symbols). (“Block Storage Start” for full name, can be remembered as <em>“Better saving spaces”</em>)</td>
+</tr>
+<tr>
+<td><code>.symtab</code></td>
+<td>Symbol table: procedure and static variable names, section names and locations</td>
+</tr>
+<tr>
+<td><code>.rel.text</code></td>
+<td>Relocation info for <code>.text</code> section: Addresses of instructions that will need to be modified in the executable and instructions for modifying (usually for global vars and external functions)</td>
+</tr>
+<tr>
+<td><code>.rel.data</code></td>
+<td>Relocation info for <code>.data</code> section: Addresses of pointer data that will need to be modified in the merged executable (usually for values of global vars and addresses for external functions)</td>
+</tr>
+<tr>
+<td><code>.debug</code>(gcc -g)</td>
+<td>Info for symbolic debugging</td>
+</tr>
+<tr>
+<td><code>.line</code>(gcc -g)</td>
+<td>Mapping machine code to line numbers of source C code.</td>
+</tr>
+<tr>
+<td><code>.strtab</code>(gcc -g)</td>
+<td>String table: symbol table of <code>.symtab</code> and <code>.debug</code> and section name of header, ending with null.</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>ELF64 symbol</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span>   name;      <span class="comment">/* String table offset */</span></span><br><span class="line">    <span class="type">char</span>  type:<span class="number">4</span>,    <span class="comment">/* Function or data (4 bits) */</span></span><br><span class="line">          binding:<span class="number">4</span>; <span class="comment">/* Local or global (4 bits) */</span></span><br><span class="line">    <span class="type">char</span>  reserved;  <span class="comment">/* Unused */</span></span><br><span class="line">    <span class="type">short</span> section;   <span class="comment">/* Section header index */</span></span><br><span class="line">    <span class="type">long</span>  value;     <span class="comment">/* Section offset or absolute address */</span></span><br><span class="line">    <span class="type">long</span>  size;      <span class="comment">/* Object size in bytes */</span></span><br><span class="line">&#125; Elf64_Symbol;</span><br></pre></td></tr></table></figure>
+
+<p>Here three pseudosections(for <code>.o</code> files) are tagged in <code>section</code>:</p>
+<ul>
+<li><p>ABS: symbols should not be relocated</p>
+</li>
+<li><p>UNDEF: symbols undefined</p>
+</li>
+<li><p>COMMON: symbols referenced by multiple modules. When happened, <code>value</code> gives requirements for data alignment, and <code>size</code> gives minimum size.</p>
+<p>Diffs between COMMON and <code>.bss</code>: COMMON lists uninitialized global vars, and <code>.bss</code> lists uninitialized static vars and global&#x2F;static vars initialized with 0.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Static Linking</p>
+<ul>
+<li><p>Symbol resolution</p>
+<p>Linker associates each symbol reference(symbols in .o, like functions, global vars, static vars) with exactly one symbol definition.</p>
+<p>Types of symbol:</p>
+<ul>
+<li><p>Global symbols</p>
+<p>locally defined and can be referenced by other modules; non-<code>static</code> functions and global vars in C, stored on the stack</p>
+</li>
+<li><p>External symbols</p>
+<p>externally defined: global vars with <code>extern</code> in C</p>
+</li>
+<li><p>Local symbols</p>
+<p>locally defined and can be accessed only by local: <code>static</code> functions and vars, stored in either <code>.bss</code> or <code>.data</code></p>
+</li>
+</ul>
+<p>&#x2F;&#x2F; Linker’s Symbol Rules for multiple definitions of global vars</p>
+<p>Rule 1: Multiple strong symbols are not allowed.</p>
+<p>Rule 2: Given a strong symbol and multiple weak ones, choose the strong one.</p>
+<p>Rule 3: Given multiple weak symbols, pick an arbitrary one. (for <code>gcc -fcommon</code>, if <code>-fno-common</code>, then trigger error)</p>
+<blockquote>
+<p>01 If multiple ones are not in COMMON, trigger error;</p>
+<p>02 If only one is not in COMMON, then choose it;</p>
+<p>03 If all in COMMON, choose the biggest one; if sizes are different, trigger warnings.</p>
+<p>(from Ouuan’s Notes) </p>
+</blockquote>
+<p>So if using multiple weak symbols, there can be nightmares:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.c</span></span><br><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">int</span> y;</span><br><span class="line">p1() &#123;&#125;</span><br><span class="line"><span class="comment">// b.c</span></span><br><span class="line"><span class="type">double</span> x;</span><br><span class="line">p2() &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Then writes to <code>x</code> in <code>p2()</code> can overwrite <code>y</code>. So, avoid global vars if you can; Otherwise, use <code>static</code>, initialize when defined, or use <code>extern</code> if referencing an external global var.</p>
+</li>
+<li><p>Relocation</p>
+<p>Linker merges separate code and data sections into single sections, relocate symbols from relative locations in <code>.o</code> to absolute memory locations in the exec(0x0 as the start), and update symbol references to these symbols to reflect their new positions.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="08-Exceptional-Control-Flow"><a href="#08-Exceptional-Control-Flow" class="headerlink" title="08 Exceptional Control Flow"></a>08 Exceptional Control Flow</h3><h3 id="09-Virtual-Memory"><a href="#09-Virtual-Memory" class="headerlink" title="09 Virtual Memory"></a>09 Virtual Memory</h3><h3 id="10-System-Level-I-O"><a href="#10-System-Level-I-O" class="headerlink" title="10 System-Level I&#x2F;O"></a>10 System-Level I&#x2F;O</h3><h3 id="11-Network-Programming"><a href="#11-Network-Programming" class="headerlink" title="*11 Network Programming"></a>*11 Network Programming</h3><h3 id="12-Concurrent-Programming"><a href="#12-Concurrent-Programming" class="headerlink" title="*12 Concurrent Programming"></a>*12 Concurrent Programming</h3>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/2023/" rel="tag"># 2023</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/futurePlan/" rel="prev" title="未来日记">
+                  <i class="fa fa-angle-left"></i> 未来日记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/DMar23/" rel="next" title="三月随笔">
+                  三月随笔 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">JasonL</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"JasonLannel/jasonlannel.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
